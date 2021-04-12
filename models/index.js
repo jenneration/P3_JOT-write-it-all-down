@@ -1,3 +1,6 @@
 module.exports = {
-  Book: require("./book")
+  Article: require("./Article"),
+  Journal :require("./Journal"),
+  Quote :require("./Quote"),
+  User :require("./User") 
 };
