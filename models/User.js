@@ -20,10 +20,11 @@ const userSchema = new Schema({
     type:String,
     required: true,
   },
-  DOB: {type:Date, required:true},
-  DarkTheme: {type :Boolean, default: false},
+ // DOB: {type:Date, required:true},
+   DarkTheme: {type :Boolean, default: false},
   journals:[{ type:Schema.Types.ObjectId, ref :"Journal"}],
-  quotes :[{type:Schema.Types.ObjectId, ref: "Quote"}]
+  quotes :[{type:Schema.Types.ObjectId, ref: "Quote"}],
+  articles:[{type:Schema.Types.ObjectId, ref:"Article"}]
 });
 const User = mongoose.model("User", userSchema);
 module.exports = User;

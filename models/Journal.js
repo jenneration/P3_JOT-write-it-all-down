@@ -10,7 +10,7 @@ const journalSchema = new Schema({
    
     user:{ type:Schema.Types.ObjectId, ref :"User"},
     // each journal can have multiple articles so saving as an array 
-    articles:[{type:Schema.Types.ObjectId, ref :"Artilce"}]
+    Article:[{type:Schema.Types.ObjectId, ref :"Article"}]
   });
   const Journal = mongoose.model("Journal", journalSchema);
   module.exports = Journal;
