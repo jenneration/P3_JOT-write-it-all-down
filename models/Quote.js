@@ -6,7 +6,7 @@ const quoteSchema = new Schema({
       type: String,
     },
     // each quote belongs to single user
-    user:{ type:Schema.Types.ObjectId, ref :"User"}
+    user:[{ type:Schema.Types.ObjectId, ref :"User"}]
   });
   const Quote = mongoose.model("Article", quoteSchema);
   module.exports = Quote;

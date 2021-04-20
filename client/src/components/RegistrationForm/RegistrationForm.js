@@ -35,6 +35,13 @@ function RegistrationForm(props) {
                 .then(function (response) {
                     //console.log(response);
                     if(response.status === 200){
+                        const user = {
+                            token : response.data.token,
+                            id : response.data.result._id,
+                            name: response.data.result.firstName
+
+                        }
+                        localStorage.setItem("user",JSON.stringify(user))
                         setState(prevState => ({
                             ...prevState,
                             'successMessage' : 'Registration successful. Redirecting to home page..'
