@@ -1,6 +1,8 @@
 import React,{useState} from 'react';
 import axios from 'axios';
-import {API_BASE_URL} from '../../constants/apiContants';
+//import { API_BASE_URL } from '../../constants/apiContants';
+// import {API_BASE_URL} from '../../constants/apiContants';
+
 function Home() {
     const [state , setState] = useState({
         journal: "",
@@ -10,14 +12,17 @@ function Home() {
     })
     var user = JSON.parse(localStorage.getItem('user'));
     const handleChange = (e) => {
-        const {name , value} = e.target   
-        setState(prevState => ({
-            ...prevState,
-            [name] : value,
-            userId: user.id,
-            token: user.token,
-            name:user.name
-        }))
+        const {name , value} = e.target 
+        if(user){
+            setState(prevState => ({
+                ...prevState,
+                [name] : value,
+                userId: user.id,
+                token: user.token,
+                name:user.name
+            }))
+        }  
+      
     }
     const addJournal = (e)=>{
         e.preventDefault();
@@ -32,14 +37,26 @@ function Home() {
     }
     const getJournal = (e)=>{
         e.preventDefault();
-        if(state.journal==="")return;
-        axios.get(`http://localhost:3001/user/journal/${state.userId}`)
-        .then(res =>
-            console.log(res)
-        )
-        .catch(err =>{
-            console.log(err)
+        const user = JSON.parse(localStorage.getItem('user'));
+        if(!user)return window.location.href ="/login";
+        const apiUrl = "http://localhost:3001/user/"
+        const authAxios = axios.create({
+        baseURL: apiUrl,
+        headers:{
+            Authorization :`Bearer ${user.token} `,
+            userId: user.id
+         }
         })
+        if(state.journal==="")return;
+        // Capturing the Token
+        try {
+        const journal = (authAxios.get(`journal/${state.userId}`));
+        console.log(journal)
+        } catch (error) {
+        console.log(error)
+        }
+     
+       
     }
 
     return(

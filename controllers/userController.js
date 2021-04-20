@@ -15,6 +15,7 @@ const bcrypt = require('bcrypt');
         if(!isPasswordCorrect)return res.status(400).json({message: "invalid email or password"});
         const token = jwt.sign({email: existingUser.email, id:existingUser._id}, "test", {expiresIn: "1h"});
         res.status(200).json({result: existingUser, token});
+        // res.cookie('jwt', token, {httpOnly:true,secure: true, maxAge: 1000*60*60}) may be work for cookie
     }catch (error){
         res.status(500).json({message: "something went wrong"});
     }
