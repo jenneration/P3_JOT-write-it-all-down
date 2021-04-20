@@ -5,6 +5,7 @@ const mongoose = require("mongoose");
 const userRoutes = require("./routes/users");
 const journalRoutes = require("./routes/journalRoutes.js");
  const articleRoutes = require("./routes/articleRoutes.js");
+ const quoteRoutes = require("./routes/quotes.js");
 const app = express();
 const PORT = process.env.PORT || 3001;
 const {auth} = require("./middleware/auth");
@@ -22,11 +23,9 @@ if (process.env.NODE_ENV === "production") {
   app.use(express.static("client/build"));
 }
 app.use("/api", userRoutes);
-app.use("/user", journalRoutes)
-app.use("/article", articleRoutes)
-// app.get("/user/journal/:userId", (req, res)=>{
-//   console.log(req.params.userId)
-// })
+app.use("/user",auth, journalRoutes);
+app.use("/article", auth, articleRoutes);
+app.use("/quote", auth, quoteRoutes);
 
 // Connect to the Mongo DB
 

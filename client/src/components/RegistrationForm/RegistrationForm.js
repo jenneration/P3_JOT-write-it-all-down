@@ -33,7 +33,7 @@ function RegistrationForm(props) {
             }
             axios.post(API_BASE_URL+'signup', payload)
                 .then(function (response) {
-                    //console.log(response);
+                    console.log(response);
                     if(response.status === 200){
                         const user = {
                             token : response.data.token,

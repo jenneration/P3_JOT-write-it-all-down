@@ -1,10 +1,16 @@
 // import { STATES } from 'mongoose';
- import React,{ useState} from 'react';
+ import React,{ useState, useEffect} from 'react';
 // import {useDispatch} from "react-redux";
 // import {Redirect, useHistory} from "react-router-dom";
 const Header = ()=> {
-    const[user, setUser] = useState(JSON.parse(localStorage.getItem("user")));
-
+    const[user, setUser] = useState([]);
+    useEffect(()=>{
+        getUser()
+    },[])
+     function getUser(){
+        const user = JSON.parse(localStorage.getItem("user"))
+        setUser(user)
+     }
     const logout = ()=>{
         localStorage.clear();
         window.location.href="/login";

@@ -4,7 +4,8 @@ const User = require ("../models/User");
 
 // get route 
 const getJournal = (req, res)=>{
-    console.log(req.params.id);
+    // console.log(req.params.id);
+    // console.log(req.headers);
     try {
         User.findOne({_id:req.params.id}).populate("journals")
         .then(dbJournal=>{
