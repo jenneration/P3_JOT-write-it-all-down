@@ -8,7 +8,7 @@ const journalSchema = new Schema({
       required : true
     },
    
-    user:{ type:Schema.Types.ObjectId, ref :"User"},
+    user:[{ type:Schema.Types.ObjectId, ref :"User"}],
     // each journal can have multiple articles so saving as an array 
     Article:[{type:Schema.Types.ObjectId, ref :"Article"}]
   });
