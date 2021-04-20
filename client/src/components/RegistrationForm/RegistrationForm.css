@@ -11,13 +11,20 @@
 
  .registration-form{
     display: flex;
+    justify-content: right;
     flex-direction: column;
-    background-color: #4ea3ff;
-    height: 70vh;
-    padding: 20px;
+    background-color: rgb(0, 217, 255);
+    height: 80vh;
+    padding: 30px;
+    
 }
 .register-button{
     width: 120px;
     height: 40px;
     align-self: center;
+}
+
+.mt-2 {
+
+    text-align: center;
 }

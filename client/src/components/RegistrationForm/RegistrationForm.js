@@ -76,7 +76,16 @@ function RegistrationForm(props) {
         }
     }
     return(
-        <div className="card col-xlg-5 col-lg-5 col-sm-5 col-xs-12 login-card mt-2 hv-center">
+        <>
+        <div className="container">
+            <div className="row">
+                <div className="login col-md-6">
+
+                   {/* logo content  */}
+
+                </div>
+                <div className="register col-md-6">
+ <div className="card col-xlg-10  col-lg-10 col-md-10 col-sm-6 offset-10 col-xs-6 login-card mt-2 hv-right">
             <form className ="registration-form">
             <div className="form-group text-center">
                     <label htmlFor="firstName">First name</label>
@@ -147,6 +156,12 @@ function RegistrationForm(props) {
             </div>
             
         </div>
+
+                </div>
+            </div>
+        </div>
+       
+        </>
     )
 }
 
