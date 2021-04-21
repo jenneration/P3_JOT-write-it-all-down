@@ -1,7 +1,7 @@
 import React from "react";
 import { Container } from "../components/Grid/grid";
 import Search from "../components/Search";
-import Table2 from "../components/Table2"
+// import Table2 from "../components/Table2"
 import Table from "../components/Table";
 import TableData from "../components/TableData";
 import quotes from "../../src/testdb/quotes.json"
@@ -35,7 +35,7 @@ class Quotes extends React.Component {
                         />
                     ))}
                 </Table>
-                <Table2 />
+                {/* <Table2 /> */}
             </Container>
         )
     }
