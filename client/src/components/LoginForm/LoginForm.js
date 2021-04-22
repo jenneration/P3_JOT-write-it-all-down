@@ -63,7 +63,7 @@ function LoginForm(props) {
       <div className="container">
         <div className="row">
           <div className="login col-lg-6  col-md-6 col-sm-6 ">{/* logo content  */}</div>
-          <div className="card col-12 col-lg-4  col-md-4 col-md-4 login-card offset-10 mt-2 hv-center">
+          <div className="card col-lg-4 col-md-3  col-sm-4 login-card offset-8 mt-2 hv-center">
             <form className="loginForm">
               <div className="form-group text-center">
                 <label htmlFor="exampleInputEmail1">Email address</label>
