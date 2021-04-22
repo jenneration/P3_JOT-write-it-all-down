@@ -9,29 +9,29 @@ function CreateEntry() {
     return (
         <div>
 
-            {/* <Container> */}
-            <Row>
-                <Col size="md-3">
-                    <Side />
-                </Col>
-                <Col size="md-6">
-                    <form>
-                        <FormBtn>Save</FormBtn>
-                        <Input
-                            // onChange={handleInputChange}
-                            name="title"
-                            placeholder="Title" />
-                        <Input
-                            name="dateCreated/Datenow()"
-                            placeholder="Today's date/DateCreated" />
-                        <TextArea
-                            name="entrycontent"
-                            placeholder="Jot it here" />
-                    </form>
-                </Col>
-            </Row>
+            <Container>
+                <Row>
+                    <Col size="md-3">
+                        <Side />
+                    </Col>
+                    <Col size="md-6">
+                        <form>
+                            <FormBtn>Save</FormBtn>
+                            <Input
+                                // onChange={handleInputChange}
+                                name="title"
+                                placeholder="Title" />
+                            <Input
+                                name="dateCreated/Datenow()"
+                                placeholder="Today's date/DateCreated" />
+                            <TextArea
+                                name="entrycontent"
+                                placeholder="Jot it here" />
+                        </form>
+                    </Col>
+                </Row>
 
-            {/* </Container> */}
+            </Container>
 
         </div>
     )
