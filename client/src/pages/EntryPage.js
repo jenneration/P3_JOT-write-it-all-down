@@ -1,7 +1,7 @@
 
 import React, { Component } from 'react';
 import Entry from '../components/Entry';
-import Wrapper from '../components/Wrapper';
+import Wrapper from '../components/Wrapper/wrapper';
 import SideNav from '../components/SideNav';
 import './style.css';
 
