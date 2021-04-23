@@ -89,7 +89,7 @@ export default function Table({ columns, data }) {
                             <button className="pagebtn" onClick={() => gotoPage(0)} disabled={!canPreviousPage}>
                                 {"<<"}
                             </button>{" "}
-                            <button className="pagebtn" onClick={() => previousPage()} disabled={!canPreviousPage}>
+                            <button className="pagebtn bg-light" onClick={() => previousPage()} disabled={!canPreviousPage}>
                                 {"Prev"}
                             </button>{" "}
                             <button className="pagebtn" onClick={() => nextPage()} disabled={!canNextPage}>
