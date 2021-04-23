@@ -28,13 +28,9 @@ function CreateEntry() {
 		}
 	  };
     return (
-
-
-        
             <div ref={refCallback}>
             <ThemeDropdown handleChange={handleChange} />
             <br></br><br></br>
-
             <Row>
                 <Col size="md-3">
                     <Side />
@@ -55,8 +51,6 @@ function CreateEntry() {
                     </form>
                 </Col>
             </Row>
-
-
         </div>
     )
 }

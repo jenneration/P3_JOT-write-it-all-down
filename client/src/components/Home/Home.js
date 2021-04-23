@@ -8,7 +8,8 @@ function Home() {
         journal: "",
         successMessage: null,
         userId : "",
-        token :""
+        token :"",
+        result:[]
     })
     var user = JSON.parse(localStorage.getItem('user'));
     const handleChange = (e) => {
@@ -35,7 +36,7 @@ function Home() {
             console.log(err)
         })
     }
-    const getJournal = (e)=>{
+    const getJournal = async (e)=>{
         e.preventDefault();
         const user = JSON.parse(localStorage.getItem('user'));
         if(!user)return window.location.href ="/login";
@@ -50,16 +51,21 @@ function Home() {
         if(state.journal==="")return;
         // Capturing the Token
         try {
-        const journal = (authAxios.get(`journal/${state.userId}`));
+        const journal = await  (authAxios.get(`journal/${state.userId}`));
         console.log(journal)
+            if(journal){  setState(prevState => ({
+                ...prevState,
+                result:journal.data
+            }))}
+          
+        
         } catch (error) {
         console.log(error)
-        }
-     
-       
+        }  
     }
 
     return(
+        <div>
         <div className="mt-2">
            <form>
                <input name="journal" type="text" placeholder="name of the journal" onChange={handleChange} />
@@ -70,7 +76,23 @@ function Home() {
                <button type="submit" onClick={getJournal}>get journal</button>
            </form>
         </div>
+        {state.result? (
+            <ul>
+                {state.result.map(item => (
+                  <li key={item._id}>
+                    <li to={"/books/" + item._id}>
+                      <strong>
+                        {item.name}
+                      </strong>
+                    </li>
+                    <button>btn</button>
+                  </li>
+                ))}
+            </ul>
+        ):(<div>button1 </div>)}
+    </div>
     )
+
 }
 
 export default Home;

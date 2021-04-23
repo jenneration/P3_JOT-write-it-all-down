@@ -62,10 +62,15 @@ function LoginForm(props) {
     <>
       <div className="container-fluid">
         <div className="row">
+<<<<<<< HEAD
+          <div className="login col-lg-6  col-md-6 col-sm-6 ">{/* logo content  */}</div>
+          <div className="card col-lg-4 col-md-3  col-sm-4 login-card offset-8 mt-2 hv-center">
+=======
            
           <div className="login col-lg-9  col-md-9 col-sm-9 ">{/* logo content  */}</div>
 
           <div id = "loginform1" className="login col-lg-3  col-md-3 col-sm-3 ">
+>>>>>>> c7e7dd922f020b71ee3a8300cd6435c5295422c8
             <form className="loginForm">
               <div className="form-group text-center">
                 <label htmlFor="exampleInputEmail1">Email address</label>

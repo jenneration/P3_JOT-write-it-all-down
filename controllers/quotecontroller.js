@@ -18,6 +18,7 @@ const getQuotes = (req,res)=>{
 }
 // creating quote or saving quote to database
 const createQuote = (req, res)=>{
+    console.log(req.body)
     try {
         const result = Quote.create({
             name : req.body.quote,
@@ -32,15 +33,22 @@ const createQuote = (req, res)=>{
 }
 // deleting the quote
 const deleteQuote = (req, res)=>{
-    try {
-        const quote = Quote.findOne({_id:req.params.id});
-        if(quote){
-            console.log(quote);
-            // quote have the userId to whom it belongs from there bring the user_id 
-            // and go to User and pul that quote _id
-        }
-    } catch (error) {
-        console.log(error)
-    }
+    console.log(req.headers);
+    console.log(req.params.id)
+    // try {
+    //     const quote = Quote.findOne({_id:req.params.id});
+    //     if(quote){
+    //         console.log(quote);
+    //         // quote have the userId to whom it belongs from there bring the user_id 
+    //         // and go to User and pul that quote _id
+    //         res.json(quote);
+    //     }
+        
+    // } catch (error) {
+    //     console.log(error)
+    // }
+    const quote = Quote.findOne({_id:req.params.id});
+    res.json(quote);
+
 }
 module.exports={getQuotes, createQuote, deleteQuote};
