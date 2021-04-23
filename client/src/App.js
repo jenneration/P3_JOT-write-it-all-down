@@ -29,7 +29,8 @@ function App() {
     <Router>
       <div className="App">
         <Header title={title} />
-        <div className="container d-flex align-items-center flex-column">
+        {/* <div className="container d-flex align-items-center flex-column"> */}
+        <div>
           <Switch>
             <Route path="/" exact={true}>
               <RegistrationForm showError={updateErrorMessage} updateTitle={updateTitle} />
@@ -57,7 +58,7 @@ function App() {
           <Route exact path="/about" component={About} />
           <Route exact path="/entrypage" component={EntryPage} />
           <Route exact path="/createentry" component={CreateEntry} />
-          <Route exact path="/allentries" component={AllEntries} />
+          <Route exact path="/allentries/:id" component={AllEntries} />
         </div>
       </div>
 

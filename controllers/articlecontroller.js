@@ -39,6 +39,13 @@ const updateArticle =  (req, res)=>{
 }
 const deleteArticle =  (req, res)=>{
     console.log(req.params.id);
+    try {
+        const result = Article.findOneAndDelete({_id:req.params.id})
+        .then()
+        
+    } catch (error) {
+        
+    }
    
    
 }

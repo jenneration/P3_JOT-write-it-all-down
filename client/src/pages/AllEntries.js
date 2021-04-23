@@ -1,49 +1,74 @@
-import React, { Component } from "react";
-import { Container } from "../components/Grid/grid";
-import Search from "../components/Search/search";
+import React, { useMemo, useState, useEffect } from "react";
+import axios from "axios";
 
-//TEST db file
-import entries from "../testdb/entries.json"
+import Table from "../components/Table/table";
 
-class AllEntries extends Component {
-  state = {
-    entries
-  }
+function AllEntries() {
+  const columns = useMemo(
+    () => [
+      {
+        Header: "Journal Entries",
+        columns: [
+          {
+            Header: () => (
+              <div style={{ textAlign: "left" }}>Title</div>
+            ),
 
-  //Delete an entry 
-  removeEntry = id => {
-    const entries = this.state.entries.filter(entry => entry.article_id !== id);
-    this.setState({ entries });
-  }
+            accessor: "show.name",
+            Cell: row => (
+              <div style={{ textAlign: "left" }}>{row.value}</div>
+            )
+          },
+          {
+            Header: "Date",
+            accessor: "show.id"
+          }
+        ]
+      },
+      {
+        Header: "Delete Entry",
+        columns:
+          [
+            {
+              Header: "X",
 
-  render() {
-    return (
-      <Container>
-        <Search />
-        <table className="table  text-center">
-          <thead>
-            <tr className="thead-light">
-              <th scope="col">Title</th>
-              <th scope="col">Date</th>
-              <th scope="col">Delete</th>
-            </tr>
-          </thead>
-          <tbody>
-            {this.state.entries.map(entry => (
-              <tr key={entry.article_id}>
-                <td>{entry.title}</td>
-                <td>{entry.date}</td>
-                <td><span onClick={() => this.removeEntry(entry.id)} className="remove">X</span></td>
-              </tr>
-            ))}
-          </tbody>
-        </table>
-      </Container>
-    )
-  }
+              accessor: "X",
+              disableSortBy: true,
+              disableFilters: true,
+              Cell: cell => (
+                // <button value={cell.accessor} onClick={props.handleClickGroup}>
+                //     {cell.accessor}
+                // </button>
+
+                <div style={{ display: "flex", justifyContent: "center", alignItems: "center", border: "none" }} > <button className="btn btnX" value="X">X</button></ div >
+
+              )
+            }
+          ]
+      }
+    ],
+    []
+  );
+
+  //Call for data
+  const [data, setData] = useState([]);
+
+  //Example API call
+  useEffect(() => {
+    (async () => {
+      const result = await axios("https://api.tvmaze.com/search/shows?q=snow");
+      console.log(result)
+      setData(result.data);
+    })();
+  }, []);
+
+
+  //Render
+  return (
+    <div className="container tableApp">
+      <Table columns={columns} data={data} />
+    </div>
+  );
 }
 
 export default AllEntries;
-
-//NOTE: Can pull in data from testdb > entries.json file
-//NOTE: Current Table is simple bootstrap and requires sorting-search functionality - gui table exists in Quotes page. See notes about there about that

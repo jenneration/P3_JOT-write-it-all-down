@@ -85,7 +85,7 @@ function RegistrationForm(props) {
 
                 </div>
                 <div className="register col-md-6">
- <div className="card col-xlg-10  col-lg-10 col-md-10 col-sm-6 offset-10 col-xs-6 login-card mt-2 hv-right">
+ <div className="card col-xlg-10  col-lg-10 col-md-10 col-sm-6 offset-10 col-xs-6 login-card mt-2 hv-right max-height-xs " >
             <form className ="registration-form">
             <div className="form-group text-center">
                     <label htmlFor="firstName">First name</label>
