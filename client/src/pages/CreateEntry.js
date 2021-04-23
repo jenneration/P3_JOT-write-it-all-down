@@ -29,35 +29,30 @@ function CreateEntry() {
 	  };
     return (
 
+            <Container>
+                <Row>
+                    <Col size="md-3">
+                        <Side />
+                    </Col>
+                    <Col size="md-6">
+                        <form>
+                            <FormBtn>Save</FormBtn>
+                            <Input
+                                // onChange={handleInputChange}
+                                name="title"
+                                placeholder="Title" />
+                            <Input
+                                name="dateCreated/Datenow()"
+                                placeholder="Today's date/DateCreated" />
+                            <TextArea
+                                name="entrycontent"
+                                placeholder="Jot it here" />
+                        </form>
+                    </Col>
+                </Row>
 
-        
-            <div ref={refCallback}>
-            <ThemeDropdown handleChange={handleChange} />
-            <br></br><br></br>
+            </Container>
 
-            <Row>
-                <Col size="md-3">
-                    <Side />
-                </Col>
-                <Col size="md-6">
-                    <form>
-                        <FormBtn>Save</FormBtn>
-                        <Input
-                            // onChange={handleInputChange}
-                            name="title"
-                            placeholder="Title" />
-                        <Input
-                            name="dateCreated/Datenow()"
-                            placeholder="Today's date/DateCreated" />
-                        <TextArea
-                            name="entrycontent"
-                            placeholder="Jot it here" />
-                    </form>
-                </Col>
-            </Row>
-
-
-        </div>
     )
 }
 

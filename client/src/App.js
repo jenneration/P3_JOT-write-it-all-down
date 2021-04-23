@@ -58,7 +58,7 @@ function App() {
           <Route exact path="/about" component={About} />
           <Route exact path="/entrypage" component={EntryPage} />
           <Route exact path="/createentry" component={CreateEntry} />
-          <Route exact path="/allentries/:id" component={AllEntries} />
+          <Route exact path="/allentries" component={AllEntries} />
         </div>
       </div>
 
