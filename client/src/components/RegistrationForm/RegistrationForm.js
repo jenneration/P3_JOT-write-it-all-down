@@ -77,15 +77,15 @@ function RegistrationForm(props) {
     }
     return(
         <>
-        <div className="container">
+        <div className="container-fluid">
             <div className="row">
-                <div className="login col-md-6">
+                <div className="login col-lg-9 col-md-9 col-sm-9">
 
                    {/* logo content  */}
 
                 </div>
-                <div className="register col-md-6">
- <div className="card col-xlg-10  col-lg-10 col-md-10 col-sm-6 offset-10 col-xs-6 login-card mt-2 hv-right max-height-xs " >
+                <div id = "regform1" className="register col-lg-3 col-md-3 cold-sm-3">
+
             <form className ="registration-form">
             <div className="form-group text-center">
                     <label htmlFor="firstName">First name</label>
@@ -146,6 +146,10 @@ function RegistrationForm(props) {
                 >
                     Register
                 </button>
+                <br>
+                </br>
+                <br>
+                </br>
             </form>
             <div className="alert alert-success mt-2" style={{display: state.successMessage ? 'block' : 'none' }} role="alert">
                 {state.successMessage}
@@ -159,9 +163,9 @@ function RegistrationForm(props) {
 
                 </div>
             </div>
-        </div>
-       
         </>
+       
+        
     )
 }
 

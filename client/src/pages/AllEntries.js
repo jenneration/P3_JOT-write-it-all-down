@@ -69,28 +69,6 @@ function AllEntries() {
       <Table columns={columns} data={data} />
     </div>
   );
-
-  //Call for data
-  const [data, setData] = useState([]);
-
-  //Example API call
-  useEffect(() => {
-    (async () => {
-      const result = await axios("https://api.tvmaze.com/search/shows?q=snow");
-      console.log(result)
-      setData(result.data);
-    })();
-  }, []);
-
-
-  //Render
-  return (
-    <div className="container tableApp">
-      <Table columns={columns} data={data} />
-    </div>
-  );
 }
+
 export default AllEntries;
-
-
-
