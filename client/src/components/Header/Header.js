@@ -10,26 +10,26 @@ import "./header.css";
 
 
 const Header = () => {
-  const [user, setuser]= useState([]);
-  const NewUser = JSON.parse(localStorage.getItem("user"));
-  useEffect(()=>{
-      if(NewUser){
-          setuser(prevState => ({
-              ...prevState,
-              userId: NewUser.id,
-              token: NewUser.token,
-              name:NewUser.name
-          }))
-      }
-  }, []);
-  const logout = () => {
-    localStorage.clear();
-    window.location.href = "/login";
-}
-  const token = NewUser?. token;
-    if(token){
+    const [user, setuser] = useState([]);
+    const NewUser = JSON.parse(localStorage.getItem("user"));
+    useEffect(() => {
+        if (NewUser) {
+            setuser(prevState => ({
+                ...prevState,
+                userId: NewUser.id,
+                token: NewUser.token,
+                name: NewUser.name
+            }))
+        }
+    }, []);
+    const logout = () => {
+        localStorage.clear();
+        window.location.href = "/login";
+    }
+    const token = NewUser?.token;
+    if (token) {
         const decodedToken = decode(token);
-        if(decodedToken.exp*1000 <new Date().getTime()){
+        if (decodedToken.exp * 1000 < new Date().getTime()) {
             logout();
         }
     }
@@ -47,16 +47,16 @@ const Header = () => {
                             <li className="nav-item">
                                 <Link to="/alljournals" className={window.location.pathname === "/alljounsals" ? "nav-link active" : "nav-link"}>Home</Link>
                             </li>
-                            <li className="nav-item">
+                            <li className="nav-item bg-danger">
                                 <Link to="/allentries" className={window.location.pathname === "/allentries" ? "nav-link active" : "nav-link"}>AllEntries</Link>
                             </li>
-                            <li className="nav-item" >
+                            <li className="nav-item bg-danger" >
                                 <Link to="/createentry" className={window.location.pathname === "/createentry" ? "nav-link active" : "nav-link"}>CreateEntry</Link>
                             </li>
                             <li className="nav-item" >
                                 <Link to="/quotes" className={window.location.pathname === "/quotes" ? "nav-link active" : "nav-link"}>Quotes</Link>
                             </li>
-                            <li className="nav-item" >
+                            <li className="nav-item bg-danger" >
                                 <Link to="/entrypage" className={window.location.pathname === "/entrypage" ? "nav-link active" : "nav-link"}>EntryPage</Link>
                             </li>
                             <li className="nav-item" >
