@@ -3,6 +3,9 @@ import React, { Component } from 'react';
 import Entry from '../components/Entry';
 import Wrapper from '../components/Wrapper/wrapper';
 import SideNav from '../components/SideNav';
+import QuoteHeader from "../components/QuoteHeader";
+import Modal from "../components/Modal"
+import Footer from "../components/Footer"
 import './style.css';
 
 import user from '../user.json';
@@ -17,6 +20,8 @@ class EntryPage extends Component {
 	render() {
 		return (
 			<Wrapper>
+				<QuoteHeader />
+
 
 				{this.state.user.map((user) => user.journals[0].article.map((article) =>
 					<SideNav
@@ -26,6 +31,11 @@ class EntryPage extends Component {
 				}
 
 				<Entry />
+				<Modal />
+				<Footer />
+				
+
+
 			</Wrapper>
 		);
 	}
