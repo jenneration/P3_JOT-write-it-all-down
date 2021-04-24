@@ -81,9 +81,163 @@
             }
 
         ]
-            },	 
+            },
             {
-                "journal_id": 3,
+                "journal_id": 3,	
+                "name": "Studies",
+                "user": "SpongeBob",
+                "article": [
+                    {
+                    "article_id": 1,
+                    "title": "Science",
+                    "body": "Welcome to Science",
+                    "user": "SpongeBob"
+                    
+                },
+            
+                {
+                    "article_id": 2,
+                    "title": "History",
+                    "body": "Welcome to History",
+                    "user": "SpongeBob",
+                    "journal": "Studies"
+                },
+                {
+                    "article_id": 3,
+                    "title": "Math",
+                    "body": "Welcome to Math",
+                    "user": "SpongeBob",
+                    "journal": "Studies"
+                },
+                {
+                    "article_id": 4,
+                    "title": "Art",
+                    "body": "Welcome to Art",
+                    "user": "SpongeBob",
+                    "journal": "Studies",
+                    "date": "04/17/2021"
+                },
+                {
+                    "article_id": 5,
+                    "title": "English",
+                    "body": "Welcome to English",
+                    "user": "SpongeBob",
+                    "journal": "Studies",
+                    "date": "04/17/2021"
+                }
+            ]
+            },	
+            {
+                "journal_id": 4,	
+                "name": "Studies",
+                "user": "SpongeBob",
+                "article": [
+                    {
+                    "article_id": 1,
+                    "title": "Science",
+                    "body": "Welcome to Science",
+                    "user": "SpongeBob"
+                    
+                },
+            
+                {
+                    "article_id": 2,
+                    "title": "History",
+                    "body": "Welcome to History",
+                    "user": "SpongeBob",
+                    "journal": "Studies"
+                },
+                {
+                    "article_id": 3,
+                    "title": "Math",
+                    "body": "Welcome to Math",
+                    "user": "SpongeBob",
+                    "journal": "Studies"
+                },
+                {
+                    "article_id": 4,
+                    "title": "Art",
+                    "body": "Welcome to Art",
+                    "user": "SpongeBob",
+                    "journal": "Studies",
+                    "date": "04/17/2021"
+                },
+                {
+                    "article_id": 5,
+                    "title": "English",
+                    "body": "Welcome to English",
+                    "user": "SpongeBob",
+                    "journal": "Studies",
+                    "date": "04/17/2021"
+                }
+            ]
+            },
+            {
+                "journal_id": 5,
+                "name": "Food Journal",
+                "user": "SpongeBob",
+                "article": [
+                    {
+                    "article_id": 1,
+                    "title": "Monday",
+                    "body": "Monday Food",
+                    "user": "SpongeBob",
+                    "journal": "Food Journal",
+                      "date": "04/17/2021"
+                },
+                {
+                    "article_id": 2,
+                    "title": "Tuesday",
+                    "body": "Tuesday Food",
+                    "user": "SpongeBob",
+                    "journal": "Food Journal",
+                      "date": "04/17/2021"
+                },
+                {
+                    "article_id": 3,
+                    "title": "Wednesday",
+                    "body": "Wednesday Food",
+                    "user": "SpongeBob",
+                    "journal": "Food Journal",
+                      "date": "04/17/2021"
+                },
+                {
+                    "article_id": 4,
+                    "title": "Thursday",
+                    "body": "Thursday Food",
+                    "user": "SpongeBob",
+                    "journal": "Food Journal"
+                },
+                {
+                    "article_id": 5,
+                    "title": "Friday",
+                    "body": "Friday Food",
+                    "user": "SpongeBob",
+                    "journal": "Food Journal",
+                      "date": "04/17/2021"
+                },
+                {
+                    "article_id": 6,
+                    "title": "Saturday",
+                    "body": "Saturday Food",
+                    "user": "SpongeBob",
+                    "journal": "Food Journal",
+                      "date": "04/17/2021"
+                },
+                {
+                    "article_id": 7,
+                    "title": "Sunday",
+                    "body": "Sunday Food",
+                    "user": "SpongeBob",
+                    "journal": "Food Journal",
+                      "date": "04/17/2021"
+                }
+                
+
+            ]
+            },
+            {
+                "journal_id": 6,
                 "name": "Food Journal",
                 "user": "SpongeBob",
                 "article": [
@@ -146,6 +300,7 @@
 
             ]
             }
+            
         ]
         }
     ]
