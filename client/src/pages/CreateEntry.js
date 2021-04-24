@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import { Row } from "../components/Grid/grid";
 import { Input, TextArea, FormBtn } from "../components/Form/form";
 import Wrapper from "../components/Wrapper";
-import ThemeDropdown from "../components/ThemeHeader"
 import themes from "../themes"
 
 
@@ -29,7 +28,6 @@ function CreateEntry() {
     return (
         <Wrapper>
             <div ref={refCallback}>
-                <ThemeDropdown handleChange={handleChange} />
                 <br></br><br></br>
                 <div className="container">
                     <Row className="d-flex justify-content-center">
