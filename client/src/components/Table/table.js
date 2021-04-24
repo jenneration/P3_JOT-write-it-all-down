@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useTable, useFilters, useSortBy, usePagination } from "react-table";
-import "./style.css";
+import "./Table.css";
 
 export default function Table({ columns, data }) {
     const [filterInput, setFilterInput] = useState("");
@@ -41,11 +41,17 @@ export default function Table({ columns, data }) {
     // Render the UI for your table
     return (
         <>
-            <input className="searchbar"
-                value={filterInput}
-                onChange={handleFilterChange}
-                placeholder={"Search"}
-            />
+            <div className="search-container">
+                <form>
+                    <div className="input-group input-group-mb-3">
+                        <input className="input-group tab-search"
+                            value={filterInput}
+                            onChange={handleFilterChange}
+                            placeholder={"Search"}
+                        />
+                    </div>
+                </form>
+            </div>
             <table {...getTableProps()}>
                 <thead>
                     {headerGroups.map(headerGroup => (
@@ -124,7 +130,7 @@ export default function Table({ columns, data }) {
                         </div>
 
                         <div className="col-sm">
-                            <select
+                            <select className="page-select"
                                 value={pageSize}
                                 onChange={(e) => {
                                     setPageSize(Number(e.target.value));

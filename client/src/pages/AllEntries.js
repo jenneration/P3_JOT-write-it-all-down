@@ -1,7 +1,6 @@
 import React, { useMemo, useState, useEffect } from "react";
 import axios from "axios";
-
-import Table from "../components/Table/table";
+import Table from "../components/Table";
 
 function AllEntries() {
   const columns = useMemo(
@@ -65,9 +64,11 @@ function AllEntries() {
 
   //Render
   return (
+
     <div className="container tableApp">
       <Table columns={columns} data={data} />
     </div>
+
   );
 }
 

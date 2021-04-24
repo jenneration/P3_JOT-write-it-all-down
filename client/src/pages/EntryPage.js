@@ -1,9 +1,9 @@
 
 import React, { Component } from 'react';
 import Entry from '../components/Entry';
-import Wrapper from '../components/Wrapper/wrapper';
-import SideNav from '../components/SideNav';
-import './style.css';
+import Wrapper from "../components/Wrapper";
+// import SideNav from '../components/SideNav';
+// import './style.css';
 
 import user from '../user.json';
 
@@ -18,12 +18,12 @@ class EntryPage extends Component {
 		return (
 			<Wrapper>
 
-				{this.state.user.map((user) => user.journals[0].article.map((article) =>
+				{/* {this.state.user.map((user) => user.journals[0].article.map((article) =>
 					<SideNav
 						id={article.article_id} title={article.title}
 					/>)
 				)
-				}
+				} */}
 
 				<Entry />
 			</Wrapper>
