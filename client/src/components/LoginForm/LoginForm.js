@@ -62,16 +62,17 @@ function LoginForm(props) {
     <>
       <div className="container-fluid">
         <div className="row">
-           
-          <div className="login col-lg-9  col-md-9 col-sm-9 ">{/* logo content  */}</div>
 
-          <div id = "loginform1" className="login col-lg-3  col-md-3 col-sm-3 ">
+          <div className="login col-lg-9  col-md-9 col-sm-9 ">{/* logo content  */}
+          </div>
+
+          <div id="loginform1" className="login col-lg-3  col-md-3 col-sm-3 ">
             <form className="loginForm">
               <div className="form-group text-center">
                 <label htmlFor="exampleInputEmail1">Email address</label>
                 <input
                   type="email"
-                  className="form-control"
+                  className="form-control input-login"
                   id="email"
                   aria-describedby="emailHelp"
                   placeholder="Enter email"
@@ -86,7 +87,7 @@ function LoginForm(props) {
                 <label htmlFor="exampleInputPassword1">Password</label>
                 <input
                   type="password"
-                  className="form-control"
+                  className="form-control input-login"
                   id="password"
                   placeholder="Password"
                   value={state.password}
@@ -96,7 +97,7 @@ function LoginForm(props) {
               <div className="form-check"></div>
               <button
                 type="submit"
-                className="btn btn-primary"
+                className="btn btn-dark"
                 onClick={handleSubmitClick}
               >
                 Submit
@@ -115,8 +116,8 @@ function LoginForm(props) {
                 Register
               </span>
             </div>
-            </div>
-          
+          </div>
+
         </div>
       </div>
     </>

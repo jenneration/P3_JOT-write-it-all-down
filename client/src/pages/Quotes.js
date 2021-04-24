@@ -1,7 +1,7 @@
 import React, { useMemo, useState, useEffect } from "react";
 import axios from "axios";
 
-import Table from "../components/Table/table";
+import Table from "../components/Table";
 
 function SavedQuotes() {
     const columns = useMemo(

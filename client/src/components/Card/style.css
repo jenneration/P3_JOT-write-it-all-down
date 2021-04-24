@@ -3,7 +3,8 @@
     border-radius: 2px;
     margin: 1rem;
     position: relative;
-    width: 500px;
+    width: 335px;
+    height: 325px;
     box-shadow: 0 3px 6px #999, 0 3px 6px #999;
     text-align: left;
   }
@@ -29,17 +30,35 @@
   .card > .content > ul > li {
     margin-top: 18px;
   }
-  
-  /* .card > .remove {
-    color: #ff1744;
-    font-size: 48px;
-    position: absolute;
-    top: -20px;
-    right: 5px;
-    cursor: pointer;
-  } */
-  
-  /* .card > .remove:hover {
-    color: #d50000;
-  } */
-  
+
+.card-ul {
+  list-style-type: none;
+} 
+
+.tooltip-text {
+  width: 145px;
+  position: absolute;
+  display: none;
+  background: ghostwhite;
+  padding: 10px;
+  font-size: 12px;
+  border-radius: 3px; 
+  transition: opacity 1s ease-out;
+}
+.fa {
+  font-size: 16px;
+  transition: .5s ease-in-out;
+}
+.fas-fa-book:hover + .tooltip-text, .fas-fa-cog:hover + .tooltip-text, .fa-fa-pencil:hover + .tooltip-text {
+  display: block;
+  color: black;
+  animation: fadeIn 2s;
+}
+@-webkit-keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}  
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
