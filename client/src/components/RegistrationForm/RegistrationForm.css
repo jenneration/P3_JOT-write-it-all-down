@@ -16,6 +16,7 @@
     background-color: rgb(0, 217, 255);
     height: 80vh;
     padding: 30px;
+    margin-top: 10%;
     
 }
 .register-button{
@@ -28,3 +29,4 @@
 
     text-align: center;
 }
+

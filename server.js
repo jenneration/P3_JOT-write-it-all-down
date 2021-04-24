@@ -25,7 +25,7 @@ if (process.env.NODE_ENV === "production") {
 app.use("/api", userRoutes);
 app.use("/user",auth, journalRoutes);
 app.use("/article", auth, articleRoutes);
-app.use("/quote", auth, quoteRoutes);
+app.use("/quote", quoteRoutes);
 
 // Connect to the Mongo DB
 
