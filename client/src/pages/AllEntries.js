@@ -1,62 +1,62 @@
 import React, { useMemo, useState, useEffect } from "react";
 import { Link, useParams } from "react-router-dom";
 import axios from "axios";
-import Table from "../components/Table/Table";
+// import Table from "../components/Table";
 import StateManager from "react-select";
 
 function AllEntries() {
   const [state, setState] = useState({
-    journalId:"",
-    userId:"",
-    token:"",
-    results :[]
+    journalId: "",
+    userId: "",
+    token: "",
+    results: []
   })
   const { id } = useParams()
-  useEffect(()=>{
+  useEffect(() => {
     const user = JSON.parse(localStorage.getItem("user"));
     setState(prevState => ({
       ...prevState,
       userId: user.id,
       token: user.token,
       name: user.name,
-      journalId:id
-  }))
-      const apiUrl = "http://localhost:3001/article/"
+      journalId: id
+    }))
+    const apiUrl = "http://localhost:3001/article/"
     const authAxios = axios.create({
-        baseURL: apiUrl,
-        headers: {
-            Authorization: `Bearer ${user.token}`,
-            userId: user.id
-        }
+      baseURL: apiUrl,
+      headers: {
+        Authorization: `Bearer ${user.token}`,
+        userId: user.id
+      }
     })
     authAxios.get(`get/${id}`)
-    .then(result=>{
+      .then(result => {
         console.log(result.data.Article);
-        if(result.data.Article){
+        if (result.data.Article) {
           setState(prevState => ({
             ...prevState,
             results: result.data.Article
-        }))
+          }))
         }
-      
-    })
-    .catch(error => console.log(error))
-  },[])
 
-  const deleteEntry = (e)=>{
-      const delid = e.target.getAttribute('id');
-      console.log(delid);
-      const apiUrl = "http://localhost:3001/article/"
-      const authAxios = axios.create({
-          baseURL: apiUrl,
-          headers: {
-              Authorization: `Bearer ${state.token} `,
-              userId: state.userId,
-              journalId: id
-          }
       })
-      authAxios.delete(`delete/${delid}`)
-      .then(res=> console.log(res))
+      .catch(error => console.log(error))
+  }, [])
+
+  const deleteEntry = (e) => {
+    const delid = e.target.getAttribute('id');
+    console.log(delid);
+    const apiUrl = "http://localhost:3001/article/"
+    const authAxios = axios.create({
+      baseURL: apiUrl,
+      headers: {
+        Authorization: `Bearer ${state.token} `,
+        userId: state.userId,
+        journalId: id
+      }
+    })
+    authAxios.delete(`delete/${delid}`)
+      .then(res => console.log(res))
       .catch(error => console.log(error));
 
   }
@@ -101,7 +101,7 @@ function AllEntries() {
                 // </button>
 
                 <div style={{ display: "flex", justifyContent: "center", alignItems: "center", border: "none" }} >
-                   <button className="btn btnX" value="X">X</button></ div >
+                  <button className="btn btnX" value="X">X</button></ div >
 
               )
             }
@@ -127,23 +127,23 @@ function AllEntries() {
   //Render
   return (
     <div>
-    {/* <div className="container tableApp">
+      {/* <div className="container tableApp">
       <Table columns={columns} data={data} />
       <div className="list-container">
         <h4>{entries.name}</h4>
       </div>
     </div> */}
-      {state.results.length? (
+      {state.results.length ? (
         <ul>
-          {state.results.map(result =>(
+          {state.results.map(result => (
             <li key={result._id}>{result.title}
-            <button id={result._id} className="btn btn-danger" onClick={deleteEntry}>delete</button>
-            <p>{result.body}</p>
+              <button id={result._id} className="btn btn-danger" onClick={deleteEntry}>delete</button>
+              <p>{result.body}</p>
             </li>
-            
+
           ))}
         </ul>
-      ):(<p> no entries on this journal please add to view.</p>)}
+      ) : (<p> no entries on this journal please add to view.</p>)}
 
     </div>
 
