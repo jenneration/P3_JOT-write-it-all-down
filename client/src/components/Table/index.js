@@ -1,5 +1,5 @@
-// import Table from "./table";
+import Table from "./table";
 
-// export default Table;
+export default Table;
 
-export { default } from "./Table"
+// export { default } from "./Table"
