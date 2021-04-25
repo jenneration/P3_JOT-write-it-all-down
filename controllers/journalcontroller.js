@@ -23,7 +23,7 @@ const createJournal =  (req, res)=>{
     if(req.body.userId === undefined) return res.status(500).json({message:"user is not authenticated"});
     try {
         const result = Journal.create({
-            name : req.body.journal,
+            name : req.body.journalName,
             user:req.body.userId
         })
         .then(({ _id }) => User.findOneAndUpdate({_id:req.body.userId}, { $push: { journals: _id } }, { new: true }))

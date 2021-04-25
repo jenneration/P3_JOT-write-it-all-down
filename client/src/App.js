@@ -3,7 +3,7 @@ import './App.css';
 import Header from './components/Header/Header';
 import LoginForm from './components/LoginForm/LoginForm';
 import RegistrationForm from './components/RegistrationForm/RegistrationForm';
-import Home from './components/Home/Home';
+// import Home from './components/Home/Home';
 import {
   BrowserRouter as Router,
   Switch,
@@ -42,7 +42,6 @@ function App() {
               <LoginForm showError={updateErrorMessage} updateTitle={updateTitle} />
             </Route>
             <Route path="/alljournals">
-              <Home />
             </Route>
           </Switch>
           <AlertComponent errorMessage={errorMessage} hideError={updateErrorMessage} />
@@ -57,8 +56,8 @@ function App() {
           <Route exact path="/quotes" component={Quotes} />
           <Route exact path="/about" component={About} />
           <Route exact path="/entrypage" component={EntryPage} />
-          <Route exact path="/createentry" component={CreateEntry} />
-          <Route exact path="/allentries" component={AllEntries} />
+          <Route exact path="/create/:id" component={CreateEntry} />
+          <Route exact path="/books/:id" component={AllEntries} />
         </div>
       </div>
 
