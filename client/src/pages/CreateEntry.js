@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import {useParams } from "react-router-dom";
-import { Row } from "../components/Grid/grid";
-import { Input, TextArea, FormBtn } from "../components/Form/form";
+// import { Row } from "../components/Grid/grid";
+// import { Input, TextArea, FormBtn } from "../components/Form/form";
 import Wrapper from "../components/Wrapper";
-import themes from "../themes";
+// import themes from "../themes";
 import axios from 'axios';
 
 

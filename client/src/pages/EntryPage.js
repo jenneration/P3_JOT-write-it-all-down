@@ -4,6 +4,7 @@ import Entry from '../components/Entry';
 import Wrapper from "../components/Wrapper";
 // import SideNav from '../components/SideNav';
 // import './style.css';
+import Modal from "../components/Modal"
 
 import user from '../user.json';
 
@@ -17,6 +18,7 @@ class EntryPage extends Component {
 	render() {
 		return (
 			<Wrapper>
+				<Modal />
 
 				{/* {this.state.user.map((user) => user.journals[0].article.map((article) =>
 					<SideNav
