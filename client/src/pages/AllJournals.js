@@ -1,6 +1,6 @@
 import axios from 'axios';
 import React, { Component, useState} from 'react';
- import Wrapper from "../components/Wrapper";
+ import Wrapper from "../components/Wrapper/wrapper";
  import { Link } from "react-router-dom";
 // import Create from "../components/Create";
  import Card from '../components/Card/card';

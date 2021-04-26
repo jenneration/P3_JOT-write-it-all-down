@@ -1,172 +1,175 @@
-import React, { useState } from 'react';
-import axios from 'axios';
-import './RegistrationForm.css';
-import { API_BASE_URL } from '../../constants/apiContants';
-import { withRouter } from 'react-router-dom';
+import React, { useState } from "react";
+import axios from "axios";
+import "./RegistrationForm.css";
+import { API_BASE_URL } from "../../constants/apiContants";
+import { withRouter } from "react-router-dom";
 
 function RegistrationForm(props) {
-    const [state , setState] = useState({
-        email : "",
-        password : "",
-        confirmPassword: "",
-        successMessage: null,
-        firstName: "",
-        lastName :""
-    })
-    const handleChange = (e) => {
-        const {id , value} = e.target   
-        setState(prevState => ({
-            ...prevState,
-            [id] : value
-        }))
-    }
-    const sendDetailsToServer = () => {
-        if(state.email.length && state.password.length) {
+  const [state, setState] = useState({
+    email: "",
+    password: "",
+    confirmPassword: "",
+    successMessage: null,
+    firstName: "",
+    lastName: "",
+  });
+  const handleChange = (e) => {
+    const { id, value } = e.target;
+    setState((prevState) => ({
+      ...prevState,
+      [id]: value,
+    }));
+  };
+  const sendDetailsToServer = () => {
+    if (state.email.length && state.password.length) {
+      props.showError(null);
+      const payload = {
+        firstName: state.firstName,
+        lastName: state.lastName,
+        email: state.email,
+        password: state.password,
+        confirmPassword: state.confirmPassword,
+      };
+      axios
+        .post(API_BASE_URL + "signup", payload)
+        .then(function (response) {
+          console.log(response);
+          if (response.status === 200) {
+            const user = {
+              token: response.data.token,
+              id: response.data.result._id,
+              name: response.data.result.firstName,
+            };
+            localStorage.setItem("user", JSON.stringify(user));
+            setState((prevState) => ({
+              ...prevState,
+              successMessage:
+                "Registration successful. Redirecting to home page..",
+            }));
+            redirectToHome();
             props.showError(null);
-            const payload={
-                "firstName":state.firstName,
-                "lastName":state.lastName,
-                "email":state.email,
-                "password":state.password,
-                "confirmPassword":state.confirmPassword,
-            }
-            axios.post(API_BASE_URL+'signup', payload)
-                .then(function (response) {
-                    console.log(response);
-                    if(response.status === 200){
-                        const user = {
-                            token : response.data.token,
-                            id : response.data.result._id,
-                            name: response.data.result.firstName
-
-                        }
-                        localStorage.setItem("user",JSON.stringify(user))
-                        setState(prevState => ({
-                            ...prevState,
-                            'successMessage' : 'Registration successful. Redirecting to home page..'
-                        }))
-                        redirectToHome();
-                        props.showError(null)
-                    } else if(response.status===400){
-                        props.showError("this email is already register");
-                    }
-                })
-                .catch(function (error) {
-                    console.log(error);
-                });    
-        } else {
-            props.showError('Please enter valid username and password')    
-        }
-        
+          } else if (response.status === 400) {
+            props.showError("this email is already register");
+          }
+        })
+        .catch(function (error) {
+          console.log(error);
+        });
+    } else {
+      props.showError("Please enter valid username and password");
     }
-    const redirectToHome = () => {
-        props.updateTitle('Home')
-        props.history.push('/home');
+  };
+  const redirectToHome = () => {
+    props.updateTitle("Home");
+    props.history.push("/home");
+  };
+  const redirectToLogin = () => {
+    props.updateTitle("Login");
+    props.history.push("/login");
+  };
+  const handleSubmitClick = (e) => {
+    e.preventDefault();
+    if (state.password === state.confirmPassword) {
+      sendDetailsToServer();
+    } else {
+      props.showError("Passwords do not match");
     }
-    const redirectToLogin = () => {
-        props.updateTitle('Login')
-        props.history.push('/login'); 
-    }
-    const handleSubmitClick = (e) => {
-        e.preventDefault();
-        if(state.password === state.confirmPassword) {
-            sendDetailsToServer()    
-        } else {
-            props.showError('Passwords do not match');
-        }
-    }
-    return(
-        <>
-        <div className="container-fluid">
-            <div className="row">
-                <div className="login col-lg-9 col-md-9 col-sm-9">
-
-                   {/* logo content  */}
-
-                </div>
-                <div id = "regform1" className="register col-lg-3 col-md-3 cold-sm-3">
-
-            <form className ="registration-form">
-            <div className="form-group text-center">
-                    <label htmlFor="firstName">First name</label>
-                    <input type="text" 
-                        className="form-control" 
-                        id="firstName" 
-                        placeholder="first name"
-                        value={state.firstName}
-                        onChange={handleChange} 
-                    />
-                </div>
-            <div className="form-group text-center">
-                    <label htmlFor="lastName">Last name</label>
-                    <input type="text" 
-                        className="form-control" 
-                        id="lastName" 
-                        placeholder="Last name"
-                        value={state.lastName}
-                        onChange={handleChange} 
-                    />
-                </div>
-                <div className="form-group text-center">
-                <label htmlFor="exampleInputEmail1">Email address</label>
-                <input type="email" 
-                       className="form-control" 
-                       id="email" 
-                       aria-describedby="emailHelp" 
-                       placeholder="Enter email" 
-                       value={state.email}
-                       onChange={handleChange}
+  };
+  return (
+    <>
+      <div className="container-fluid">
+        <div className="row">
+          <div className="login col-lg-8 col-md-8 col-sm-8">
+            {/* logo content  */}
+          </div>
+          <div id="regform1" className="register col-lg-4 col-md-4 cold-sm-4">
+            <form className="registration-form">
+                
+              <div className="form-group text-centermb">
+                <label htmlFor="firstName"></label>
+                020425
+                <input
+                  type="text"
+                  className="form-control"
+                  id="firstName"
+                  placeholder="first name"
+                  value={state.firstName}
+                  onChange={handleChange}
                 />
-                <small id="emailHelp" className="form-text text-white">We'll never share your email with anyone else.</small>
-                </div>
-                <div className="form-group text-left">
-                    <label htmlFor="exampleInputPassword1">Password</label>
-                    <input type="password" 
-                        className="form-control" 
-                        id="password" 
-                        placeholder="Password"
-                        value={state.password}
-                        onChange={handleChange} 
-                    />
-                </div>
-                <div className="form-group text-center">
-                    <label htmlFor="exampleInputPassword1">Confirm Password</label>
-                    <input type="password" 
-                        className="form-control" 
-                        id="confirmPassword" 
-                        placeholder="Confirm Password"
-                        value={state.confirmPassword}
-                        onChange={handleChange} 
-                    />
-                </div>
-                <button 
-                    type="submit" 
-                    className="btn btn-primary register-button"
-                    onClick={handleSubmitClick}
-                >
-                    Register
-                </button>
-                <br>
-                </br>
-                <br>
-                </br>
+              </div>
+              <div className="form-group text-center">
+                <label htmlFor="lastName"></label>
+                <input
+                  type="text"
+                  className="form-control"
+                  id="lastName"
+                  placeholder="Last name"
+                  value={state.lastName}
+                  onChange={handleChange}
+                />
+              </div>
+              <div className="form-group text-center">
+                <label htmlFor="exampleInputEmail1"></label>
+                <input
+                  type="email"
+                  className="form-control"
+                  id="email"
+                  aria-describedby="emailHelp"
+                  placeholder="Enter email"
+                  value={state.email}
+                  onChange={handleChange}
+                />
+              </div>
+              <div className="form-group text-left">
+                <label htmlFor="exampleInputPassword1"></label>
+                <input
+                  type="password"
+                  className="form-control"
+                  id="password"
+                  placeholder="Password"
+                  value={state.password}
+                  onChange={handleChange}
+                />
+              </div>
+              <div className="form-group text-center">
+                <label htmlFor="exampleInputPassword1"></label>
+                <input
+                  type="password"
+                  className="form-control"
+                  id="confirmPassword"
+                  placeholder="Confirm Password"
+                  value={state.confirmPassword}
+                  onChange={handleChange}
+                />
+              </div>
+              <button
+                type="submit"
+                className="btn btn-primary register-button"
+                onClick={handleSubmitClick}
+              >
+                Register
+              </button>
+              <br></br>
+              <br></br>
             </form>
-            <div className="alert alert-success mt-2" style={{display: state.successMessage ? 'block' : 'none' }} role="alert">
-                {state.successMessage}
+            <div
+              className="alert alert-success mt-2"
+              style={{ display: state.successMessage ? "block" : "none" }}
+              role="alert"
+            >
+              {state.successMessage}
             </div>
             <div className="mt-2">
-                <span>Already have an account? </span>
-                <span className="loginText" onClick={() => redirectToLogin()}>Login here</span> 
+              <span>Already have an account? </span>
+              <span className="loginText" onClick={() => redirectToLogin()}>
+                Login here
+              </span>
             </div>
-            
+          </div>
         </div>
-
-                </div>
-            </div>
-        </>
-       
-        
-    )
+      </div>
+    </>
+  );
 }
 
 export default withRouter(RegistrationForm);

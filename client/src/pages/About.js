@@ -1,35 +1,35 @@
 import React from "react";
-import { Container, Row, Col } from "../components/Grid/grid";
-import mary from "../assets/mary.gif";
-import arjun from "../assets/arjun.gif";
-import menuka from "../assets/menuka.gif";
-import jennerm from "../assets/jennerm.gif";
+import ArjunCard from "./ArjunCard";
+import MenukaCard from "./MenukaCard";
+import MerryCard from "./MarryCard";
+import JennerCard from "./JennerCard";
+import {Grid} from "@material-ui/core";
+import Paper from "@material-ui/core/Paper";
 
-function About(props) {
-    return (
-        <div>
-            <h1>theJAMM</h1>
-            <br></br>
-            <Container>
-                <Row>
-                    <Col size="md-3">
-                        <img src={arjun} style={{ width: "300px" }} />
-                    </Col>
-                    <Col size="md-3">
-                        <img src={menuka} style={{ width: "300px" }} />
-                    </Col>
-                    <Col size="md-3">
-                        <img src={mary} style={{ width: "300px" }} />
-                    </Col>
-                    <Col size="md-3">
-                        <img src={jennerm} style={{ width: "300px" }} />
-                    </Col>
-                </Row>
+const About =() => {
 
-            </Container>
+    return ( 
+        
+        
+    <Grid container  spacing ={5}>
+    
+        
+        <Grid item sm={12} md={6} lg ={3}>
+        <ArjunCard/>
+        </Grid> 
+        <Grid item sm={12} md={6} lg ={3}>
+        <MenukaCard/>
+        </Grid> 
+        <Grid item sm={12} md={6} lg ={3}>
+        <MerryCard/>
+        </Grid> 
+        <Grid item sm={12} md={6} lg ={3}>
+        <JennerCard/>
+        </Grid> 
+        </Grid>
+   
+        );
 
-        </div>
-    )
-}
+};
 
 export default About;
