@@ -74,14 +74,14 @@ function AllEntries() {
               <div style={{ textAlign: "left" }}>Title</div>
             ),
 
-            accessor: "show.name",
+            accessor: "result.title",
             Cell: row => (
               <div style={{ textAlign: "left" }}>{row.value}</div>
             )
           },
           {
             Header: "Date",
-            accessor: "show.id"
+            accessor: "result._id"
           }
         ]
       },

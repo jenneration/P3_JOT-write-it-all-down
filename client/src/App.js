@@ -19,7 +19,7 @@ import About from "./pages/About";
 import AllEntries from "./pages/AllEntries";
 import EntryPage from "./pages/EntryPage";
 import CreateEntry from "./pages/CreateEntry";
-
+import "bootstrap/js/src/collapse.js";
 
 
 function App() {
