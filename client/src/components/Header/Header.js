@@ -35,10 +35,11 @@ const Header = () => {
 
     return (
         <div>
+
        { NewUser?(
         <nav className = "navbar navbar-expand-lg navbar-dark bg-dark " >
                 
-                  
+                 // <div>
                     <div className="navbar-brand"><Link to="/alljournals" className={window.location.pathname === "/alljournals" ? "nav-link active" : "nav-link"}>jot</Link></div>
                     <button className="navbar-toggler ml-auto" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                         <span className="navbar-toggler-icon"></span>
@@ -68,14 +69,61 @@ const Header = () => {
                             </li>
                         </ul>
                     </div>
+           //  </div > 
 
-        </nav >
-       ): (<div></div>)}
-             
-        
-        
-       </div>
-       )
-     
-    }
+                </nav >
+            ) : (<div></div>)}
+
+
+
+        </div>
+    )
+
+}
 export default Header;
+
+           
+
+
+//                     <div>
+//                         <div className="navbar-brand"><Link to="/alljournals" className={window.location.pathname === "/alljournals" ? "nav-link active" : "nav-link"}>jot</Link></div>
+//                         <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+//                             <span className="navbar-toggler-icon"></span>
+//                         </button>
+//                         <div className="collapse navbar-collapse" id="navbarNav">
+//                             <ul className="navbar-nav">
+//                                 <li className="nav-item">
+//                                     <Link to="/alljournals" className={window.location.pathname === "/alljounsals" ? "nav-link active" : "nav-link"}>Home</Link>
+//                                 </li>
+//                                 <li className="nav-item bg-danger">
+//                                     <Link to="/allentries" className={window.location.pathname === "/allentries" ? "nav-link active" : "nav-link"}>AllEntries</Link>
+//                                 </li>
+//                                 <li className="nav-item bg-danger" >
+//                                     <Link to="/createentry" className={window.location.pathname === "/createentry" ? "nav-link active" : "nav-link"}>CreateEntry</Link>
+//                                 </li>
+//                                 <li className="nav-item" >
+//                                     <Link to="/quotes" className={window.location.pathname === "/quotes" ? "nav-link active" : "nav-link"}>Quotes</Link>
+//                                 </li>
+//                                 <li className="nav-item bg-danger" >
+//                                     <Link to="/entrypage" className={window.location.pathname === "/entrypage" ? "nav-link active" : "nav-link"}>EntryPage</Link>
+//                                 </li>
+//                                 <li className="nav-item" >
+//                                     <Link to="/about" className={window.location.pathname === "/entries" ? "nav-link active" : "nav-link"}>About</Link>
+//                                 </li>
+//                                 <li>
+//                                     <button id="button1" className="btn btn-primary" onClick={logout}> logout</button>
+//                                 </li>
+//                             </ul>
+//                         </div>
+//                     </div >
+
+//                 </nav >
+//             ) : (<div></div>)}
+
+
+
+//         </div>
+//     )
+
+// }
+// export default Header;

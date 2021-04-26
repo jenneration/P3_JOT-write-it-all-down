@@ -19,7 +19,10 @@ import About from "./pages/About";
 import AllEntries from "./pages/AllEntries";
 import EntryPage from "./pages/EntryPage";
 import CreateEntry from "./pages/CreateEntry";
+
 import QuoteHeader from "./components/QuoteHeader"
+import "bootstrap/js/src/collapse.js";
+
 
 function App() {
   const [title, updateTitle] = useState(null);

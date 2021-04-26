@@ -1,15 +1,15 @@
 import React from 'react';
-import "./style.css";
+import "./card.css";
 
 function Card(props) {
 
-    
+
     return (
         <div className="card">
             <div className="card-body">
                 <div>
                     <h3 className="card-title" key={props.id}>
-                        {}
+                        { }
                     </h3>
                     <div className="card-div">
                         <ul className="card-ul">

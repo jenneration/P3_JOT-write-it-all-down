@@ -1,0 +1,26 @@
+.createentry {
+    margin-top: 60px;
+    border: 1px solid grey;
+    
+}
+
+input.input-group,
+input.form-control,
+input.form-control:focus,
+input.form-control-lg,
+input.form-control-lg:focus,
+textarea.form-control, 
+textarea.form-control:focus {
+    border: none;
+    border-bottom: 1px solid lightgrey;
+    box-shadow: none;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    -moz-transition: none;
+    -webkit-transition: none;
+  }
+
+ input > .form-control-lg.createinput {
+     height: 50px;
+ }
+
