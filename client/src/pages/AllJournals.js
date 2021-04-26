@@ -1,9 +1,12 @@
+
 import axios from "axios";
 import React, { Component, useState } from "react";
 import Wrapper from "../components/Wrapper/wrapper";
 import { Link } from "react-router-dom";
 import "./alljournals.css";
 import "./allpages.css";
+
+
 
 class AllJournals extends Component {
     state = {

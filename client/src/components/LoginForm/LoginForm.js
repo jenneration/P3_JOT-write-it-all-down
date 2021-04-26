@@ -59,68 +59,64 @@ function LoginForm(props) {
     props.updateTitle("Register");
   };
   return (
-    <>
-      <div className="container-fluid">
-        <div className="row">
+    <div className="container-fluid">
+      <div className="row">
+        <div className="login col-lg-8  col-md-8 col-sm-8 ">
+          {/* logo content  */}
+        </div>
 
-          <div className="login col-lg-9  col-md-9 col-sm-9 ">{/* logo content  */}
-          </div>
-
-          <div id="loginform1" className="login col-lg-3  col-md-3 col-sm-3 ">
-            <form className="loginForm">
-              <div className="form-group text-center">
-                <label htmlFor="exampleInputEmail1">Email address</label>
-                <input
-                  type="email"
-                  className="form-control input-login"
-                  id="email"
-                  aria-describedby="emailHelp"
-                  placeholder="Enter email"
-                  value={state.email}
-                  onChange={handleChange}
-                />
-                <small id="emailHelp" className="form-text text-muted">
-                  We'll never share your email with anyone else.
-                </small>
-              </div>
-              <div className="form-group text-center">
-                <label htmlFor="exampleInputPassword1">Password</label>
-                <input
-                  type="password"
-                  className="form-control input-login"
-                  id="password"
-                  placeholder="Password"
-                  value={state.password}
-                  onChange={handleChange}
-                />
-              </div>
-              <div className="form-check"></div>
-              <button
-                type="submit"
-                className="btn btn-dark"
-                onClick={handleSubmitClick}
-              >
-                Submit
-              </button>
-            </form>
-            <div
-              className="alert alert-success mt-2"
-              style={{ display: state.successMessage ? "block" : "none" }}
-              role="alert"
+        <div id="loginform1" className="login col-lg-4  col-md-4 col-sm-4 ">
+          <form className="loginForm">
+            <div className="form-group text-centermb">
+              <label htmlFor="exampleInputEmail1" className="labelmb">Email address</label>
+              <input
+                type="email"
+                className="form-control input-login"
+                id="email"
+                aria-describedby="emailHelp"
+                placeholder="Enter email"
+                value={state.email}
+                onChange={handleChange}
+              />
+              
+            </div>
+            <div className="form-group text-center">
+              <label htmlFor="exampleInputPassword1"className="passwordmb">Password</label>
+              <input
+                type="password"
+                className="form-control input-login"
+                id="password"
+                placeholder="Password"
+                value={state.password}
+                onChange={handleChange}
+              />
+            </div>
+            <div className="form-check"></div>
+            <button
+              type="submit"
+             
+              className="btn btn-dark"
+              onClick={handleSubmitClick}
             >
-              {state.successMessage}
-            </div>
-            <div className="registerMessage">
-              <span>Don't have an account? </span>
-              <span className="loginText" onClick={() => redirectToRegister()}>
-                Register
-              </span>
-            </div>
+              Submit
+            </button>
+          </form>
+          <div
+            className="alert alert-success mt-2"
+            style={{ display: state.successMessage ? "block" : "none" }}
+            role="alert"
+          >
+            {state.successMessage}
           </div>
-
+          <div className="registerMessage">
+            <span>Don't have an account? </span>
+            <span className="loginText" onClick={() => redirectToRegister()}>
+              Register
+            </span>
+          </div>
         </div>
       </div>
-    </>
+    </div>
   );
 }
 
