@@ -19,6 +19,8 @@ import About from "./pages/About";
 import AllEntries from "./pages/AllEntries";
 import EntryPage from "./pages/EntryPage";
 import CreateEntry from "./pages/CreateEntry";
+
+import QuoteHeader from "./components/QuoteHeader"
 import "bootstrap/js/src/collapse.js";
 
 
@@ -29,6 +31,7 @@ function App() {
     <Router>
       <div className="App">
         <Header title={title} />
+        <QuoteHeader />
         {/* <div className="container d-flex align-items-center flex-column"> */}
         <div>
           <Switch>
