@@ -1,7 +1,7 @@
 import React, { useMemo, useState, useEffect } from "react";
 import { Link, useParams } from "react-router-dom";
 import axios from "axios";
-// import Table from "../components/Table";
+import Table from "../components/Table/table";
 import StateManager from "react-select";
 
 function AllEntries() {
@@ -62,8 +62,6 @@ function AllEntries() {
   }
 
 
-
-
   const columns = useMemo(
     () => [
       {
@@ -74,14 +72,14 @@ function AllEntries() {
               <div style={{ textAlign: "left" }}>Title</div>
             ),
 
-            accessor: "result.title",
+            accessor: "title",
             Cell: row => (
               <div style={{ textAlign: "left" }}>{row.value}</div>
             )
           },
           {
             Header: "Date",
-            accessor: "result._id"
+            accessor: "createAt"
           }
         ]
       },
@@ -92,18 +90,23 @@ function AllEntries() {
             {
               Header: "X",
 
-              accessor: "X",
+              accessor: "_id",
               disableSortBy: true,
               disableFilters: true,
-              Cell: cell => (
-                // <button value={cell.accessor} onClick={props.handleClickGroup}>
-                //     {cell.accessor}
-                // </button>
+              // ***** A-1 KEEP BY COMMENTING THIS OUT ID CAN BE SEEN UNDER "X"
+              // Cell: cell => 
+              // <div style={{ display: "flex", justifyContent: "center", alignItems: "center", border: "none" }} >
+              //  < button className="btn btnX" value="X" >X</button ></ div >
+              // )
 
-                <div style={{ display: "flex", justifyContent: "center", alignItems: "center", border: "none" }} >
-                  <button className="btn btnX" value="X">X</button></ div >
 
-              )
+
+
+
+              // *** DELETE? THIS WAS COMMENTED OUT BY ARJUN
+              //   // <button value={cell.accessor} onClick={props.handleClickGroup}>
+              //   //     {cell.accessor}
+              //   // </button>
             }
           ]
       }
@@ -111,39 +114,15 @@ function AllEntries() {
     []
   );
 
-  //Call for data
-  const [data, setData] = useState([]);
-
-  //Example API call
-  useEffect(() => {
-    (async () => {
-      const result = await axios("https://api.tvmaze.com/search/shows?q=snow");
-      console.log(result)
-      setData(result.data);
-    })();
-  }, []);
 
 
   //Render
   return (
-    <div>
-      {/* <div className="container tableApp">
-      <Table columns={columns} data={data} />
-      <div className="list-container">
-        <h4>{entries.name}</h4>
-      </div>
-    </div> */}
-      {state.results.length ? (
-        <ul>
-          {state.results.map(result => (
-            <li key={result._id}>{result.title}
-              <button id={result._id} className="btn btn-danger" onClick={deleteEntry}>delete</button>
-              <p>{result.body}</p>
-            </li>
+    <div className="container tableApp">
 
-          ))}
-        </ul>
-      ) : (<p> no entries on this journal please add to view.</p>)}
+      <Table
+        columns={columns}
+        data={state.results} />
 
     </div>
 

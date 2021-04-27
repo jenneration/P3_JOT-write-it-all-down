@@ -5,7 +5,7 @@ import Wrapper from "../components/Wrapper/wrapper";
 import { Link } from "react-router-dom";
 import "./alljournals.css";
 import "./allpages.css";
-
+import Footer from "../components/Footer";
 
 
 class AllJournals extends Component {
@@ -97,7 +97,7 @@ class AllJournals extends Component {
                             onChange={this.handleChange}
                             value={this.state.journalName}
                             type="text"
-                            className="journal-input form-control"
+                            className="journal-input form-control bg-warning"
                             placeholder="Journal Name"
                             name="journalName"
                             id="journalName">
@@ -116,6 +116,7 @@ class AllJournals extends Component {
 
                 {this.state.results.length ? (
                     <div className="container card-container d-flex flex-wrap">
+
                         {this.state.results.map((result) => (
                             <div className="card">
                                 {/* <CardJournal> */}
@@ -127,11 +128,13 @@ class AllJournals extends Component {
                                                 {result.name}
                                             </h3> */}
                                         </h4>
+                                        <hr />
                                         <p className="card-text">
                                             <Link to={"/books/" + result._id}>
                                                 <span><i class="fas fa-file-alt"></i></span>
                                                   See All Jots</Link>
                                         </p>
+                                        <hr />
                                         <p className="card-text ">
                                             <Link to={"/create/" + result._id}>
                                                 <a
@@ -145,20 +148,15 @@ class AllJournals extends Component {
                                         </p>
                                         <p className="text-right"><i class="fas fa-cog"></i></p>
                                     </div>
-                                    {/* <div className="d-flex justify-content-center align-items-center">
-                                        <div><h6 ><Link to={"/books/" + result._id}><strong>See all jots</strong> </Link></h6></div>
-                                        <div><h6><Link to={"/create/" + result._id}><a className="text-capitalize text-center" onClick={this.createEntry} id={result._id}>jot a new entry</a></Link></h6></div>
-                                        </div>
-                                        <div className="card-footer">
-                                        <button className="btn btn-primary" onClick={this.deleteJournal} id={result._id}>Delete</button>
-                                    </div> */}
                                 </div>
                                 <div className="card-footer border-top-0 text-right">
                                     <button
-                                        className="btn btn-secondary"
+                                        className="btn btn-outline-secondary
+                                        "
                                         onClick={this.deleteJournal}
                                         id={result._id}>
-                                        X</button>
+                                        <i class="fas fa-times" style={{ color: "darkred" }}></i>
+                                    </button>
                                 </div>
                                 {/* </CardJournal> */}
                             </div>
@@ -169,6 +167,7 @@ class AllJournals extends Component {
                         <h4>You don't have any journals yoy can create here</h4>
                     </div>
                 )}
+                <Footer />
             </Wrapper>
         );
     }

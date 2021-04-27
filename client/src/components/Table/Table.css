@@ -18,13 +18,20 @@ table {
   }
 
   /* Table row */
-  table tr:last-child td {
+  table tr:last-child {
     border-bottom: 0;
+    background-color: rgb(174, 169, 169);
   }
 
   table tr:nth-child(even) {
-    background-color: #fafafa;
+    background-color:#d3d3d3;
   }
+
+  table tr:nth-child(odd) {
+    background-color: #fff;
+  }
+
+
   
   table th::before {
     /* position: absolute; */
@@ -77,15 +84,15 @@ table {
   
   }
 
-
  .search-container {
    background-color: #000;
-   padding: 20px 10px;
+   padding: 50px 30px;
+   
  }
 
-
-
-
+ .tab-search {
+   height: 50px;
+ }
 
  .containerpagination {
     padding: 20px;
