@@ -63,6 +63,41 @@ function LoginForm(props) {
       <div className="row">
         <div className="login col-lg-8  col-md-8 col-sm-8 ">
           {/* logo content  */}
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
         </div>
 
         <div id="loginform1" className="login col-lg-4  col-md-4 col-sm-4 ">

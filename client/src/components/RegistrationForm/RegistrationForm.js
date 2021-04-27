@@ -81,15 +81,63 @@ function RegistrationForm(props) {
         <div className="row">
           <div className="login col-lg-8 col-md-8 col-sm-8">
             {/* logo content  */}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            
           </div>
           <div id="regform1" className="register col-lg-4 col-md-4 cold-sm-4">
             <form className="registration-form">
-                
+                <h1> Sign Up</h1>
               <div className="form-group text-centermb">
                 <label htmlFor="firstName"></label>
-                020425
+                
                 <input
-                  type="text"
+                  type="firstName"
                   className="form-control"
                   id="firstName"
                   placeholder="first name"
@@ -100,7 +148,7 @@ function RegistrationForm(props) {
               <div className="form-group text-center">
                 <label htmlFor="lastName"></label>
                 <input
-                  type="text"
+                  type="lastName"
                   className="form-control"
                   id="lastName"
                   placeholder="Last name"
@@ -151,6 +199,12 @@ function RegistrationForm(props) {
               </button>
               <br></br>
               <br></br>
+              <div className="mt-2">
+              <span>Already have an account? </span>
+              <span className="loginText" onClick={() => redirectToLogin()}>
+                Login here
+              </span>
+            </div>
             </form>
             <div
               className="alert alert-success mt-2"
@@ -158,13 +212,9 @@ function RegistrationForm(props) {
               role="alert"
             >
               {state.successMessage}
+              
             </div>
-            <div className="mt-2">
-              <span>Already have an account? </span>
-              <span className="loginText" onClick={() => redirectToLogin()}>
-                Login here
-              </span>
-            </div>
+            
           </div>
         </div>
       </div>

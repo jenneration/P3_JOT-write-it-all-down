@@ -15,10 +15,11 @@ const useStyles = makeStyles((theme) => ({
     padding: theme.spacing(2),
     margin: 'auto',
     maxWidth: 500,
+    maxHeight:700,
   },
   image: {
-    width: 500,
-    height: 500,
+    width: 400,
+    height: 400,
   },
   img: {
     margin: 'auto',
@@ -27,7 +28,7 @@ const useStyles = makeStyles((theme) => ({
     maxHeight: '100%',
   },
   resize:{
-    fontSize:50
+    fontSize:30
   },
 }));
 
@@ -46,7 +47,7 @@ export default function ComplexGrid() {
           <Grid item s={12} md={6} lg={4} sm container>
             <Grid item xs container direction="column" spacing={2}>
               <Grid item xs align="center">
-                <Typography style={{ padding: 155 }} >
+                <Typography style={{ padding: 155 }} className={classes.resize}>
                  JENNER <br></br> FullStackDevloper 
                 </Typography>
             

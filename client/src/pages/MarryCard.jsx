@@ -14,12 +14,16 @@ const useStyles = makeStyles((theme) => ({
     padding: theme.spacing(2),
     margin: 'auto',
     maxWidth: 500,
+    maxHeight:700,
     
    
   },
+  resize:{
+    fontSize:30
+  },
   image: {
-    width: 500,
-    height: 500,
+    width: 400,
+    height: 400,
   },
   img: {
     margin: 'auto',
@@ -52,7 +56,7 @@ export default function ComplexGrid() {
           <Grid item s={12} md={6} lg={4} sm container>
             <Grid item xs container direction="column" spacing={2}>
               <Grid item xs>
-                <Typography style={{ padding: 155 }} >
+                <Typography style={{ padding: 155 }} className={classes.resize} >
                  Mary FullStackDeveloper
                 </Typography>
                 {/* <Typography variant="body2" gutterBottom>
