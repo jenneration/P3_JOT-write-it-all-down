@@ -14,13 +14,15 @@ const useStyles = makeStyles((theme) => ({
     padding: theme.spacing(2),
     margin: 'auto',
     maxWidth: 500,
-    align: 'center',
+    maxHeight:700,
   },
   image: {
-    width: 500,
-    height: 500,
+    width: 400,
+    height: 400,
   },
-
+  resize:{
+    fontSize:30
+  },
   
   img: {
     margin: 'auto',
@@ -45,7 +47,7 @@ export default function ComplexGrid() {
           <Grid item s={12} md={6} lg={4} sm container>
             <Grid item xs container direction="column" spacing={2}>
               <Grid item xs>
-                <Typography style={{ padding: 155 }} >
+                <Typography style={{ padding: 155 }} className={classes.resize} >
                   MENUKA FullStackDevloper
                 </Typography>
                 {/* <Typography variant="body2" textAlign="center" gutterBottom>

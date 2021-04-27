@@ -6,18 +6,23 @@ import Typography from '@material-ui/core/Typography';
 import ButtonBase from '@material-ui/core/ButtonBase';
 import arjun from "../assets/arjun.gif";
 
+
 const useStyles = makeStyles((theme) => ({
   root: {
     flexGrow: 1,
+  },
+  resize:{
+    fontSize:30
   },
   paper: {
     padding: theme.spacing(2),
     margin: 'auto',
     maxWidth: 500,
+    maxHeight:700,
   },
   image: {
-    width: 500,
-    height: 500,
+    width: 400,
+    height: 400,
   },
   img: {
     margin: 'auto',
@@ -39,10 +44,10 @@ export default function ComplexGrid() {
               <img className={classes.img} alt="complex" src={arjun} />
             </ButtonBase>
           </Grid>
-          <Grid item s={12} md={6} lg={4} sm container>
+          <Grid item sm={12} md={6} lg={4} sm container>
             <Grid item xs container direction="column" spacing={2}>
               <Grid item >
-                <Typography  style={{ padding: 150 }}>
+                <Typography  style={{ padding: 150 }}className={classes.resize}>
                   ARJUN FullStackDevleoper
                 </Typography>
                 

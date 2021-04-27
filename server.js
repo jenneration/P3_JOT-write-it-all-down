@@ -23,7 +23,8 @@ if (process.env.NODE_ENV === "production") {
   app.use(express.static("client/build"));
 }
 app.use("/api", userRoutes);
-app.use("/user",auth, journalRoutes);
+//app.use("/user", auth, journalRoutes);
+app.use("/user", journalRoutes);
 app.use("/article", auth, articleRoutes);
 app.use("/quote", quoteRoutes);
 
