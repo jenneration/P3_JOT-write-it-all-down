@@ -16,7 +16,10 @@ const Modal = () => {
           Object.keys(theme).forEach((element) => {
             node.style.setProperty(element, theme[element], 'important');
             // if (element=== 'background') {
-            if (element === 'background-color' || element === 'background') {
+            if (element === 'background-image' 
+            || element === 'background'
+            ) 
+            {
               // apply the same background mentioned for theme to the body of the website
               document.body.style.background = theme[element];
             }
@@ -27,7 +30,7 @@ const Modal = () => {
     return(
 
         <div classNameName="modal">
-<button type="button" className="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">
+<button type="button" className="btn" style={{borderRadius:"5px", background:"black", color:"white"}} data-toggle="modal" data-target="#exampleModalCenter">
  Theme Selector
 </button>
 
