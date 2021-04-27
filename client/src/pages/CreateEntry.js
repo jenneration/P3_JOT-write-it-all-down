@@ -34,6 +34,13 @@ function CreateEntry() {
             name: user.name
         }))
     }
+    const clearInput =()=>{
+        setState({
+            //...prevState,
+                title:"",
+                body:""
+        })
+    }
     const addArticle = (e) => {
         e.preventDefault();
         if (state.journalId === "" || state.userId === "") return;
@@ -48,6 +55,7 @@ function CreateEntry() {
         authAxios.post("create", state)
             .then(res => console.log(res))
             .catch(err => console.log(err));
+            clearInput();
     }
     // const handleChange = (selectedTheme) => {
     //     setTheme(themes[selectedTheme.value]);
@@ -89,7 +97,7 @@ function CreateEntry() {
                                     type="text"
                                     placeholder="Title"
                                     name="title"
-                                    id="title">
+                                    id="title" value={state.title}>
                                 </input>
                             </div>
 
@@ -108,7 +116,7 @@ function CreateEntry() {
                                     placeholder="Write it all down"
                                     name="body"
                                     id="body"
-                                    rows="15">
+                                    rows="15" value={state.body}>
                                 </textarea>
                                 <button
                                     onClick={addArticle}

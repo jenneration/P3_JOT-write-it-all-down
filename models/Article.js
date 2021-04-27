@@ -21,14 +21,16 @@ const articleSchema = new Schema({
 // defining middleware to delete 
 articleSchema.post("remove", document => {
   const articleId = document._id;
-  Journal.find({ article: { $in: [articleId] } }).then(journals => {
+  Journal.find({ articles: { $in: [articleId] } }).then(journals => {
     Promise.all(
       journals.map(journal =>
+        
         Journal.findOneAndUpdate(
-          journal._id,
+         {_id: journal._id,},
           { $pull: { articles: articleId } },
           { new: true }
         )
+        
       )
     );
   });

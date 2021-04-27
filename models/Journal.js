@@ -11,18 +11,18 @@ const journalSchema = new Schema({
    
     user:[{ type:Schema.Types.ObjectId, ref :"User"}],
     // each journal can have multiple articles so saving as an array 
-    Article:[{type:Schema.Types.ObjectId, ref :"Article"}]
+    articles:[{type:Schema.Types.ObjectId, ref :"Article"}]
   });
 
 
   // Look into Mongoose Pre/Post hooks (remove, save, virtuals)
-  journalSchema.pre('remove', (next) => {
-     Article.remove({
-       "_id": {
-         $in: this.Article
-       }
-     })
-  });
+  //  journalSchema.pre('remove', (next) => {
+  //    Article.remove({
+  //      "_id": {
+  //        $in: this.Article
+  //      }
+  //    })
+  // });
 
 
 

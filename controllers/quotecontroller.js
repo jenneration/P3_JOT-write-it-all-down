@@ -35,18 +35,24 @@ const createQuote = (req, res)=>{
 const deleteQuote = (req, res)=>{
     console.log(req.headers);
     console.log(req.params.id)
-    // try {
-    //     const quote = Quote.findOne({_id:req.params.id});
-    //     if(quote){
-    //         console.log(quote);
-    //         // quote have the userId to whom it belongs from there bring the user_id 
-    //         // and go to User and pul that quote _id
-    //         res.json(quote);
-    //     }
+    const userId = request.headers.userid;
+    try {
+        const result = Quote.findOneAndDelete({Id:req.params.id}, (err, result)=>{
+           if(err){
+               res.json(err)
+           } 
+           res.json(result)
+           User.findOneAndUpdate({_id:userId}, {$pull:{quotes: req.params.id}}, (err, res)=>{
+               if (err) {
+                  res.json(err) 
+               }
+               res.json(res)
+           })
+        })
+        res.json(result)
+    } catch (error) {
         
-    // } catch (error) {
-    //     console.log(error)
-    // }
+    }
     const quote = Quote.findOne({_id:req.params.id});
     res.json(quote);
 

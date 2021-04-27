@@ -43,6 +43,38 @@ function AllEntries() {
       .catch(error => console.log(error))
   }, [])
 
+
+  const  getEntries = ()=>{
+    const user = JSON.parse(localStorage.getItem("user"));
+    setState(prevState => ({
+      ...prevState,
+      userId: user.id,
+      token: user.token,
+      name: user.name,
+      journalId: id
+    }))
+    const apiUrl = "http://localhost:3001/article/"
+    const authAxios = axios.create({
+      baseURL: apiUrl,
+      headers: {
+        Authorization: `Bearer ${user.token}`,
+        userId: user.id
+      }
+    })
+    authAxios.get(`get/${id}`)
+      .then(result => {
+        console.log(result.data.articles);
+        if (result.data.articles) {
+          setState(prevState => ({
+            ...prevState,
+            results: result.data.articles
+          }))
+        }
+
+      })
+      .catch(error => console.log(error)) 
+    };
+
   const deleteEntry = (e) => {
     const delid = e.target.getAttribute('id');
     console.log(delid);
@@ -58,7 +90,7 @@ function AllEntries() {
     authAxios.delete(`delete/${delid}`)
       .then(res => console.log(res))
       .catch(error => console.log(error));
-
+      getEntries();
   }
 
 
@@ -123,6 +155,33 @@ function AllEntries() {
       <Table
         columns={columns}
         data={state.results} />
+      
+
+
+
+      <div>
+      {/* <div className="container tableApp">
+      <Table columns={columns} data={data} />
+      <div className="list-container">
+        <h4>{entries.name}</h4>
+      </div>
+    </div> */}
+      {/* {state.results.length ? (
+        <ul>
+          {state.results.map(result => (
+            <li key={result._id}>{result.title}
+              <button id={result._id} className="btn btn-danger" onClick={deleteEntry}>delete</button>
+              <p>{result.body}</p>
+            </li>
+
+          ))}
+        </ul>
+      ) : (<p> no entries on this journal please add to view. <Link to={"/create/" + id}><button className="btn btn-primary">click</button></Link></p>)} */}
+
+    </div>
+
+
+
 
     </div>
 
