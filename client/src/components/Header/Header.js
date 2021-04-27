@@ -36,9 +36,12 @@ const Header = () => {
     return (
         <div>
 
-       { NewUser?(
-        <nav className = "navbar navbar-expand-lg navbar-dark bg-dark " >
-                
+
+            { NewUser ? (
+                <nav className="navbar navbar-expand-lg navbar-dark bg-dark " >
+
+                    {/* <div> */}
+
                     <div className="navbar-brand"><Link to="/alljournals" className={window.location.pathname === "/alljournals" ? "nav-link active" : "nav-link"}>jot</Link></div>
                     <button className="navbar-toggler ml-auto" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                         <span className="navbar-toggler-icon"></span>
@@ -69,6 +72,9 @@ const Header = () => {
                         </ul>
                     </div>
 
+                    {/* </div >  */}
+
+
                 </nav >
             ) : (<div></div>)}
 
@@ -80,7 +86,7 @@ const Header = () => {
 }
 export default Header;
 
-           
+
 
 
 //                     <div>

@@ -4,9 +4,10 @@ import { useParams } from "react-router-dom";
 import { Row } from "../components/Grid/grid";
 // import { Input, TextArea, FormBtn } from "../components/Form/form";
 import Wrapper from "../components/Wrapper";
-import Background from "../components/Background/background"
+// import Background from "../components/Background/background"
 import "./createentry.css";
-import themes from "../themes";
+// import themes from "../themes";
+
 
 import axios from 'axios';
 
@@ -65,7 +66,7 @@ function CreateEntry() {
     // };
     return (
         <Wrapper>
-            <Background />
+            {/* <Background /> */}
             {/* <div className="form-container "> */}
             <div className="container ">
                 <Row className="d-flex justify-content-center">
@@ -98,7 +99,7 @@ function CreateEntry() {
                                     type="text"
                                     placeholder="date goes here" />
                             </div>
-                            
+
                             <div className="form-group">
                                 <textarea
                                     className="form-control "

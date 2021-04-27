@@ -3,6 +3,7 @@ import Blue from "./images/blue.jpg";
 import Mosaic from "./images/mosaic.jpg";
 import Swirl from "./images/swirl.jpg"
 const themes = {
+
     default: {
       'background-color': '#fff',
       'background-image': 'none',
@@ -101,3 +102,4 @@ const themes = {
   };
   
   export default themes;
+

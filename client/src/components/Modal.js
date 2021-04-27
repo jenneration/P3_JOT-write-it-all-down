@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React, { useState } from "react";
 import ThemeDropdown from "./ThemeDropdown"
 import themes from "../themes"
 
@@ -54,11 +54,11 @@ const Modal = () => {
       <div className="modal-footer">
         <button type="button" className="btn btn-secondary" data-dismiss="modal">Close</button>
       
+
+
+ 
       </div>
     </div>
-  </div>
-</div>
-</div>
 
 
 
@@ -66,10 +66,10 @@ const Modal = () => {
 
 
 
-   
 
 
-    )
+
+  )
 }
 
-export default Modal; 
+export default Modal;

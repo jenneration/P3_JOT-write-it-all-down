@@ -20,7 +20,10 @@ textarea.form-control:focus {
     -webkit-transition: none;
   }
 
- input > .form-control-lg.createinput {
+ .input-group.createinput {
      height: 50px;
+     background: red;
  }
+
+
 

@@ -41,7 +41,8 @@ function SavedQuotes() {
                                 //     {cell.accessor}
                                 // </button>
 
-                                <div style={{ display: "flex", justifyContent: "center", alignItems: "center", border: "none" }} > <button className="btn btnX" value="X">X</button></ div >
+                                <div style={{ display: "flex", justifyContent: "center", alignItems: "center", border: "none" }} >
+                                    <button className="btn btnX" value="X">X</button></ div >
                             )
                         }
                     ]
