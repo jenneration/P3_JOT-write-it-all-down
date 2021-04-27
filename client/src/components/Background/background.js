@@ -3,10 +3,10 @@ import background from "../../assets/background.jpeg";
 
 function Background() {
     return (
-        <div
+        <div className="text-transparent"
 
             style={{
-                backgroundImage: `url(${background}1)`,
+                backgroundImage: `url(${background})`,
                 height: "100vh",
                 backgroundPosition: "center",
                 backgroundRepeat: "no-repeat",
@@ -16,7 +16,7 @@ function Background() {
                 top: "0",
                 zIndex: "-1",
                 opacity: "0.5"
-            }} >
+            }} >Hello
 
 
 

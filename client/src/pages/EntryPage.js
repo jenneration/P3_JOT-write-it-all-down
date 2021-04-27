@@ -27,7 +27,7 @@ class EntryPage extends Component {
 				)
 				} */}
 
-				<Entry />
+				{/* <Entry /> */}
 			</Wrapper>
 		);
 	}

@@ -5,15 +5,15 @@ import React from "react"
 function Footer() {
 
 
-    return(
+    return (
 
-        
-            <footer style={{position:"fixed"}}>
 
-            <p style={{textAlign:"center"}}>Text for Footer Here</p>
+        <footer style={{ position: "fixed", background: "red" }}>
 
-            </footer>
-        
+            <p style={{ textAlign: "center" }}>Text for Footer Here</p>
+
+        </footer>
+
 
     )
 }
