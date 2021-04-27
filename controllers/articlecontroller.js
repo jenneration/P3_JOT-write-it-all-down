@@ -6,7 +6,7 @@ const Article = require ("../models/Article");
 const getArticle = (req, res)=>{
     console.log(req.params.id);
     try {
-        Journal.findOne({_id:req.params.id}).populate("Article")
+        Journal.findOne({_id:req.params.id}).populate("articles")
         .then(dbArticle=>{
             console.log(dbArticle)
             res.json(dbArticle);
@@ -39,9 +39,21 @@ const updateArticle =  (req, res)=>{
 }
 const deleteArticle =  (req, res)=>{
     console.log(req.params.id);
+    console.log(req.headers.journalid);
+    const journalId = req.headers.journalid;
     try {
-        const result = Article.findOneAndDelete({_id:req.params.id})
-        .then()
+     const result = Article.findOneAndDelete({_id:req.params.id}, (err, result)=>{
+         if(err){
+            console.log(err)
+         }
+         Journal.findOneAndUpdate({_id:journalId}, {$pull : {articles:req.params.id}}, (err, res)=>{
+            if(err){
+                console.log(err)
+            }
+            console.log(res)
+         }) 
+     })
+       .then( res.json(result))
         
     } catch (error) {
         

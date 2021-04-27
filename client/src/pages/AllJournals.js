@@ -54,6 +54,37 @@ class AllJournals extends Component {
             [name]: value,
         });
     };
+    clearInput =()=>{
+        this.setState({
+            journalName:""
+        });  
+    }
+    getJournal = () => {
+        const user = JSON.parse(localStorage.getItem("user"));
+        if (user) {
+            this.setState({
+                userId: user.id,
+                token: user.token,
+                name: user.name,
+            });
+            console.log(user);
+            // creating header
+            const apiUrl = "http://localhost:3001/user/";
+            const authAxios = axios.create({
+                baseURL: apiUrl,
+                headers: {
+                    Authorization: `Bearer ${user.token}`,
+                    userId: user.id,
+                },
+            });
+            authAxios.get(`journal/${user.id}`).then((result) => {
+                console.log(result.data);
+                this.setState({
+                    results: result.data,
+                });
+            });
+        }
+     };
 
     // function to create the article
     createEntry = () => { };
@@ -76,6 +107,8 @@ class AllJournals extends Component {
                 .then((res) => console.log(res))
                 .catch((error) => console.log(error));
         }
+        this.getJournal();
+        this.clearInput();
     };
 
     render() {
