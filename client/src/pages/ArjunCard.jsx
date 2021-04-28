@@ -47,8 +47,8 @@ export default function ComplexGrid() {
           <Grid item sm={12} md={6} lg={4} sm container>
             <Grid item xs container direction="column" spacing={2}>
               <Grid item >
-                <Typography  style={{ padding: 150 }}className={classes.resize}>
-                  ARJUN FullStackDevleoper
+                <Typography  style={{ padding: 80 }}className={classes.resize}>
+                  ArjunGhimire
                 </Typography>
                 
                 

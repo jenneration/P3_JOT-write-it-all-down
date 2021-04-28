@@ -9,7 +9,13 @@ import Paper from "@material-ui/core/Paper";
 const About =() => {
 
     return ( 
-        
+        <div> 
+          <br></br>
+          
+         <div>
+             <br></br>
+             <div>
+                 <br></br>
         
     <Grid container  spacing ={5}>
     
@@ -27,6 +33,9 @@ const About =() => {
         <JennerCard/>
         </Grid> 
         </Grid>
+        </div>
+        </div>
+        </div>
    
         );
 
