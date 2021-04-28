@@ -2,11 +2,12 @@ import Purple from "./images/purple.png";
 import Blue from "./images/blue.jpg";
 import Mosaic from "./images/mosaic.jpg";
 import Swirl from "./images/swirl.jpg"
+
 const themes = {
 
     default: {
-      'background-color': '#fff',
-      'background-image': 'none',
+      'background-color': 'none',
+      'background-image': '',
 
       'color': '#000',
       'font-family': "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen,Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif"

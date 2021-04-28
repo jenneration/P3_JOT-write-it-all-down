@@ -38,7 +38,7 @@ const Header = () => {
 
 
             { NewUser ? (
-                <nav className="navbar navbar-expand-lg navbar-dark bg-dark " >
+                <nav className="navbar navbar-expand-lg navbar-light bg-light">
 
                     {/* <div> */}
 

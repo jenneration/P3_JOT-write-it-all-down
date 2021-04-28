@@ -9,6 +9,9 @@ import Footer from "../components/Footer";
 
 
 class AllJournals extends Component {
+
+    
+   
     state = {
         userId: "",
         token: "",
@@ -17,6 +20,7 @@ class AllJournals extends Component {
         results: [],
         journalName: "",
     };
+
     // user = JSON.parse(localStorage.getItem("user"));
     componentDidMount() {
         // API.getBooks("harry potter")
@@ -28,6 +32,7 @@ class AllJournals extends Component {
                 userId: user.id,
                 token: user.token,
                 name: user.name,
+                
             });
             console.log(user);
             // creating header
@@ -110,6 +115,12 @@ class AllJournals extends Component {
         this.getJournal();
         this.clearInput();
     };
+  
+     
+     
+     
+
+ 
 
     render() {
         return (
@@ -154,8 +165,8 @@ class AllJournals extends Component {
                         {this.state.results.map((result) => (
                             <div className="card card-journal">
                                 {/* <CardJournal> */}
-                                <div
-                                    className="card-body card-body-journal d-flex flex-wrap justify-content-center align-items-center">
+                               
+          <div className="card-body card-body-journal d-flex flex-wrap justify-content-center align-items-center">
                                     <div className="card-content card-content-journal">
                                         <h4 className="card-title text-center">{result.name}
                                             {/* <h3 className="text-capitalize">
