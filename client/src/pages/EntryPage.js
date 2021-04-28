@@ -7,6 +7,7 @@ import Wrapper from "../components/Wrapper";
 import Modal from "../components/Modal"
 
 import user from '../user.json';
+import Footer from "../components/Footer/footer";
 
 class EntryPage extends Component {
 	// Setting this.state.friends to the friends json array
@@ -28,6 +29,7 @@ class EntryPage extends Component {
 				} */}
 
 				{/* <Entry /> */}
+				<Footer />
 			</Wrapper>
 		);
 	}

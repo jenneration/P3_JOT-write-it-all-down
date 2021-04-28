@@ -3,6 +3,8 @@ import { Link, useParams } from "react-router-dom";
 import axios from "axios";
 import Table from "../components/Table/table";
 import StateManager from "react-select";
+import Footer from "../components/Footer/footer";
+
 
 function AllEntries() {
   const [state, setState] = useState({
@@ -159,6 +161,7 @@ function AllEntries() {
 
 
 
+      <Footer />
       <div>
       {/* <div className="container tableApp">
       <Table columns={columns} data={data} />
@@ -179,7 +182,6 @@ function AllEntries() {
       ) : (<p> no entries on this journal please add to view. <Link to={"/create/" + id}><button className="btn btn-primary">click</button></Link></p>)} */}
 
     </div>
-
 
 
 

@@ -2,6 +2,7 @@ import React, { useMemo, useState, useEffect } from "react";
 import axios from "axios";
 
 import Table from "../components/Table";
+import Footer from "../components/Footer/footer"
 
 function SavedQuotes() {
     const columns = useMemo(
@@ -67,6 +68,7 @@ function SavedQuotes() {
     return (
         <div className="container tableApp">
             <Table columns={columns} data={data} />
+            <Footer />
         </div>
     );
 }

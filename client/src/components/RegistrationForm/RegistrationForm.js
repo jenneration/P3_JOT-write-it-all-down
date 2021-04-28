@@ -3,6 +3,9 @@ import axios from "axios";
 import "./RegistrationForm.css";
 import { API_BASE_URL } from "../../constants/apiContants";
 import { withRouter } from "react-router-dom";
+import  Footer from "../Footer/footer";
+  
+
 
 function RegistrationForm(props) {
   const [state, setState] = useState({
@@ -217,6 +220,7 @@ function RegistrationForm(props) {
             
           </div>
         </div>
+        < Footer />
       </div>
     </>
   );

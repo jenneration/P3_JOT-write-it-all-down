@@ -5,7 +5,7 @@ import Wrapper from "../components/Wrapper/wrapper";
 import { Link } from "react-router-dom";
 import "./alljournals.css";
 import "./allpages.css";
-import Footer from "../components/Footer";
+import Footer from "../components/Footer/footer"
 
 
 class AllJournals extends Component {

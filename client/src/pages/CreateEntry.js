@@ -6,6 +6,7 @@ import { Row } from "../components/Grid/grid";
 import Wrapper from "../components/Wrapper";
 // import Background from "../components/Background/background"
 import "./createentry.css";
+import Footer from "../components/Footer/footer"
 // import themes from "../themes";
 
 
@@ -129,6 +130,7 @@ function CreateEntry() {
                     </div>
                 </Row>
             </div>
+            <Footer/>
         </Wrapper >
     )
     // return (

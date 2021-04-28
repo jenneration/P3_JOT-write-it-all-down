@@ -10,6 +10,7 @@ import AllEntries from "./pages/AllEntries";
 import EntryPage from "./pages/EntryPage";
 import CreateEntry from "./pages/CreateEntry";
 
+
 function App() {
   return (
     <Router>
@@ -22,6 +23,7 @@ function App() {
         <Route exact path="/entrypage" component={EntryPage} />
         <Route exact path="/createentry" component={CreateEntry} />
       </div>
+      
     </Router>
   );
 }

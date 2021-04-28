@@ -3,6 +3,7 @@ import axios from "axios";
 import "./LoginForm.css";
 import { API_BASE_URL } from "../../constants/apiContants";
 import { withRouter } from "react-router-dom";
+import  Footer from "../Footer/footer"
 
 function LoginForm(props) {
   const [state, setState] = useState({
@@ -151,6 +152,7 @@ function LoginForm(props) {
           </div>
         </div>
       </div>
+      <Footer />
     </div>
   );
 }
