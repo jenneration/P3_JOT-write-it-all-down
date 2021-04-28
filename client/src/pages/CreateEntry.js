@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-
 import { useParams } from "react-router-dom";
 import { Row } from "../components/Grid/grid";
 // import { Input, TextArea, FormBtn } from "../components/Form/form";
@@ -7,9 +6,9 @@ import Wrapper from "../components/Wrapper";
 // import Background from "../components/Background/background"
 import "./createentry.css";
 // import themes from "../themes";
-
-
 import axios from 'axios';
+
+let today = new Date().toDateString();
 
 
 function CreateEntry() {
@@ -34,11 +33,11 @@ function CreateEntry() {
             name: user.name
         }))
     }
-    const clearInput =()=>{
+    const clearInput = () => {
         setState({
             //...prevState,
-                title:"",
-                body:""
+            title: "",
+            body: ""
         })
     }
     const addArticle = (e) => {
@@ -55,7 +54,7 @@ function CreateEntry() {
         authAxios.post("create", state)
             .then(res => console.log(res))
             .catch(err => console.log(err));
-            clearInput();
+        clearInput();
     }
     // const handleChange = (selectedTheme) => {
     //     setTheme(themes[selectedTheme.value]);
@@ -85,7 +84,7 @@ function CreateEntry() {
                                 <button
                                     onClick={addArticle}
                                     type="submit"
-                                    className="btn btn-lg btn-outline-secondary">
+                                    className="btn btn-lg btn-dark">
                                     Save
                                 </button>
                             </div>
@@ -105,7 +104,7 @@ function CreateEntry() {
                                 <input
                                     className="form-control form-control-lg createinput2"
                                     type="text"
-                                    placeholder="date goes here" />
+                                    placeholder={today} />
                             </div>
 
                             <div className="form-group">
@@ -118,14 +117,15 @@ function CreateEntry() {
                                     id="body"
                                     rows="15" value={state.body}>
                                 </textarea>
-                                <button
-                                    onClick={addArticle}
-                                    type="submit"
-                                    className="btn btn-lg btn-outline-secondary">
-                                    Save
-                                    </button>
+
                             </div>
                         </form>
+                        <button
+                            onClick={addArticle}
+                            type="submit"
+                            className="btn btn-lg btn-dark">
+                            Save
+                        </button>
                     </div>
                 </Row>
             </div>

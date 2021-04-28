@@ -4,8 +4,7 @@ import "./RegistrationForm.css";
 import { API_BASE_URL } from "../../constants/apiContants";
 import { withRouter } from "react-router-dom";
 import Logo from "../Logo/logo";
-import Background from "../Background/background";
-
+import Tagline from "../Tagline/tagline"
 
 function RegistrationForm(props) {
   const [state, setState] = useState({
@@ -82,19 +81,16 @@ function RegistrationForm(props) {
     <>
 
       <div className="container-fluid">
-        <Background />
-        <div className="row ">
-          {/* <div className="login register h-100 pr-0 col-lg-9 col-md-4"> */}
+        <div className="row h-100">
           <div className="login register pr-0 col-sm-9">
-
             <Logo />
+            <Tagline />
           </div>
-
-          <div id="regform1" className="register pr-0 col-sm-3">
-            <form className="registration-form">
+          <div id="regform1" className="register pr-0 pl-0 col-sm-3">
+            <form className="registration-form" style={{ height: "890px", paddingTop: "75px" }}>
               <h1> Sign Up</h1>
               <div className="form-group text-center">
-                <label htmlFor="firstName"></label>
+                <label htmlFor="exampleInputfirstName"></label>
                 <input
                   type="firstName"
                   className="form-control"
@@ -105,7 +101,7 @@ function RegistrationForm(props) {
                 />
               </div>
               <div className="form-group text-center">
-                <label htmlFor="lastName"></label>
+                <label htmlFor="exampleInputlastName"></label>
                 <input
                   type="lastName"
                   className="form-control"
@@ -128,7 +124,8 @@ function RegistrationForm(props) {
                 />
               </div>
               <div className="form-group regis-password">
-                <label htmlFor="exampleInputPassword1 text-center">Shhhhh!</label>
+                <label htmlFor="exampleInputPassword1 text-center">
+                  <h3><em>Shhhhh!</em></h3></label>
                 <input
                   type="password"
                   className="form-control text-left"
@@ -152,7 +149,8 @@ function RegistrationForm(props) {
               <div className="form-check form-group">
                 <button
                   type="submit"
-                  className="btn btn-lg btn-dark "
+                  className="btn btn-lg btn-dark"
+                  style={{ marginTop: "35px" }}
                   onClick={handleSubmitClick}>
                   Sign Up
               </button>
@@ -160,15 +158,15 @@ function RegistrationForm(props) {
 
               <br></br>
               <br></br>
-              <div className="mt-2">
+              <div style={{ marginTop: "15px" }}>
                 <span>Already have an account? </span>
                 <span className="loginText" onClick={() => redirectToLogin()}>
-                  Login here
+                  Login HERE
               </span>
               </div>
 
               <div
-                className="alert alert-success mt-2"
+                className="alert alert-success "
                 style={{ display: state.successMessage ? "block" : "none" }}
                 role="alert">
                 {state.successMessage}

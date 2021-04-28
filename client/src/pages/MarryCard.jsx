@@ -57,7 +57,7 @@ export default function ComplexGrid() {
             <Grid item xs container direction="column" spacing={2}>
               <Grid item xs>
                 <Typography style={{ padding: 155 }} className={classes.resize} >
-                 Mary FullStackDeveloper
+                 MARY
                 </Typography>
                 {/* <Typography variant="body2" gutterBottom>
                  Full Stack Devloper

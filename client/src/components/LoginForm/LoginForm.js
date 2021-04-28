@@ -64,15 +64,14 @@ function LoginForm(props) {
 
 
     <div className="container-fluid">
-      <div className="row h-100">
+      <div className="row h-100 ">
         <div className="login col-lg-9 col-md-4 h-100 ">
           <Logo />
         </div>
-
-        {/* <div id="loginform1" className="login col-lg-4 col-md-4 col-sm-4 "> */}
-        <div className="login pr-0 h-100 col-sm" >
-          <form className="loginForm" style={{ height: "900px" }}>
-            <h1>Log In</h1>
+        <div></div>
+        <div className="login pr-0 h-100 col-sm pl-0 pr-0" >
+          <form className="loginForm" style={{ height: "890px", paddingTop: "200px" }}>
+            <h1 style={{ marginBottom: "35px" }}>Log In</h1>
             <div className="form-group text-center">
               <label htmlFor="exampleInputEmail1"></label>
               <input
@@ -102,6 +101,7 @@ function LoginForm(props) {
               <button
                 type="submit"
                 className="btn btn-lg btn-dark"
+                style={{ marginTop: "35px" }}
                 onClick={handleSubmitClick}>
                 Submit
           </button>
@@ -113,10 +113,12 @@ function LoginForm(props) {
               role="alert">
               {state.successMessage}
             </div>
-            <div className="registerMessage">
+            <div className="registerMessage" style={{ marginTop: "35px" }}>
               <span>Don't have an account? </span>
-              <span className="loginText" onClick={() => redirectToRegister()}>
-                Register</span>
+              <span className="loginText"
+
+                onClick={() => redirectToRegister()}>
+                Register HERE</span>
             </div>
           </form>
         </div>

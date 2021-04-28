@@ -2,15 +2,19 @@ import Purple from "./images/purple.png";
 import Blue from "./images/blue.jpg";
 import Mosaic from "./images/mosaic.jpg";
 import Swirl from "./images/swirl.jpg"
+import Watercolor from "./assets/watercolor.jpeg"
+import Books from "./images/books.jpeg";
+
 
 const themes = {
 
-    default: {
-      'background-color': 'none',
-      'background-image': '',
+    Books: {
+        'background-color': '',
+        'background-image': `url(${Books})`,
 
-      'color': '#000',
-      'font-family': "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen,Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif"
+        'color': '#000',
+        'font-family': "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen,Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif"
+
     },
     // purple: {
     //   'background-color': '#8c6e76',
@@ -74,12 +78,35 @@ const themes = {
 
     //   'color': 'violet',
     //   'font-family': 'Verdana, Geneva, Tahoma, sans-serif'
-    // },  
-    
-    purple: {
-        'background-image': `url(${Purple})`,
-        "color": "violet",
+    // }, 
+
+
+    Books: {
+        'background-image': `url(${Books})`,
+        "color": "navy",
         'font-family': "'Courier New', Courier, monospace"
+
+    },
+
+    swirl: {
+        'background-image': `url(${Swirl})`,
+        "color": "navy",
+        'font-family': "'Courier New', Courier, monospace"
+
+    },
+
+    // Watercolor: {
+    //     'background-image': `url(${Watercolor})`,
+    //     "color": "navy",
+    //     'font-family': "'Courier New', Courier, monospace"
+    // },
+
+    watercolor: {
+        'background-image': `url(${Watercolor})`,
+        "color": "violet",
+        'font-family': "'Courier New', Courier, monospace",
+        "background-size": "cover",
+        "background-repeat": "no-repeat"
 
     },
     blue: {
@@ -94,13 +121,10 @@ const themes = {
         'font-family': "'Courier New', Courier, monospace"
 
     },
-    swirl: {
-        'background-image': `url(${Swirl})`,
-        "color": "navy",
-        'font-family': "'Courier New', Courier, monospace"
 
-    }
-  };
-  
-  export default themes;
+
+
+};
+
+export default themes;
 

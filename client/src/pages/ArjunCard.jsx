@@ -48,7 +48,7 @@ export default function ComplexGrid() {
             <Grid item xs container direction="column" spacing={2}>
               <Grid item >
                 <Typography  style={{ padding: 150 }}className={classes.resize}>
-                  ARJUN FullStackDevleoper
+                  ARJUN 
                 </Typography>
                 
                 

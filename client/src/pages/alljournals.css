@@ -32,32 +32,35 @@ hr {
   }
 
  
-  .card-journal > .card-body-journal,
-  .card-journal > .card-footer-journal {
-    /* background-image: url("../assets/large-leather.png"); */
-    background-color: rgb(179, 168, 235) ;
-    background-image: linear-gradient(to right,#161616 25px, #161616 25px, transparent 30px);  
+  .card-journal > .card-body-journal {
+    background-color: #fefefa;
+    background-image: url(../assets/large-leather.png);
+    position: relative;
+    z-index: 2; 
   }
 
+    .vl {
+      border-left: 30px solid #161616;;
+      height: 500px;
+    }
+
+  .journal-input {
+      height: 50px;
+  }
+
+
   .card-content-journal {
-    background-color: #fefefa;
     padding-top: .75rem;
     padding-left: 1rem;
     padding-right: 1rem;
     padding-bottom: .75;
-    width: 230px;
+    width: 285px;
     border-radius: 5%;
-    /* height: 150px; */
+    height: 175px;
     line-height: 1;;
-    margin-left: 25px;
     border: 1px solid #000
   }
   
-.card-footer-journal {
-    border-top: none;
-    /* background-image: linear-gradient(to right,#161616 35px, #161616 35px, transparent 40px); */
-    background-image: linear-gradient(to right,#343030 35px, #3c3b3b 35px, transparent 40px);
-}
 
 .fa, .fas {
   font-size: 18px;
@@ -65,18 +68,17 @@ hr {
 }
 
 .fa-plus {
-  font-size: 2rem;
+  font-size: 1.75rem;
   color: #fefefa;
 }
 
-
 .fa:hover,
 .fas:hover {
-    color: rgb(127, 223, 127);
+    color: black;
 }
 
 .fa-file-alt {
-  margin-right: 12px;
+  margin-right: 19px;
 }
 .fa-edit {
     margin-right: 8px;

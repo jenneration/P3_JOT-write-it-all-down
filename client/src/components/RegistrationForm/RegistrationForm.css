@@ -33,12 +33,9 @@ button:hover {
     cursor: pointer;
 }
 
-.successMessage {
-  color: green;
-  font-weight: bold;
+.loginText:hover {
+text-decoration: underline;
 }
-
-
 
 .register-button{
   width: 220px;
@@ -49,6 +46,27 @@ button:hover {
 .mt-2{
   font-size: 30px;
   } 
+
+
+  /* Tablet, Mobile Landscape */
+/* @media (min-width: 481px) and (max-width: 767px) {
+  
+  .loginForm {
+    padding-top: 35px;
+    height: 100%;
+  }
+} */
+
+
+/* Mobile */
+/* @media (min-width: 320px) and (max-width: 480px) {
+  
+  .loginForm {
+    padding-top: 35px;
+    height: 100%;
+  
+  }
+} */
 
 
 
