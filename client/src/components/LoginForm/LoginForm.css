@@ -1,110 +1,50 @@
-/* .login-card {
-    min-height: 60vh;
-    text-align: right;
 
+html, body, #root {
+  height: 100%;
+  margin: 0px auto;
 }
 
-.registerMessage {
-    margin-top: 10vh;
+.loginForm {
+  display: flex;
+  justify-content: right;
+  flex-direction: column;
+  /* background-image: url(https://ak.picdn.net/shutterstock/videos/22399126/thumb/1.jpg); */
+  background-image: url(../../assets/watercolor.jpeg);
+  padding: 30px;
+  /* margin-top: 0%; */
 }
-.form-group {
-    padding-top: 40px;
-
-
-}
-
-.loginForm{
-    display: flex;
-    justify-content: right;
-    flex-direction: column;
-    background-color: rgb(0, 217, 255);
-    height: 50vh;
-    padding: 30px;
-    
-}
-*/
 
 /* Bordered form */
-.loginForm {
+/* .loginForm {
     margin-top: 350px;
-  }
-  
-  input[type=email], input[type=password] {
-    width: 80%;
-    padding: 12px 20px;
-    margin: 8px 8px;
-    display: inline-block;
-    box-sizing: content-box;
-    
-    
-  }
-
-  /* Set a style for all buttons */
-  /* button {
-    background-color: #4CAF50;
-    color: white;
-    padding: 14px 20px;
-    margin: 8px 0;
-    border: none;
-    cursor: pointer;
-    width: 100%;
   } */
   
-  /* Add a hover effect for buttons */
+  input[type=email],
+  input[type=password] {
+    width: 80%;
+    /* padding: 8px 12px; */
+    /* margin: 8px 8px; */
+    margin-left: auto;
+    margin-right: auto;
+    box-sizing: content-box; 
+  }
+  
   button:hover {
     opacity: 0.8;
   }
   
-  /* Extra style for the cancel button (red) */
-  .cancelbtn {
-    width: auto;
-    padding: 10px 18px;
-    background-color: #f44336;
-  }
-  
   /* Center the avatar image inside this container */
-  .imgcontainer {
+  /* .imgcontainer {
     text-align: center;
     margin: 24px 0 12px 0;
   }
   
   /* Avatar image */
-  img.avatar {
+  /* img.avatar {
     width: 40%;
     border-radius: 50%;
-  }
-  
-  /* Add padding to containers */
-  /* .container {
-    padding: 16px;
-  } */
-  
-  /* The "Forgot password" text */
-  span.psw {
-    float: right;
-    padding-top: 16px;
-  }
-  
-  
-  @media screen and (max-width: 300px) {
-    span.psw {
-      display: block;
-      float: none;
-    }
-    .cancelbtn {
-      width: 100%;
-    }
-  }
-  #loginform1{
-    display: flex;
-    justify-content: right;
-    flex-direction: column;
-    background-image: url(https://ak.picdn.net/shutterstock/videos/22399126/thumb/1.jpg);
-    height: 150vh;
-   
-    padding: 30px;
-    margin-top: 0%;
-  }
+  }  */
+
   /*Menuka's new CSS*/
 
   /* .container-fluid {
@@ -115,27 +55,47 @@ background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSb8u
 
   } */
 
-  .labelmb{
+  /* .labelmb{
 font-size: 30pt;
 font-weight: bolder;
 
-  }
-  .passwordmb{
+  } */
+  /* .passwordmb{
     font-size: 30pt;
     font-weight: bolder;
 
-  }
-  .registerMessage{
-font-size: 20pt;
+  } */
 
+/* .registerMessage{
+  font-size: 20pt;
+  } */
 
-  }
-.form-group text-centermb{
-
-margin-top: 550px;
-
-}
-#firstName{
-
+/* #firstName{
 margin-top: 350px;
-}
+} */
+
+/* Buttons, Messagse */
+
+
+/* Extra style for the cancel button (red) */
+/* .cancelbtn {
+  width: auto;
+  padding: 10px 18px;
+  background-color: #f44336;
+} */
+
+  /* The "Forgot password" text */
+  /* span.psw {
+  float: right;
+  padding-top: 16px;
+  } */
+
+  @media screen and (max-width: 300px) {
+    span.psw {
+      display: block;
+      float: none;
+    } 
+  .cancelbtn {
+      width: 100%;
+    }
+ }

@@ -1,9 +1,12 @@
-.wrapper {
-    padding-top: 50px;
-    height: 100%;
-    padding: 20px;
-    overflow: auto;
-    /* background: #e8e1e1; */
 
 
-  }
+.wrapper {    
+/* height: 93vh; */
+height: 95vh;
+min-height: 100%;
+width: 100%;
+/* background-color: pink; */
+position: relative;
+z-index: -1;
+overflow: auto;
+}

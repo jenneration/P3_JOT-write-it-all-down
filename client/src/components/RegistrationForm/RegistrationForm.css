@@ -1,44 +1,60 @@
+html, body, #root {
+  height: 100%;
+  margin: 0;
+}
+
+.registration-form {
+   display: flex;
+   justify-content: right;
+   flex-direction: column;
+   /* background-image: url(https://ak.picdn.net/shutterstock/videos/22399126/thumb/1.jpg); */
+   background-image: url(../../assets/watercolor.jpeg);
+   padding: 30px;  
+}
+
+input[type=firstName],
+input[type=lastName]{
+  width: 80%;
+  /* padding: 8px 12px; */
+  margin-right: auto;
+  margin-left: auto;
+  box-sizing: content-box; 
+  }
+
+button:hover {
+  opacity: 0.8;
+}
+
+.regis-password {
+  margin-top: 2rem;
+}
+
 .loginText {
-    color: #007bff;
-    font-weight: bold;
     cursor: pointer;
 }
 
 .successMessage {
-    color: green;
-    font-weight: bold;
+  color: green;
+  font-weight: bold;
 }
 
- .registration-form{
-    display: flex;
-    justify-content: right;
-    flex-direction: column;
-    background-image: url(https://ak.picdn.net/shutterstock/videos/22399126/thumb/1.jpg);
-    height: 150vh;
-   
-    padding: 30px;
-    margin-top: 0%;
-    
-}
+
+
 .register-button{
-    width: 220px;
-    height: 50px;
-    align-self: center;
-    
+  width: 220px;
+  height: 50px;
+  align-self: center;   
 }
 
+.mt-2{
+  font-size: 30px;
+  } 
 
-  input ,[type=firstName],[type=password],[type=email] {
-    width: 50%;
-    padding: 12px 20px;
-    margin: 8px 8px;
-    display: inline-block;
-    box-sizing: content-box;
 
-  }
-  .mt-2{
 
-    font-size: 30px;
-  }
+
+
+
+
 
 

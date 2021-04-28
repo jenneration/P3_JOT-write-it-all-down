@@ -3,6 +3,9 @@ import axios from "axios";
 import "./RegistrationForm.css";
 import { API_BASE_URL } from "../../constants/apiContants";
 import { withRouter } from "react-router-dom";
+import Logo from "../Logo/logo";
+import Background from "../Background/background";
+
 
 function RegistrationForm(props) {
   const [state, setState] = useState({
@@ -77,70 +80,26 @@ function RegistrationForm(props) {
   };
   return (
     <>
+
       <div className="container-fluid">
-        <div className="row">
-          <div className="login col-lg-8 col-md-8 col-sm-8">
-            {/* logo content  */}
+        <Background />
+        <div className="row ">
+          {/* <div className="login register h-100 pr-0 col-lg-9 col-md-4"> */}
+          <div className="login register pr-0 col-sm-9">
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-            
+            <Logo />
           </div>
-          <div id="regform1" className="register col-lg-4 col-md-4 cold-sm-4">
+
+          <div id="regform1" className="register pr-0 col-sm-3">
             <form className="registration-form">
-                <h1> Sign Up</h1>
-              <div className="form-group text-centermb">
+              <h1> Sign Up</h1>
+              <div className="form-group text-center">
                 <label htmlFor="firstName"></label>
-                
                 <input
                   type="firstName"
                   className="form-control"
                   id="firstName"
-                  placeholder="first name"
+                  placeholder="First Name"
                   value={state.firstName}
                   onChange={handleChange}
                 />
@@ -151,7 +110,7 @@ function RegistrationForm(props) {
                   type="lastName"
                   className="form-control"
                   id="lastName"
-                  placeholder="Last name"
+                  placeholder="Last Name"
                   value={state.lastName}
                   onChange={handleChange}
                 />
@@ -163,16 +122,16 @@ function RegistrationForm(props) {
                   className="form-control"
                   id="email"
                   aria-describedby="emailHelp"
-                  placeholder="Enter email"
+                  placeholder="Email"
                   value={state.email}
                   onChange={handleChange}
                 />
               </div>
-              <div className="form-group text-left">
-                <label htmlFor="exampleInputPassword1"></label>
+              <div className="form-group regis-password">
+                <label htmlFor="exampleInputPassword1 text-center">Shhhhh!</label>
                 <input
                   type="password"
-                  className="form-control"
+                  className="form-control text-left"
                   id="password"
                   placeholder="Password"
                   value={state.password}
@@ -190,34 +149,36 @@ function RegistrationForm(props) {
                   onChange={handleChange}
                 />
               </div>
-              <button
-                type="submit"
-                className="btn btn-primary register-button"
-                onClick={handleSubmitClick}
-              >
-                Register
+              <div className="form-check form-group">
+                <button
+                  type="submit"
+                  className="btn btn-lg btn-dark "
+                  onClick={handleSubmitClick}>
+                  Sign Up
               </button>
+              </div>
+
               <br></br>
               <br></br>
               <div className="mt-2">
-              <span>Already have an account? </span>
-              <span className="loginText" onClick={() => redirectToLogin()}>
-                Login here
+                <span>Already have an account? </span>
+                <span className="loginText" onClick={() => redirectToLogin()}>
+                  Login here
               </span>
-            </div>
+              </div>
+
+              <div
+                className="alert alert-success mt-2"
+                style={{ display: state.successMessage ? "block" : "none" }}
+                role="alert">
+                {state.successMessage}
+              </div>
             </form>
-            <div
-              className="alert alert-success mt-2"
-              style={{ display: state.successMessage ? "block" : "none" }}
-              role="alert"
-            >
-              {state.successMessage}
-              
-            </div>
-            
           </div>
         </div>
       </div>
+
+
     </>
   );
 }
