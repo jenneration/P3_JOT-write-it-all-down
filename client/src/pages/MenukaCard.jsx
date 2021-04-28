@@ -17,7 +17,7 @@ const useStyles = makeStyles((theme) => ({
     maxHeight:700,
   },
   image: {
-    width: 400,
+    width: 430,
     height: 400,
   },
   resize:{
@@ -47,8 +47,10 @@ export default function ComplexGrid() {
           <Grid item s={12} md={6} lg={4} sm container>
             <Grid item xs container direction="column" spacing={2}>
               <Grid item xs>
-                <Typography style={{ padding: 80 }} className={classes.resize} >
-                  MenukaBisht
+
+                <Typography style={{ padding: 155 }} className={classes.resize} >
+                  MENUKA 
+
                 </Typography>
                 {/* <Typography variant="body2" textAlign="center" gutterBottom>
                  SR. Website QA Analyst

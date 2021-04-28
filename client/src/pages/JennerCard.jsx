@@ -5,6 +5,7 @@ import Paper from '@material-ui/core/Paper';
 import Typography from '@material-ui/core/Typography';
 import ButtonBase from '@material-ui/core/ButtonBase';
 import jennerm from "../assets/jennerm.gif";
+import "./allpages.css";
 
 
 const useStyles = makeStyles((theme) => ({
@@ -30,6 +31,7 @@ const useStyles = makeStyles((theme) => ({
   resize:{
     fontSize:30
   },
+
 }));
 
 export default function ComplexGrid() {
@@ -47,8 +49,10 @@ export default function ComplexGrid() {
           <Grid item s={12} md={6} lg={4} sm container>
             <Grid item xs container direction="column" spacing={2}>
               <Grid item xs align="center">
-                <Typography style={{ padding:85 }} className={classes.resize}>
-                 JennerGarcia  
+
+                <Typography style={{ padding: 155 }} className={classes.resize}>
+                 JENNER
+
                 </Typography>
             
                 

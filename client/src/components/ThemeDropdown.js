@@ -14,9 +14,9 @@ const ThemeDropdown = ({ handleChange }) => {
 
   return (
     <div className="theme-dropdown">
-      <span>Choose Theme</span>
+      <span className="d-flex d-inline-block" style={{ color: "transparent" }}>Choose</span>
       <Select
-        className="select-filter"
+        className="select-filter "
         onChange={handleChange}
         options={options}
       />
