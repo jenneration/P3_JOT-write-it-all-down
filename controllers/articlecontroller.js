@@ -25,7 +25,7 @@ const createArticle =  (req, res)=>{
             title : req.body.title,
             body:req.body.body
         })
-        .then(({ _id }) => Journal.findOneAndUpdate({_id:req.body.journalId}, { $push: { Article: _id } }, { new: true }))
+        .then(({ _id }) => Journal.findOneAndUpdate({_id:req.body.journalId}, { $push: { articles: _id } }, { new: true }))
         .then()
         res.json(result);
     } catch (error) {

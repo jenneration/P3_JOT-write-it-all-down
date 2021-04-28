@@ -1,8 +1,7 @@
 import React, { useMemo, useState, useEffect } from "react";
-import { Link, useParams } from "react-router-dom";
+import {useParams } from "react-router-dom";
 import axios from "axios";
 import Table from "../components/Table/table";
-import StateManager from "react-select";
 
 function AllEntries() {
   const [state, setState] = useState({
@@ -31,11 +30,11 @@ function AllEntries() {
     })
     authAxios.get(`get/${id}`)
       .then(result => {
-        console.log(result.data.Article);
-        if (result.data.Article) {
+        console.log(result.data.articles);
+        if (result.data.articles) {
           setState(prevState => ({
             ...prevState,
-            results: result.data.Article
+            results: result.data.articles
           }))
         }
 
