@@ -9,17 +9,17 @@ const getJournal = (req, res)=>{
     try {
         User.findOne({_id:req.params.id}).populate("journals")
         .then(dbJournal=>{
-            console.log(dbJournal.journals)
+            //console.log(dbJournal.journals)
             res.json(dbJournal.journals);
         }) 
     } catch (error) {
-        console.log(error)
+        res.json(error)
      }
 
 }
 // post or creating journal
 const createJournal =  (req, res)=>{
-    console.log(req.body);
+    // console.log(req.body);
     if(req.body.userId === undefined) return res.status(500).json({message:"user is not authenticated"});
     try {
         const result = Journal.create({
@@ -30,7 +30,7 @@ const createJournal =  (req, res)=>{
         .then()
         res.json(result);
     } catch (error) {
-        console.log(error)
+        res.json(error)
     }
    
 }
@@ -39,8 +39,21 @@ const updateJournal =  (req, res)=>{
    
 }
 const deleteJournal =  (req, res)=>{
-    console.log(req.params.id);
-   
+    // console.log(req.params.id);
+    const userId = req.headers.userid;
+    const journalId = req.params.id;
+    const journal = Journal.findOneAndDelete({_id:req.params.id}, (err, res)=>{
+        if(err){
+        res.json(err)
+        }
+        User.findOneAndUpdate({_id:userId}, {$pull:{journals: journalId}}, (err, res)=>{
+            if (err) {
+               console.log(err)
+            }
+           console.log(res)
+        })
+    })
+   // res.json(journal);
    
 }
 module.exports={getJournal, createJournal, updateJournal, deleteJournal};

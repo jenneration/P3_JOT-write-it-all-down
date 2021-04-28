@@ -1,13 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import decode from "jwt-decode";
-// import {useDispatch} from "react-redux";
-// import {Redirect, useHistory} from "react-router-dom";
 import { Link } from "react-router-dom";
 import logotrans from "../../assets/logotrans.png"
 import "bootstrap/js/src/collapse.js";
 import "./header.css";
-
-
 
 const Header = () => {
     const [user, setuser] = useState([]);
@@ -24,7 +20,7 @@ const Header = () => {
     }, []);
     const logout = () => {
         localStorage.clear();
-        window.location.href = "/login";
+        window.location.pathname = "/login";
     }
     const token = NewUser?.token;
     if (token) {
@@ -59,7 +55,7 @@ const Header = () => {
                                     <Link to="/createentry" className={window.location.pathname === "/createentry" ? "nav-link active" : "nav-link"}>CreateEntry</Link>
                                 </li>
                                 <li className="nav-item" >
-                                    <Link to="/quotes" className={window.location.pathname === "/quotes" ? "nav-link active" : "nav-link"}>Quotes</Link>
+                                    <Link to={`/quotes/${NewUser.id}`} className={window.location.pathname === "/quotes" ? "nav-link active" : "nav-link"}>Quotes</Link>
                                 </li>
                                 <li className="nav-item " >
                                     <Link to="/entrypage" className={window.location.pathname === "/entrypage" ? "nav-link active" : "nav-link"}>EntryPage</Link>

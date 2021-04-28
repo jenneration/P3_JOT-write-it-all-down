@@ -1,5 +1,5 @@
 import axios from "axios";
-import React, { Component, useState } from "react";
+import React, { Component} from "react";
 import Wrapper from "../components/Wrapper/wrapper";
 import Modal from "../components/Modal";
 import { Link } from "react-router-dom";
@@ -15,12 +15,35 @@ class AllJournals extends Component {
     results: [],
     journalName: "",
   };
+  // function to delete journal
+  deleteJournal = (e) => {
+    console.log(e.target)
+    const delid = e.target.getAttribute('id');
+    const user = JSON.parse(localStorage.getItem("user"));
+    if (user) {
+        this.setState({
+            userId: user.id,
+            token: user.token,
+            name: user.name,
+        });
+    console.log(delid);
+    const apiUrl = "http://localhost:3001/user/"
+    const authAxios = axios.create({
+      baseURL: apiUrl,
+      headers: {
+        Authorization: `Bearer ${this.state.token} `,
+        userId:this. state.userId,
+      }
+    })
+    authAxios.delete(`journal/${delid}`)
+      .then(res => console.log(res),
+        this.getJournal()
+      )
+      .catch(error => console.log(error));
 
-  // user = JSON.parse(localStorage.getItem("user"));
+  } }
+  // on page load.
   componentDidMount() {
-    // API.getBooks("harry potter")
-    // .then(res=>
-    //   this.setState({results: res.data.items}))
     const user = JSON.parse(localStorage.getItem("user"));
     if (user) {
       this.setState({
@@ -38,7 +61,8 @@ class AllJournals extends Component {
           userId: user.id,
         },
       });
-      authAxios.get(`journal/${user.id}`).then((result) => {
+      authAxios.get(`journal/${user.id}`)
+      .then((result) => {
         console.log(result.data);
         this.setState({
           results: result.data,
@@ -58,6 +82,7 @@ class AllJournals extends Component {
       journalName: "",
     });
   };
+  // function to get journal
   getJournal = () => {
     const user = JSON.parse(localStorage.getItem("user"));
     if (user) {
@@ -84,12 +109,10 @@ class AllJournals extends Component {
       });
     }
   };
-
-  // function to create the article
-  createEntry = () => { };
   // function to create new journal
   addJournal = (e) => {
     e.preventDefault();
+    if (this.state.journalName === "") return
     const user = JSON.parse(localStorage.getItem("user"));
     if (user) {
       const apiUrl = "http://localhost:3001/user/";
@@ -100,13 +123,19 @@ class AllJournals extends Component {
           userId: user.id,
         },
       });
-      if (this.state.journalName === "") return;
+      if (this.state.journalName === "") return
       authAxios
         .post("journal", this.state)
-        .then((res) => console.log(res))
+        .then((res) => {console.log(res)
+        if (res.status===200) {
+          this.getJournal()
+        }
+        }
+
+        )
         .catch((error) => console.log(error));
     }
-    this.getJournal();
+    
     this.clearInput();
   };
 
@@ -194,7 +223,7 @@ class AllJournals extends Component {
                         id={result._id}
                       >
                         <i
-                          class="fas fa-times"
+                          class="fas fa-times" id ={result._id}
                           style={{ color: "red", fontSize: "25px" }}
                         ></i>
                       </button>
@@ -206,7 +235,7 @@ class AllJournals extends Component {
           </div>
         ) : (
           <div>
-            <h4>You don't have any journals yoy can create here</h4>
+            <h4 style={{color:"dark-brown"}}>You don't have any journals yoy can create here</h4>
           </div>
         )}
         {/* <Footer /> */}

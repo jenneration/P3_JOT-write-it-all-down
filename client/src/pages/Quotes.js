@@ -1,74 +1,117 @@
-import React, { useMemo, useState, useEffect } from "react";
+import React, { Component, useEffect, useState } from "react";
+import {useParams } from "react-router-dom";
 import axios from "axios";
 
-import Table from "../components/Table";
-
-function SavedQuotes() {
-    const columns = useMemo(
-        () => [
-            {
-                Header: "Favorite Quotes",
-                columns: [
-                    {
-                        Header: () => (
-                            <div style={{ textAlign: "left" }}>Quote</div>
-                        ),
-
-                        accessor: "show.name",
-                        Cell: row => (
-                            <div style={{ textAlign: "left" }}>{row.value}</div>
-                        )
-                    },
-                    {
-                        Header: "Author",
-                        accessor: "show.language"
+function SavedQuotes () {
+    const [state, setState] = useState({
+        userId: "",
+        token: "",
+        results: []
+      });
+      const id = useParams()
+    useEffect( ()=>{
+            const user = JSON.parse(localStorage.getItem("user"));
+            if(user){
+                setState ({
+                    
+                    userId: user.id,
+                    token: user.token,
+                    name: user.name,
+                  })
+                  const apiUrl = "http://localhost:3001/quote/"
+                  const authAxios = axios.create({
+                    baseURL: apiUrl,
+                    headers: {
+                      Authorization: `Bearer ${user.token}`,
+                      userId: user.id
                     }
-                ]
-            },
-            {
-                Header: "Delete Quote",
-                columns:
-                    [
-                        {
-                            Header: "X",
+                  })
+                  console.log(id.id)
+                 authAxios.get(`get/${id.id}`)
+                 .then((result) => {
+                    if (result.data) {
+                        setState(prevState => ({
+                          ...prevState,
+                          results: result.data
+                        }))
+                      }
+                 });
+                 
+                    //.catch(error => console.log(error))  
+                };
 
-                            accessor: "X",
-                            disableSortBy: true,
-                            disableFilters: true,
+          },[])
 
-                            Cell: cell => (
-                                // <button value={cell.accessor} onClick={props.handleClickGroup}>
-                                //     {cell.accessor}
-                                // </button>
+          const  getQuotes = ()=>{
+            const user = JSON.parse(localStorage.getItem("user"));
+            setState(prevState => ({
+              ...prevState,
+              userId: user.id,
+              token: user.token,
+              name: user.name,
+            }))
+            const apiUrl = "http://localhost:3001/quote/"
+            const authAxios = axios.create({
+              baseURL: apiUrl,
+              headers: {
+                Authorization: `Bearer ${user.token}`,
+                userId: user.id
+              }
+            })
+            authAxios.get(`get/${id.id}`)
+              .then(result => {
+                console.log(result.data);
+                if (result.data) {
+                  setState(prevState => ({
+                    ...prevState,
+                    results: result.data
+                  }))
+                }
+        
+              })
+              .catch(error => console.log(error)) 
+            };
 
-                                <div style={{ display: "flex", justifyContent: "center", alignItems: "center", border: "none" }} >
-                                    <button className="btn btnX" value="X">X</button></ div >
-                            )
-                        }
-                    ]
-            }
-        ],
-        []
-    );
+            const deleteQuote = (e) => {
+                const delid = e.target.getAttribute('id');
+                console.log(delid);
+                const apiUrl = "http://localhost:3001/quote/"
+                const authAxios = axios.create({
+                  baseURL: apiUrl,
+                  headers: {
+                    Authorization: `Bearer ${state.token} `,
+                    userId: state.userId,
+                  }
+                })
+                authAxios.delete(`delete/${delid}`)
+                  .then(res => {console.log(res)
+                    if(res.status===200){
+                        getQuotes();
+                    }
+                  }
+                  )
+                  .catch(error => console.log(error));
+              }
 
-    //Call for data
-    const [data, setData] = useState([]);
+ 
+        return(
+        <div  className="bg-dark " style={{opacity:"0.7"}}>
+           <ul>
+           {state.results ? (
+        <ul className="bg-dark" style={{opacity:"0.7", listStyleType :"none"}}>
+          {state.results.map(result => (
+            <li key={result._id} className="bg-darken-1 cool_purple text-white font-weight-500">{result.name}
+              <button id={result._id} className="btn btn-danger ml-3 mt-2" onClick={deleteQuote}>delete</button>
+            </li>
 
-    useEffect(() => {
-        (async () => {
-            const result = await axios("https://api.tvmaze.com/search/shows?q=snow");
-            console.log(result)
-            setData(result.data);
-        })();
-    }, []);
-
-
-    //Render
-    return (
-        <div className="container tableApp">
-            <Table columns={columns} data={data} />
-        </div>
-    );
+          ))}
+        </ul>
+      ) : (<h4> no quotes are saved yet. please save to view </h4>)}
+           </ul>
+           </div>
+        );
+       
+    
 }
 
 export default SavedQuotes;

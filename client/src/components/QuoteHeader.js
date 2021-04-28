@@ -6,15 +6,6 @@ import axios from "axios";
 function QuoteHeader() {
     const quote = quotes[Math.floor(Math.random() * quotes.length)];
     const navQuote = `${quote.q} ~ ${quote.a}`;
-    console.log(navQuote);
-
-    //    function handleFormSubmit(event) {
-    //        event.preventDefault();
-    //        API.saveQuote({
-    //            title: quote.q,
-    //            author: quote.a
-
-    //          })
 
     // save quote to database
     const addQuote = (e) => {
@@ -32,14 +23,13 @@ function QuoteHeader() {
             .post("create", quote)
             .then((res) => console.log(res))
             .catch((err) => console.log(err));
-        //clearInput();
     };
 
     return (
         <FadeIn transitionDuration="6000">
             <nav className="navbar navbar-light bg-dark d-flex justify-content-center">
                 <span
-                    className="navbar-brand "
+                    className="navbar-brand mr-1"
                     style={{
                         fontSize: "25px",
                         fontFamily: "caveat",

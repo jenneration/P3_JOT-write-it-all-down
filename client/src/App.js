@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './App.css';
 import Header from './components/Header/Header';
 import LoginForm from './components/LoginForm/LoginForm';
@@ -12,7 +12,6 @@ import {
 import AlertComponent from './components/AlertComponent/AlertComponent';
 
 // Site Routes
-// import Navbar from "./components/Navbar/navbar";
 import AllJournals from "./pages/AllJournals";
 import Quotes from "./pages/Quotes";
 import About from "./pages/About";
@@ -20,19 +19,30 @@ import AllEntries from "./pages/AllEntries";
 import EntryPage from "./pages/EntryPage";
 import CreateEntry from "./pages/CreateEntry";
 
-import QuoteHeader from "./components/QuoteHeader"
+import QuoteHeader from "./components/QuoteHeader";
 import "bootstrap/js/src/collapse.js";
 
 
 function App() {
   const [title, updateTitle] = useState(null);
   const [errorMessage, updateErrorMessage] = useState(null);
+  const [logged, setLogged] = useState(false)
+  const toggle = () => {
+    setLogged(!logged)
+  }
+  const getuser = ()=>{
+    const user = JSON.parse(localStorage.getItem("user"))
+      setLogged(!!user)
+  }
+  useEffect(()=>{
+    getuser();
+  },[logged])
+
   return (
     <Router>
       <div className="App">
         <Header title={title} />
-        <QuoteHeader />
-        {/* <div className="container d-flex align-items-center flex-column"> */}
+        {logged?<QuoteHeader />:null}
         <div>
           <Switch>
             <Route path="/" exact={true}>
@@ -46,29 +56,20 @@ function App() {
             </Route>
             <Route path="/alljournals">
             </Route>
-          </Switch>
+            </Switch>
           <AlertComponent errorMessage={errorMessage} hideError={updateErrorMessage} />
-          {/* </div> */}
-
-
-          {/* TO FIX START */}
-
-          {/* <div> */}
-          {/* <Navbar /> */}
-          <Route exact path="/alljournals" component={AllJournals} />
-          <Route exact path="/quotes" component={Quotes} />
-          <Route exact path="/about" component={About} />
-          <Route exact path="/entrypage" component={EntryPage} />
-          <Route exact path="/create/:id" component={CreateEntry} />
-          <Route exact path="/books/:id" component={AllEntries} />
+          
+          <Route exact path="/alljournals">
+            <AllJournals fn={toggle}/>
+          </Route> 
+          <Route exact path="/quotes/:id"><Quotes/></Route>
+          <Route exact path="/about"><About /></Route>
+          <Route exact path="/entrypage"> <EntryPage /></Route>
+          <Route exact path="/create/:id"><CreateEntry /> </Route>
+          <Route exact path="/books/:id"><AllEntries /> </Route>
+          
         </div>
       </div>
-
-
-      {/* TO FIX END */}
-
-
-
     </Router>
 
 
