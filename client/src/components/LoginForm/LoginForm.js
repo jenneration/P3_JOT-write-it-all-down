@@ -3,6 +3,7 @@ import axios from "axios";
 import "./LoginForm.css";
 import { API_BASE_URL } from "../../constants/apiContants";
 import { withRouter } from "react-router-dom";
+import Logo from "../Logo/logo";
 
 function LoginForm(props) {
   const [state, setState] = useState({
@@ -58,100 +59,70 @@ function LoginForm(props) {
     props.history.push("/register");
     props.updateTitle("Register");
   };
+
   return (
+
+
     <div className="container-fluid">
-      <div className="row">
-        <div className="login col-lg-8  col-md-8 col-sm-8 ">
-          {/* logo content  */}
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
+      <div className="row h-100">
+        <div className="login col-lg-9 col-md-4 h-100 ">
+          <Logo />
         </div>
 
-        <div id="loginform1" className="login col-lg-4  col-md-4 col-sm-4 ">
-          <form className="loginForm">
-            <div className="form-group text-centermb">
-              <label htmlFor="exampleInputEmail1" className="labelmb">Email address</label>
+        {/* <div id="loginform1" className="login col-lg-4 col-md-4 col-sm-4 "> */}
+        <div className="login pr-0 h-100 col-sm" >
+          <form className="loginForm" style={{ height: "900px" }}>
+            <h1>Log In</h1>
+            <div className="form-group text-center">
+              <label htmlFor="exampleInputEmail1"></label>
               <input
                 type="email"
-                className="form-control input-login"
+                className="form-control"
                 id="email"
                 aria-describedby="emailHelp"
                 placeholder="Enter email"
                 value={state.email}
                 onChange={handleChange}
               />
-              
+
             </div>
             <div className="form-group text-center">
-              <label htmlFor="exampleInputPassword1"className="passwordmb">Password</label>
+              <label htmlFor="exampleInputPassword1"></label>
               <input
                 type="password"
-                className="form-control input-login"
+                className="form-control"
                 id="password"
                 placeholder="Password"
                 value={state.password}
                 onChange={handleChange}
               />
             </div>
-            <div className="form-check"></div>
-            <button
-              type="submit"
-             
-              className="btn btn-dark"
-              onClick={handleSubmitClick}
-            >
-              Submit
-            </button>
+
+            <div className="form-check form-group">
+              <button
+                type="submit"
+                className="btn btn-lg btn-dark"
+                onClick={handleSubmitClick}>
+                Submit
+          </button>
+            </div>
+
+            <div
+              className="alert alert-success mt-2"
+              style={{ display: state.successMessage ? "block" : "none" }}
+              role="alert">
+              {state.successMessage}
+            </div>
+            <div className="registerMessage">
+              <span>Don't have an account? </span>
+              <span className="loginText" onClick={() => redirectToRegister()}>
+                Register</span>
+            </div>
           </form>
-          <div
-            className="alert alert-success mt-2"
-            style={{ display: state.successMessage ? "block" : "none" }}
-            role="alert"
-          >
-            {state.successMessage}
-          </div>
-          <div className="registerMessage">
-            <span>Don't have an account? </span>
-            <span className="loginText" onClick={() => redirectToRegister()}>
-              Register
-            </span>
-          </div>
         </div>
       </div>
-    </div>
+    </div >
+
   );
 }
 

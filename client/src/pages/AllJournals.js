@@ -54,10 +54,10 @@ class AllJournals extends Component {
             [name]: value,
         });
     };
-    clearInput =()=>{
+    clearInput = () => {
         this.setState({
-            journalName:""
-        });  
+            journalName: ""
+        });
     }
     getJournal = () => {
         const user = JSON.parse(localStorage.getItem("user"));
@@ -84,7 +84,7 @@ class AllJournals extends Component {
                 });
             });
         }
-     };
+    };
 
     // function to create the article
     createEntry = () => { };
@@ -140,35 +140,36 @@ class AllJournals extends Component {
                             <button
                                 className="btn btn-dark search-button text-capitalize" id="button-addon2"
                                 type="submit"
-                                onClick={this.addJournal}>save
-                        </button>
+                                onClick={this.addJournal}>
+                                <i class="fas fa-plus"></i>
+                            </button>
                         </div>
                     </div>
                     {/* </form> */}
                 </div>
 
                 {this.state.results.length ? (
-                    <div className="container card-container d-flex flex-wrap">
+                    <div className="container-fluid card-container d-flex flex-wrap justify-content-center">
 
                         {this.state.results.map((result) => (
-                            <div className="card">
+                            <div className="card card-journal">
                                 {/* <CardJournal> */}
                                 <div
-                                    className="card-body d-flex justify-content-center align-items-center">
-                                    <div className="card-content ">
+                                    className="card-body card-body-journal d-flex flex-wrap justify-content-center align-items-center">
+                                    <div className="card-content card-content-journal">
                                         <h4 className="card-title text-center">{result.name}
                                             {/* <h3 className="text-capitalize">
                                                 {result.name}
                                             </h3> */}
                                         </h4>
                                         <hr />
-                                        <p className="card-text">
+                                        <p className="card-text card-text-journal">
                                             <Link to={"/books/" + result._id}>
                                                 <span><i class="fas fa-file-alt"></i></span>
                                                   See All Jots</Link>
                                         </p>
                                         <hr />
-                                        <p className="card-text ">
+                                        <p className="card-text card-text-journal">
                                             <Link to={"/create/" + result._id}>
                                                 <a
                                                     className="text-capitalize text-center"
@@ -182,7 +183,7 @@ class AllJournals extends Component {
                                         <p className="text-right"><i class="fas fa-cog"></i></p>
                                     </div>
                                 </div>
-                                <div className="card-footer border-top-0 text-right">
+                                <div className="card-footer card-footer-journal border-top-0 text-right">
                                     <button
                                         className="btn btn-outline-secondary
                                         "

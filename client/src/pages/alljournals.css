@@ -1,14 +1,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Caveat:wght@500;700&family=Lato:wght@400;700&display=swap');
 
-.card-title {
-    font-family: 'Lato', sans-serif; 
+.card-title-journal {
     font-size: 1.75rem;
     font-weight: bold;
 }
 
-.card-text a,
-.card-text,
-.card-title {
+.card-text-journal a,
+.card-text-journal,
+.card-title-journal {
     font-size: 1rem;
     color: #000;
 }
@@ -22,25 +21,25 @@ hr {
   margin-bottom: 40px;
 }
 
-.card {
+.card-journal {
     background: #161616;
     border-radius: 2px;
     margin: 1rem;
     margin-bottom: 40px;
-    width: 335px;
-    height: 325px;
+    width: 500px;
+    height: 500px;
     text-align: left;
   }
 
  
-  .card > .card-body,
-  .card > .card-footer {
+  .card-journal > .card-body-journal,
+  .card-journal > .card-footer-journal {
     /* background-image: url("../assets/large-leather.png"); */
     background-color: rgb(179, 168, 235) ;
     background-image: linear-gradient(to right,#161616 25px, #161616 25px, transparent 30px);  
   }
 
-  .card-content {
+  .card-content-journal {
     background-color: #fefefa;
     padding-top: .75rem;
     padding-left: 1rem;
@@ -54,7 +53,7 @@ hr {
     border: 1px solid #000
   }
   
-.card-footer {
+.card-footer-journal {
     border-top: none;
     /* background-image: linear-gradient(to right,#161616 35px, #161616 35px, transparent 40px); */
     background-image: linear-gradient(to right,#343030 35px, #3c3b3b 35px, transparent 40px);
@@ -64,6 +63,12 @@ hr {
   font-size: 18px;
   color: grey;
 }
+
+.fa-plus {
+  font-size: 2rem;
+  color: #fefefa;
+}
+
 
 .fa:hover,
 .fas:hover {
