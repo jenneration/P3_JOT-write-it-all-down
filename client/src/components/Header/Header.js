@@ -45,11 +45,11 @@ const Header = () => {
                         </button>
                         <div className="collapse navbar-collapse" id="navbarNav">
                             <ul className="navbar-nav ml-auto ">
-                                <li className="nav-item">
-                                    <Link to="/alljournals" className={window.location.pathname === "/alljounsals" ? "nav-link active" : "nav-link"}></Link>
-                                </li>
                                 <li className="nav-item ">
                                     <Link to="/allentries" className={window.location.pathname === "/allentries" ? "nav-link active" : "nav-link"}></Link>
+                                </li>
+                                <li className="nav-item">
+                                    <Link to="/alljournals" className={window.location.pathname === "/alljounsals" ? "nav-link active" : "nav-link"}>Home</Link>
                                 </li>
                                 <li className="nav-item " >
                                     <Link to="/createentry" className={window.location.pathname === "/createentry" ? "nav-link active" : "nav-link"}></Link>

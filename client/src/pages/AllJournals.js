@@ -27,7 +27,7 @@ class AllJournals extends Component {
         name: user.name,
       });
       console.log(delid);
-      const apiUrl = "http://localhost:3001/user/"
+      const apiUrl = "/user/"
       const authAxios = axios.create({
         baseURL: apiUrl,
         headers: {
@@ -54,7 +54,7 @@ class AllJournals extends Component {
       });
       console.log(user);
       // creating header
-      const apiUrl = "http://localhost:3001/user/";
+      const apiUrl = "/user/";
       const authAxios = axios.create({
         baseURL: apiUrl,
         headers: {
@@ -96,7 +96,7 @@ class AllJournals extends Component {
       });
       console.log(user);
       // creating header
-      const apiUrl = "http://localhost:3001/user/";
+      const apiUrl = "/user/";
       const authAxios = axios.create({
         baseURL: apiUrl,
         headers: {
@@ -118,7 +118,7 @@ class AllJournals extends Component {
     if (this.state.journalName === "") return
     const user = JSON.parse(localStorage.getItem("user"));
     if (user) {
-      const apiUrl = "http://localhost:3001/user/";
+      const apiUrl = "/user/";
       const authAxios = axios.create({
         baseURL: apiUrl,
         headers: {
@@ -170,7 +170,7 @@ class AllJournals extends Component {
 
             <div className="input-group-append">
               <button
-                className="btn btn-dark search-button text-capitalize"
+                className="btn btn-dark text-light search-button text-capitalize"
                 id="button-addon2"
                 type="submit"
                 onClick={this.addJournal}
@@ -190,7 +190,7 @@ class AllJournals extends Component {
                 <div className="card-body vl card-body-journal d-flex flex-wrap justify-content-center align-items-center">
                   <div>
                     <div className="card-content card-content-journal">
-                      <h4 className="card-title text-center">{result.name}</h4>
+                      <strong><h3 className="card-title text-center ">{result.name}</h3></strong>
                       <hr />
                       <p className="card-text card-text-journal">
                         <Link to={"/books/" + result._id}>

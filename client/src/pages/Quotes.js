@@ -1,4 +1,4 @@
-import React, { Component, useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import axios from "axios";
 import "./allpages.css";
@@ -19,7 +19,7 @@ function SavedQuotes() {
         token: user.token,
         name: user.name,
       })
-      const apiUrl = "http://localhost:3001/quote/"
+      const apiUrl = "/quote/"
       const authAxios = axios.create({
         baseURL: apiUrl,
         headers: {
@@ -51,7 +51,7 @@ function SavedQuotes() {
       token: user.token,
       name: user.name,
     }))
-    const apiUrl = "http://localhost:3001/quote/"
+    const apiUrl = "/quote/"
     const authAxios = axios.create({
       baseURL: apiUrl,
       headers: {
@@ -76,7 +76,7 @@ function SavedQuotes() {
   const deleteQuote = (e) => {
     const delid = e.target.getAttribute('id');
     console.log(delid);
-    const apiUrl = "http://localhost:3001/quote/"
+    const apiUrl = "/quote/"
     const authAxios = axios.create({
       baseURL: apiUrl,
       headers: {

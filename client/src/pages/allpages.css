@@ -44,18 +44,31 @@ tr {
     margin-top: 70px;
 }
 
-.accordian-entries {
-    width: 700px;
+.cardEntries {
+    
     margin-right: auto;
     margin-left: auto;
     margin-bottom: 0;
+    font-style: 'Lato', sans-serif;
+    background:#fff9f6;
+    border:2px solid #000;
+    outline: 1px dashed #000;
+    outline-offset: -10px;
+
+
 }
 
-/* .pEntries,
-.cardEntries {
-    border: 2px solid grey;
-} */
 
+.btn:focus {
+    outline:none;
+}
+
+.entries {
+    background:#000;
+    border:2px solid #fff9f6;
+    outline: 1px dashed #fff9f6;
+    outline-offset: -10px;
+}
 
 
 .messageEntries {

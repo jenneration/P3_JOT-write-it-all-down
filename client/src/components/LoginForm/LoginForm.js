@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import axios from "axios";
 import "./LoginForm.css";
-import { API_BASE_URL } from "../../constants/apiContants";
+
 import { withRouter } from "react-router-dom";
 import Logo from "../Logo/logo";
 
@@ -26,7 +26,7 @@ function LoginForm(props) {
       password: state.password,
     };
     axios
-      .post(API_BASE_URL + "/signin", payload)
+      .post("/api/signin", payload)
       .then(function (response) {
         if (response.status === 200) {
           const user = {
