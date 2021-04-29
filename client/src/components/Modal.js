@@ -27,14 +27,26 @@ const Modal = () => {
   return (
     // Error classNameName - if removed button disappears
     <div classNameName="modal">
-      <button
+      <span
         type="button"
-        className="btn"
-        style={{ borderRadius: "5px", background: "black", color: "white" }}
+        className="btn bg-transparent border-0"
+        style={{
+          borderRadius: "5px",
+          background: "black", color: "white"
+        }}
         data-toggle="modal"
         data-target="#exampleModalCenter">
-        Theme Selector
-      </button>
+
+        <span><i class="fas fa-cog"
+          style={{
+            fontSize: "1.75rem",
+            color: "#dadad5",
+            marginLeft: "12px",
+          }}>
+        </i>
+        </span>
+        {/* Theme Selector */}
+      </span>
 
       <div
         className="modal fade"

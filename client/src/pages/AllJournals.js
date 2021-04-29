@@ -1,7 +1,7 @@
 import axios from "axios";
-import React, { Component} from "react";
+import React, { Component } from "react";
 import Wrapper from "../components/Wrapper/wrapper";
-import Modal from "../components/Modal";
+
 import { Link } from "react-router-dom";
 import "./alljournals.css";
 import "./allpages.css";
@@ -21,27 +21,28 @@ class AllJournals extends Component {
     const delid = e.target.getAttribute('id');
     const user = JSON.parse(localStorage.getItem("user"));
     if (user) {
-        this.setState({
-            userId: user.id,
-            token: user.token,
-            name: user.name,
-        });
-    console.log(delid);
-    const apiUrl = "http://localhost:3001/user/"
-    const authAxios = axios.create({
-      baseURL: apiUrl,
-      headers: {
-        Authorization: `Bearer ${this.state.token} `,
-        userId:this. state.userId,
-      }
-    })
-    authAxios.delete(`journal/${delid}`)
-      .then(res => console.log(res),
-        this.getJournal()
-      )
-      .catch(error => console.log(error));
+      this.setState({
+        userId: user.id,
+        token: user.token,
+        name: user.name,
+      });
+      console.log(delid);
+      const apiUrl = "http://localhost:3001/user/"
+      const authAxios = axios.create({
+        baseURL: apiUrl,
+        headers: {
+          Authorization: `Bearer ${this.state.token} `,
+          userId: this.state.userId,
+        }
+      })
+      authAxios.delete(`journal/${delid}`)
+        .then(res => console.log(res),
+          this.getJournal()
+        )
+        .catch(error => console.log(error));
 
-  } }
+    }
+  }
   // on page load.
   componentDidMount() {
     const user = JSON.parse(localStorage.getItem("user"));
@@ -62,13 +63,15 @@ class AllJournals extends Component {
         },
       });
       authAxios.get(`journal/${user.id}`)
-      .then((result) => {
-        console.log(result.data);
-        this.setState({
-          results: result.data,
+        .then((result) => {
+          console.log(result.data);
+          this.setState({
+            results: result.data,
+          });
         });
-      });
     }
+    this.props.fn()
+
   }
   // handing input change
   handleChange = (e) => {
@@ -126,23 +129,23 @@ class AllJournals extends Component {
       if (this.state.journalName === "") return
       authAxios
         .post("journal", this.state)
-        .then((res) => {console.log(res)
-        if (res.status===200) {
-          this.getJournal()
-        }
+        .then((res) => {
+          console.log(res)
+          if (res.status === 200) {
+            this.getJournal()
+          }
         }
 
         )
         .catch((error) => console.log(error));
     }
-    
+
     this.clearInput();
   };
 
   render() {
     return (
       <Wrapper>
-        <Modal />
         <div className="container">
           <div class="input-group input-group-lg create-journal">
             <div className="input-group-prepend ">
@@ -223,7 +226,7 @@ class AllJournals extends Component {
                         id={result._id}
                       >
                         <i
-                          class="fas fa-times" id ={result._id}
+                          className="fas fa-times" id={result._id}
                           style={{ color: "red", fontSize: "25px" }}
                         ></i>
                       </button>
@@ -234,8 +237,11 @@ class AllJournals extends Component {
             ))}
           </div>
         ) : (
-          <div>
-            <h4 style={{color:"dark-brown"}}>You don't have any journals yoy can create here</h4>
+          <div className="container container-journals">
+            <p className="messageJournals text-light">You don't have any journals.
+            <br />
+              <br />
+    Create Some!</p>
           </div>
         )}
         {/* <Footer /> */}

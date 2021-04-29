@@ -1,7 +1,50 @@
-.createentry {
-    margin-top: 60px;
-    border: 1px solid grey;
+/* font-family: 'Caveat', cursive;
+font-family: 'Open Sans', sans-serif;
+font-family: 'Seaweed Script', cursive; */
+/* font-family: 'Lato', sans-serif; */
+
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@500;700&family=Lato:wght@400;700&display=swap');
+
+.createtitle {
+    font-family: 'Caveat', cursive;
+    font-size: 3rem;
+    color: #080808;
+}
+
+.createinput2.entrybody {
+    color: #080808;
+}
+
+.createtitle::placeholder {
+    font-family: 'Caveat', cursive;
+    font-size: 3rem;
+  
+}
+
+.createinput.date,
+.createinput2.entrybody {
+    font-family: 'Caveat', cursive; 
+    font-size: 1.75rem;
+}
+
+.createform {
+    background: #fff9f6;
+}
+
+
+
+.createentry,
+textarea {
+   margin: 20px 15px;
+    border: 3px solid #000;
+    padding: 30px;
+
+
     
+}
+
+.form-group {
+    margin-bottom: 0;
 }
 
 input.input-group,
@@ -20,9 +63,14 @@ textarea.form-control:focus {
     -webkit-transition: none;
   }
 
- .input-group.createinput {
-     height: 50px;
-     background: red;
+ .form-control.createinput {
+     height: 75px;
+     background-color: #fff9f6;
+ }
+
+ .form-control.createinput2 {
+    background-color: #fff9f6;  
+    border-bottom: none;
  }
 
 

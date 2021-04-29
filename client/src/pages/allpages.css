@@ -4,3 +4,71 @@ font-family: 'Seaweed Script', cursive; */
 /* font-family: 'Lato', sans-serif; */
 
 @import url('https://fonts.googleapis.com/css2?family=Caveat:wght@500;700&family=Lato:wght@400;700&display=swap');
+
+
+  /* quote.header */
+
+
+.quote-text {
+    font-family: 'Lato', sans-serif;
+    font-size: 1rem;  
+}
+
+.quote-message {
+    font-family: 'Lato', sans-serif;
+    font-size: 2.5rem; 
+   
+}
+
+.table tr:nth-child(even) {
+    background-color:#f5f0f0;
+    padding: 20px;
+  }
+
+  .table tr:nth-child(odd) {
+    background-color: #fff;
+  }
+
+  .table td {
+      padding: 1rem;
+  }
+
+tr {
+ padding: 10px;
+}
+
+
+/* All entries.js */
+
+.container-entries {
+    margin-top: 70px;
+}
+
+.accordian-entries {
+    width: 700px;
+    margin-right: auto;
+    margin-left: auto;
+    margin-bottom: 0;
+}
+
+/* .pEntries,
+.cardEntries {
+    border: 2px solid grey;
+} */
+
+
+
+.messageEntries {
+background: #000;
+    padding: 35px;
+    margin-top: 100px;
+    
+  
+}
+
+.jotEntries {
+    font-family: 'Caveat', cursive;
+    font-size: 1.75rem;
+    font-weight: bold;
+    
+}

@@ -46,19 +46,19 @@ const Header = () => {
                         <div className="collapse navbar-collapse" id="navbarNav">
                             <ul className="navbar-nav ml-auto ">
                                 <li className="nav-item">
-                                    <Link to="/alljournals" className={window.location.pathname === "/alljounsals" ? "nav-link active" : "nav-link"}>Home</Link>
+                                    <Link to="/alljournals" className={window.location.pathname === "/alljounsals" ? "nav-link active" : "nav-link"}></Link>
                                 </li>
                                 <li className="nav-item ">
-                                    <Link to="/allentries" className={window.location.pathname === "/allentries" ? "nav-link active" : "nav-link"}>AllEntries</Link>
+                                    <Link to="/allentries" className={window.location.pathname === "/allentries" ? "nav-link active" : "nav-link"}></Link>
                                 </li>
                                 <li className="nav-item " >
-                                    <Link to="/createentry" className={window.location.pathname === "/createentry" ? "nav-link active" : "nav-link"}>CreateEntry</Link>
+                                    <Link to="/createentry" className={window.location.pathname === "/createentry" ? "nav-link active" : "nav-link"}></Link>
                                 </li>
                                 <li className="nav-item" >
                                     <Link to={`/quotes/${NewUser.id}`} className={window.location.pathname === "/quotes" ? "nav-link active" : "nav-link"}>Quotes</Link>
                                 </li>
                                 <li className="nav-item " >
-                                    <Link to="/entrypage" className={window.location.pathname === "/entrypage" ? "nav-link active" : "nav-link"}>EntryPage</Link>
+                                    <Link to="/entrypage" className={window.location.pathname === "/entrypage" ? "nav-link active" : "nav-link"}></Link>
                                 </li>
                                 <li className="nav-item" >
                                     <Link to="/about" className={window.location.pathname === "/entries" ? "nav-link active" : "nav-link"}>About</Link>

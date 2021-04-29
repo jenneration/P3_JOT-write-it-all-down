@@ -1,83 +1,82 @@
-import React, { useMemo, useState, useEffect } from "react";
-import {useParams } from "react-router-dom";
-import axios from "axios";
-import Table from "../components/Table/table";
+import React, { useMemo, useState, useEffect } from 'react';
+import { useParams, Link } from 'react-router-dom';
+import axios from 'axios';
+// import Table from '../components/Table/table';
+import "./allpages.css";
 
-function AllEntries() {
+function AllEntries(props) {
   const [state, setState] = useState({
-    journalId: "",
-    userId: "",
-    token: "",
+    journalId: '',
+    userId: '',
+    token: '',
     results: []
-  })
-  const { id } = useParams()
+  });
+  const { id } = useParams();
   useEffect(() => {
-    const user = JSON.parse(localStorage.getItem("user"));
-    setState(prevState => ({
+    const user = JSON.parse(localStorage.getItem('user'));
+    setState((prevState) => ({
       ...prevState,
       userId: user.id,
       token: user.token,
       name: user.name,
       journalId: id
-    }))
-    const apiUrl = "http://localhost:3001/article/"
+    }));
+    const apiUrl = 'http://localhost:3001/article/';
     const authAxios = axios.create({
       baseURL: apiUrl,
       headers: {
         Authorization: `Bearer ${user.token}`,
         userId: user.id
       }
-    })
-    authAxios.get(`get/${id}`)
-      .then(result => {
+    });
+    authAxios
+      .get(`get/${id}`)
+      .then((result) => {
         console.log(result.data.articles);
         if (result.data.articles) {
-          setState(prevState => ({
+          setState((prevState) => ({
             ...prevState,
             results: result.data.articles
-          }))
+          }));
         }
-
       })
-      .catch(error => console.log(error))
-  }, [])
-
-
-  const  getEntries = ()=>{
-    const user = JSON.parse(localStorage.getItem("user"));
-    setState(prevState => ({
+      .catch((error) => console.log(error));
+    props.fn()
+  }, []);
+  const getEntries = () => {
+    const user = JSON.parse(localStorage.getItem('user'));
+    setState((prevState) => ({
       ...prevState,
       userId: user.id,
       token: user.token,
       name: user.name,
       journalId: id
-    }))
-    const apiUrl = "http://localhost:3001/article/"
+    }));
+    const apiUrl = 'http://localhost:3001/article/';
     const authAxios = axios.create({
       baseURL: apiUrl,
       headers: {
         Authorization: `Bearer ${user.token}`,
         userId: user.id
       }
-    })
-    authAxios.get(`get/${id}`)
-      .then(result => {
+    });
+    authAxios
+      .get(`get/${id}`)
+      .then((result) => {
         console.log(result.data.articles);
         if (result.data.articles) {
-          setState(prevState => ({
+          setState((prevState) => ({
             ...prevState,
             results: result.data.articles
-          }))
+          }));
         }
-
       })
-      .catch(error => console.log(error)) 
-    };
-
+      .catch((error) => console.log(error));
+  };
   const deleteEntry = (e) => {
     const delid = e.target.getAttribute('id');
     console.log(delid);
-    const apiUrl = "http://localhost:3001/article/"
+    const apiUrl = 'http://localhost:3001/article/';
     const authAxios = axios.create({
       baseURL: apiUrl,
       headers: {
@@ -85,106 +84,75 @@ function AllEntries() {
         userId: state.userId,
         journalId: id
       }
-    })
-    authAxios.delete(`delete/${delid}`)
-      .then(res => console.log(res))
-      .catch(error => console.log(error));
-      getEntries();
-  }
-
-
-  const columns = useMemo(
-    () => [
-      {
-        Header: "Journal Entries",
-        columns: [
-          {
-            Header: () => (
-              <div style={{ textAlign: "left" }}>Title</div>
-            ),
-
-            accessor: "title",
-            Cell: row => (
-              <div style={{ textAlign: "left" }}>{row.value}</div>
-            )
-          },
-          {
-            Header: "Date",
-            accessor: "createAt"
-          }
-        ]
-      },
-      {
-        Header: "Delete Entry",
-        columns:
-          [
-            {
-              Header: "X",
-
-              accessor: "_id",
-              disableSortBy: true,
-              disableFilters: true,
-              // ***** A-1 KEEP BY COMMENTING THIS OUT ID CAN BE SEEN UNDER "X"
-              // Cell: cell => 
-              // <div style={{ display: "flex", justifyContent: "center", alignItems: "center", border: "none" }} >
-              //  < button className="btn btnX" value="X" >X</button ></ div >
-              // )
-
-
-
-
-
-              // *** DELETE? THIS WAS COMMENTED OUT BY ARJUN
-              //   // <button value={cell.accessor} onClick={props.handleClickGroup}>
-              //   //     {cell.accessor}
-              //   // </button>
-            }
-          ]
-      }
-    ],
-    []
-  );
-
-
-
+    });
+    authAxios.delete(`delete/${delid}`).then((res) => console.log(res)).catch((error) => console.log(error));
+    getEntries();
+  };
   //Render
   return (
-    <div className="container tableApp">
+    <div>
+      {state.results.length ? (
+        <div className="container container-entries ">
+          <div className="row d-flex justify-content-center  ">
+            <div className="col-sm-8 bg-secondary ">
+              {state.results.map((result) => (
+                <div className="accordian-entries text-left "
+                  style={{ margin: '.5rem' }}>
+                  <button
+                    className="btn  btn-dark text-left"
+                    type="button"
+                    data-toggle="collapse"
+                    data-target={`#${result._id}`}
+                    aria-expanded="false"
+                    aria-controls={result._id}
+                    style={{
+                      height: '55px',
+                      color: 'white',
+                      width: "100%",
 
-      <Table
-        columns={columns}
-        data={state.results} />
-      
+                    }}
+                  >
+                    {result.title}
+                  </button>
+                  <div className="collapse" id={result._id}>
+                    <div className="card card-body cardEntries "
+                      style={{ width: '100' }}>
+                      <p className="pEntries" style={{ textAlign: 'left' }}>{result.body}</p>
+                      <div>
+                        <button id={result._id}
+                          className="text-right border-0 bg-transparent"
+                          onClick={deleteEntry}>
 
+                          <i className="fas fa-times" id={result._id}
+                            style={{ color: "red", fontSize: "25px" }}
+                          ></i>
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
 
-
-      <div>
-      {/* <div className="container tableApp">
-      <Table columns={columns} data={data} />
-      <div className="list-container">
-        <h4>{entries.name}</h4>
-      </div>
-    </div> */}
-      {/* {state.results.length ? (
-        <ul>
-          {state.results.map(result => (
-            <li key={result._id}>{result.title}
-              <button id={result._id} className="btn btn-danger" onClick={deleteEntry}>delete</button>
-              <p>{result.body}</p>
-            </li>
-
-          ))}
-        </ul>
-      ) : (<p> no entries on this journal please add to view. <Link to={"/create/" + id}><button className="btn btn-primary">click</button></Link></p>)} */}
-
-    </div>
-
-
-
-
-    </div>
-
+              ))}
+            </div>
+          </div>
+        </div>
+      ) : (
+        <div className="container container-entries ">
+          <p className="messageEntries text-light">
+            {' '}
+					There are no entries in this journal
+          <br />
+            {' '}
+            <br />
+            <br />
+            <Link to={'/create/' + id}>
+              <button className="btn btn-light"><span className="jotEntries">write it all down!</span></button>
+            </Link>
+          </p>
+        </div>
+      )
+      }
+    </div >
   );
 }
-
 export default AllEntries;

@@ -80,15 +80,16 @@ function RegistrationForm(props) {
   return (
     <>
 
-      <div className="container-fluid">
-        <div className="row h-100">
-          <div className="login register pr-0 col-sm-9">
+      <div className="container-fluid px-0">
+        <div className="row">
+          <div className="col col-lg-9 col-md-8 col-sm-6 col-xs-7 col-xl-9 login register ">
             <Logo />
-            <Tagline />
           </div>
-          <div id="regform1" className="register pr-0 pl-0 col-sm-3">
-            <form className="registration-form" style={{ height: "890px", paddingTop: "75px" }}>
+
+          <div id="regform1" className="col col-lg-3 col-md-4 col-sm-6 col-xs-5 col-xl-3 pr-0 pl-0 register">
+            <form className="registration-form">
               <h1> Sign Up</h1>
+
               <div className="form-group text-center">
                 <label htmlFor="exampleInputfirstName"></label>
                 <input
@@ -100,6 +101,7 @@ function RegistrationForm(props) {
                   onChange={handleChange}
                 />
               </div>
+
               <div className="form-group text-center">
                 <label htmlFor="exampleInputlastName"></label>
                 <input
@@ -149,16 +151,14 @@ function RegistrationForm(props) {
               <div className="form-check form-group">
                 <button
                   type="submit"
-                  className="btn btn-lg btn-dark"
+                  className="btn-submit btn btn-lg btn-dark"
                   style={{ marginTop: "35px" }}
                   onClick={handleSubmitClick}>
                   Sign Up
               </button>
               </div>
-
-              <br></br>
-              <br></br>
-              <div style={{ marginTop: "15px" }}>
+              <br />
+              <div>
                 <span>Already have an account? </span>
                 <span className="loginText" onClick={() => redirectToLogin()}>
                   Login HERE
