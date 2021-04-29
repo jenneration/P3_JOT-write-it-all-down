@@ -4,74 +4,65 @@ import Grid from '@material-ui/core/Grid';
 import Paper from '@material-ui/core/Paper';
 import Typography from '@material-ui/core/Typography';
 import ButtonBase from '@material-ui/core/ButtonBase';
-import mary from "../assets/mary.gif";
+import menuka from "../assets/menuka.gif";
 
 const useStyles = makeStyles((theme) => ({
   root: {
     flexGrow: 1,
   },
   paper: {
-    padding: theme.spacing(2),
-    margin: 'auto',
+    padding: theme.spacing(0),
+    marginLeft:30,
+    marginTop:250,
+    marginRight:30,
     maxWidth: 500,
-    maxHeight:700,
-    
-   
-  },
-  resize:{
-    fontSize:30
+    maxHeight:570,
   },
   image: {
-    width: 400,
-    height: 400,
+    width: 385,
+    height: 350,
+    marginTop:40,
+    marginLeft:60,
+    marginRight:40,
+    alignContent:"center",
   },
   img: {
-    margin: 'auto',
+    marginTop:90,
     display: 'block',
     maxWidth: '100%',
     maxHeight: '100%',
   },
-  typography: {
-    // In Chinese and Japanese the characters are usually larger,
-    // so a smaller fontsize may be appropriate.
-    fontSize: 12,
+  resize:{
+    fontSize:40,
+    marginLeft:90,
+    fontFamily:'Roboto',
   },
-  
- 
 }));
-
-
 export default function ComplexGrid() {
   const classes = useStyles();
-
   return (
     <div className={classes.root}>
       <Paper className={classes.paper}>
-        <Grid container spacing={2}>
+        <Grid container spacing={0}>
           <Grid item>
             <ButtonBase className={classes.image}>
-              <img className={classes.img} alt="complex" src={mary} />
+              <img className={classes.img} alt="complex" src={menuka} />
             </ButtonBase>
           </Grid>
           <Grid item s={12} md={6} lg={4} sm container>
-            <Grid item xs container direction="column" spacing={2}>
+            <Grid item xs container direction="column" spacing={0}>
               <Grid item xs>
-
-                <Typography style={{ padding: 155 }} className={classes.resize} >
-                 MARY
-
+                <Typography style={{ padding: 65 }} className={classes.resize} >
+                     MENUKA 
                 </Typography>
-                {/* <Typography variant="body2" gutterBottom>
-                 Full Stack Devloper
+                {/* <Typography variant="body2" textAlign="center" gutterBottom>
+                 SR. Website QA Analyst
                 </Typography> */}
-                
               </Grid>
               <Grid item>
-                
               </Grid>
             </Grid>
             <Grid item>
-             
             </Grid>
           </Grid>
         </Grid>
@@ -79,4 +70,3 @@ export default function ComplexGrid() {
     </div>
   );
 }
-

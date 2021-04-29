@@ -1,10 +1,10 @@
 import React, { useState } from "react";
 import axios from "axios";
 import "./RegistrationForm.css";
-import { API_BASE_URL } from "../../constants/apiContants";
+
 import { withRouter } from "react-router-dom";
 import Logo from "../Logo/logo";
-import Tagline from "../Tagline/tagline"
+
 
 function RegistrationForm(props) {
   const [state, setState] = useState({
@@ -33,7 +33,7 @@ function RegistrationForm(props) {
         confirmPassword: state.confirmPassword,
       };
       axios
-        .post(API_BASE_URL + "signup", payload)
+        .post("/api/signup", payload)
         .then(function (response) {
           console.log(response);
           if (response.status === 200) {

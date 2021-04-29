@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState } from "react";
 import { useParams } from "react-router-dom";
 import { Row } from "../components/Grid/grid";
 // import { Input, TextArea, FormBtn } from "../components/Form/form";
@@ -6,10 +6,10 @@ import Wrapper from "../components/Wrapper";
 // import Background from "../components/Background/background"
 import "./createentry.css";
 // import themes from "../themes";
-import axios from 'axios';
+import axios from "axios";
+import { Link } from "react-router-dom";
 
 let today = new Date().toDateString();
-
 
 function CreateEntry() {
     const [state, setState] = useState({
@@ -18,44 +18,45 @@ function CreateEntry() {
         body: "",
         userId: "",
         token: "",
-        name: ""
+        name: "",
     });
-    const { id } = useParams()
+    const { id } = useParams();
     const handleChange = (e) => {
-        const user = JSON.parse(localStorage.getItem('user'));
-        const { name, value } = e.target
-        setState(prevState => ({
+        const user = JSON.parse(localStorage.getItem("user"));
+        const { name, value } = e.target;
+        setState((prevState) => ({
             ...prevState,
             [name]: value,
             journalId: id,
             userId: user.id,
             token: user.token,
-            name: user.name
-        }))
-    }
+            name: user.name,
+        }));
+    };
     const clearInput = () => {
         setState({
             //...prevState,
             title: "",
-            body: ""
-        })
-    }
+            body: "",
+        });
+    };
     const addArticle = (e) => {
         e.preventDefault();
         if (state.journalId === "" || state.userId === "") return;
-        const apiUrl = "http://localhost:3001/article/"
+        const apiUrl = "/article/";
         const authAxios = axios.create({
             baseURL: apiUrl,
             headers: {
                 Authorization: `Bearer ${state.token} `,
-                userId: state.userId
-            }
-        })
-        authAxios.post("create", state)
-            .then(res => console.log(res))
-            .catch(err => console.log(err));
+                userId: state.userId,
+            },
+        });
+        authAxios
+            .post("create", state)
+            .then((res) => console.log(res))
+            .catch((err) => console.log(err));
         clearInput();
-    }
+    };
     // const handleChange = (selectedTheme) => {
     //     setTheme(themes[selectedTheme.value]);
     // };
@@ -78,15 +79,25 @@ function CreateEntry() {
             <div className="container ">
                 <Row className="d-flex justify-content-center">
                     <div className="col-md-9 offset-md-1 createform">
-
                         <form className="mt-40 createentry">
                             <div class="text-right">
                                 <button
                                     onClick={addArticle}
                                     type="submit"
-                                    className="btn btn-sm btn-dark ">
+                                    className="btn btn-sm btn-dark "
+                                >
                                     Save
-                                </button>
+                </button>
+                                <div>
+                                    <br />
+                                    <Link to={"/alljournals"}>
+                                        <span
+                                            style={{ color: "darkgrey " }}>
+                                            <i class="fas fa-arrow-left fa-3x color-purple mr-2"></i>
+                      Back to journal
+                    </span>
+                                    </Link>
+                                </div>
                             </div>
 
                             <div className="input-group createinput">
@@ -97,8 +108,9 @@ function CreateEntry() {
                                     type="text"
                                     placeholder="Title"
                                     name="title"
-                                    id="title" value={state.title}>
-                                </input>
+                                    id="title"
+                                    value={state.title}
+                                ></input>
                             </div>
 
                             <div className="input-group createinput">
@@ -106,12 +118,12 @@ function CreateEntry() {
                                     className="form-control form-control-lg createinput date"
                                     style={{ background: "#fff9f6" }}
                                     type="text"
-                                    placeholder={today} />
+                                    placeholder={today}
+                                />
                             </div>
 
                             <div className="form-group border-0 createinput2">
                                 <textarea
-
                                     className="form-control createinput2 entrybody"
                                     style={{ background: "#fff9f6", paddingTop: "5px" }}
                                     onChange={handleChange}
@@ -119,10 +131,9 @@ function CreateEntry() {
                                     placeholder="Write it all down"
                                     name="body"
                                     id="body"
-                                    rows="15" value={state.body}>
-
-                                </textarea>
-
+                                    rows="15"
+                                    value={state.body}
+                                ></textarea>
                             </div>
                         </form>
                         {/* <button
@@ -134,8 +145,8 @@ function CreateEntry() {
                     </div>
                 </Row>
             </div>
-        </Wrapper >
-    )
+        </Wrapper>
+    );
     // return (
     //     <Wrapper>
     //         <div ref={refCallback}>

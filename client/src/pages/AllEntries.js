@@ -21,7 +21,7 @@ function AllEntries(props) {
       name: user.name,
       journalId: id
     }));
-    const apiUrl = 'http://localhost:3001/article/';
+    const apiUrl = '/article/';
     const authAxios = axios.create({
       baseURL: apiUrl,
       headers: {
@@ -52,7 +52,7 @@ function AllEntries(props) {
       name: user.name,
       journalId: id
     }));
-    const apiUrl = 'http://localhost:3001/article/';
+    const apiUrl = '/article/';
     const authAxios = axios.create({
       baseURL: apiUrl,
       headers: {
@@ -76,7 +76,7 @@ function AllEntries(props) {
   const deleteEntry = (e) => {
     const delid = e.target.getAttribute('id');
     console.log(delid);
-    const apiUrl = 'http://localhost:3001/article/';
+    const apiUrl = '/article/';
     const authAxios = axios.create({
       baseURL: apiUrl,
       headers: {
@@ -94,12 +94,12 @@ function AllEntries(props) {
       {state.results.length ? (
         <div className="container container-entries ">
           <div className="row d-flex justify-content-center  ">
-            <div className="col-sm-8 bg-secondary ">
+            <div className="col-sm-8 ">
               {state.results.map((result) => (
-                <div className="accordian-entries text-left "
-                  style={{ margin: '.5rem' }}>
+                <div className="entries text-left "
+                  style={{ margin: '.5rem', fontStyle: "bold" }}>
                   <button
-                    className="btn  btn-dark text-left"
+                    className="btn text-left"
                     type="button"
                     data-toggle="collapse"
                     data-target={`#${result._id}`}
@@ -109,6 +109,7 @@ function AllEntries(props) {
                       height: '55px',
                       color: 'white',
                       width: "100%",
+                      backgroundColor: "#000",
 
                     }}
                   >
@@ -118,7 +119,7 @@ function AllEntries(props) {
                     <div className="card card-body cardEntries "
                       style={{ width: '100' }}>
                       <p className="pEntries" style={{ textAlign: 'left' }}>{result.body}</p>
-                      <div>
+                      <div className="text-right">
                         <button id={result._id}
                           className="text-right border-0 bg-transparent"
                           onClick={deleteEntry}>

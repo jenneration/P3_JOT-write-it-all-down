@@ -11,7 +11,7 @@ function QuoteHeader() {
 
   // save quote to database
   const addQuote = (e) => {
-    const apiUrl = "http://localhost:3001/quote/";
+    const apiUrl = "/quote/";
     const user = JSON.parse(localStorage.getItem("user"));
     const authAxios = axios.create({
       baseURL: apiUrl,

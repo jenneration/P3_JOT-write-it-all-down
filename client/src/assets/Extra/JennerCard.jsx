@@ -4,65 +4,63 @@ import Grid from '@material-ui/core/Grid';
 import Paper from '@material-ui/core/Paper';
 import Typography from '@material-ui/core/Typography';
 import ButtonBase from '@material-ui/core/ButtonBase';
-import menuka from "../assets/menuka.gif";
+import jennerm from "../assets/jennerm.gif";
+import "./allpages.css";
 
 const useStyles = makeStyles((theme) => ({
   root: {
     flexGrow: 1,
   },
   paper: {
-    padding: theme.spacing(2),
-    margin: 'auto',
+    padding: theme.spacing(0),
+    marginLeft:90,
+    marginTop:250,
+    marginRight:30,
     maxWidth: 500,
-    maxHeight:700,
+    maxHeight:570,
   },
   image: {
-    width: 430,
-    height: 400,
+    width: 385,
+    height: 350,
+    marginTop:40,
+    marginLeft:60,
+    marginRight:40,
+    alignContent:"center",
   },
-  resize:{
-    fontSize:30
-  },
-  
   img: {
-    margin: 'auto',
+    marginTop:90,
     display: 'block',
     maxWidth: '100%',
     maxHeight: '100%',
   },
+  resize:{
+    fontSize:40,
+    marginLeft:90,
+    fontFamily:'Roboto',
+  },
 }));
-
 export default function ComplexGrid() {
   const classes = useStyles();
-
   return (
     <div className={classes.root}>
       <Paper className={classes.paper}>
         <Grid container spacing={2}>
           <Grid item>
             <ButtonBase className={classes.image}>
-              <img className={classes.img} alt="complex" src={menuka} />
+              <img className={classes.img} alt="complex" src={jennerm} />
             </ButtonBase>
           </Grid>
-          <Grid item s={12} md={6} lg={4} sm container>
+          <Grid item sm={12} md={6} lg={4} sm container>
             <Grid item xs container direction="column" spacing={2}>
-              <Grid item xs>
-
-                <Typography style={{ padding: 155 }} className={classes.resize} >
-                  MENUKA 
-
+              <Grid item xs align="center">
+                <Typography style={{ padding: 75 }} className={classes.resize} align ='center'>
+                 JENNER
                 </Typography>
-                {/* <Typography variant="body2" textAlign="center" gutterBottom>
-                 SR. Website QA Analyst
-                </Typography> */}
-                
               </Grid>
               <Grid item>
-                
               </Grid>
             </Grid>
             <Grid item>
-             
             </Grid>
           </Grid>
         </Grid>
