@@ -1,17 +1,28 @@
 
 html, body, #root {
   height: 100%;
-  margin: 0px auto;
+  margin: 0px;
+  min-width: 100%;
 }
 
 .loginForm {
-  display: flex;
-  justify-content: right;
-  flex-direction: column;
   background-image: url(../../assets/watercolor.jpeg);
-  padding: 30px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  /* height: 950px; */
+  /* display: flex;
+  justify-content: right;
+  flex-direction: column; */
+  padding-top: 200px;
+  height: 100vh;
+  min-height: 100vh;
+  padding-left: 25px;
+  padding-right: 25px;
+  border: 2px solid #000;
 }
 
+
+/* INPUTS */
   input[type=email],
   input[type=password] {
     width: 80%;
@@ -19,21 +30,33 @@ html, body, #root {
     margin-right: auto;
     box-sizing: content-box; 
   }
+
+
+  input[type=email] {
+    margin-bottom: 45px;
+  }
   
-  button:hover {
+  .btn-submit:hover  {
     opacity: 0.8;
   }
+  
+  .loginText {
+    cursor: pointer;
+  }
+  
   .loginText:hover {
     text-decoration: underline;
+    font-style: bolder;
+  
     }
 
 /* Tablet, Mobile Landscape */
-@media (min-width: 481px) and (max-width: 767px) {
+@media (min-width: 481px) and (max-width: 992px) {
   
   .loginForm {
-    padding-top: 35px;
-    height: 100%;
+    padding-top: 75px;
   }
+
 }
 
 
@@ -41,8 +64,7 @@ html, body, #root {
 @media (min-width: 320px) and (max-width: 480px) {
   
   .loginForm {
-    padding-top: 35px;
-    height: 100%;
-  
+  padding-top: 35px;
+  min-height: 100%;
   }
 }

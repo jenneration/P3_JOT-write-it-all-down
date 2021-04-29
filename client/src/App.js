@@ -21,7 +21,7 @@ import CreateEntry from "./pages/CreateEntry";
 
 import QuoteHeader from "./components/QuoteHeader";
 import "bootstrap/js/src/collapse.js";
-
+import Footer from "./components/Footer/footer";
 
 function App() {
   const [title, updateTitle] = useState(null);
@@ -30,47 +30,40 @@ function App() {
   const toggle = () => {
     setLogged(!logged)
   }
-  const getuser = ()=>{
+  const getuser = () => {
     const user = JSON.parse(localStorage.getItem("user"))
-      setLogged(!!user)
+    setLogged(!!user)
   }
-  useEffect(()=>{
+  useEffect(() => {
     getuser();
-  },[logged])
+  }, [logged])
 
   return (
     <Router>
       <div className="App">
         <Header title={title} />
-        {logged?<QuoteHeader />:null}
-        <div>
-          <Switch>
-            <Route path="/" exact={true}>
-              <RegistrationForm showError={updateErrorMessage} updateTitle={updateTitle} />
-            </Route>
-            <Route path="/register">
-              <RegistrationForm showError={updateErrorMessage} updateTitle={updateTitle} />
-            </Route>
-            <Route path="/login">
-              <LoginForm showError={updateErrorMessage} updateTitle={updateTitle} />
-            </Route>
-            <Route path="/alljournals">
-            </Route>
-            </Switch>
-          <AlertComponent errorMessage={errorMessage} hideError={updateErrorMessage} />
-          
+        {logged ? <QuoteHeader /> : null}
+        <Switch>
+          <Route exact path={["/", "/register"]} >
+            <RegistrationForm showError={updateErrorMessage} updateTitle={updateTitle} />
+          </Route>
+          <Route exact path="/login">
+            <LoginForm showError={updateErrorMessage} updateTitle={updateTitle} />
+          </Route>
           <Route exact path="/alljournals">
-            <AllJournals fn={toggle}/>
-          </Route> 
-          <Route exact path="/quotes/:id"><Quotes/></Route>
+            <AllJournals fn={toggle} />
+          </Route>
+          <Route exact path="/quotes/:id"><Quotes /></Route>
           <Route exact path="/about"><About /></Route>
           <Route exact path="/entrypage"> <EntryPage /></Route>
           <Route exact path="/create/:id"><CreateEntry /> </Route>
-          <Route exact path="/books/:id"><AllEntries /> </Route>
-          
-        </div>
+          <Route exact path="/books/:id"><AllEntries fn={toggle} /> </Route>
+          <AlertComponent errorMessage={errorMessage} hideError={updateErrorMessage} />
+        </Switch>
+        {logged ? <Footer /> : null}
       </div>
     </Router>
+
 
 
   );

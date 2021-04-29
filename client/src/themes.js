@@ -2,7 +2,7 @@ import Purple from "./images/purple.png";
 import Blue from "./images/blue.jpg";
 import Mosaic from "./images/mosaic.jpg";
 import Swirl from "./images/swirl.jpg"
-import Watercolor from "./assets/watercolor.jpeg"
+import Half from "./images/half.jpg";
 import Books from "./images/books.jpeg";
 
 
@@ -101,12 +101,11 @@ const themes = {
     //     'font-family': "'Courier New', Courier, monospace"
     // },
 
-    watercolor: {
-        'background-image': `url(${Watercolor})`,
+    half: {
+        'background-image': `url(${Half})`,
+        "background-size": "cover",
         "color": "violet",
         'font-family': "'Courier New', Courier, monospace",
-        "background-size": "cover",
-        "background-repeat": "no-repeat"
 
     },
     blue: {

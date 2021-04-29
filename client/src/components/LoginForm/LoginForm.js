@@ -64,61 +64,64 @@ function LoginForm(props) {
 
 
     <div className="container-fluid">
-      <div className="row h-100 ">
-        <div className="login col-lg-9 col-md-4 h-100 ">
+      <div className="row ">
+        <div className="col col-lg-9 col-md-8 col-sm-6 col-xs-7 col-xl-9 login register ">
           <Logo />
         </div>
-        <div></div>
-        <div className="login pr-0 h-100 col-sm pl-0 pr-0" >
-          <form className="loginForm" style={{ height: "890px", paddingTop: "200px" }}>
-            <h1 style={{ marginBottom: "35px" }}>Log In</h1>
-            <div className="form-group text-center">
-              <label htmlFor="exampleInputEmail1"></label>
-              <input
-                type="email"
-                className="form-control"
-                id="email"
-                aria-describedby="emailHelp"
-                placeholder="Enter email"
-                value={state.email}
-                onChange={handleChange}
-              />
 
-            </div>
-            <div className="form-group text-center">
-              <label htmlFor="exampleInputPassword1"></label>
-              <input
-                type="password"
-                className="form-control"
-                id="password"
-                placeholder="Password"
-                value={state.password}
-                onChange={handleChange}
-              />
-            </div>
+        <div className="col col-lg-3 col-md-4 col-sm-6 col-xs-5 col-xl-3 pr-0 pl-0 register ">
+          <form className="loginForm">
+            <div className="inner-border">
+              <h1 style={{ marginBottom: "35px" }}>Log In</h1>
 
-            <div className="form-check form-group">
-              <button
-                type="submit"
-                className="btn btn-lg btn-dark"
-                style={{ marginTop: "35px" }}
-                onClick={handleSubmitClick}>
-                Submit
+              <div className="form-group text-center">
+                <label htmlFor="exampleInputEmail1"></label>
+                <input
+                  type="email"
+                  className="form-control"
+                  id="email"
+                  aria-describedby="emailHelp"
+                  placeholder="Enter email"
+                  value={state.email}
+                  onChange={handleChange}
+                />
+              </div>
+
+              <div className="form-group text-center">
+                <label htmlFor="exampleInputPassword1"></label>
+                <input
+                  type="password"
+                  className="form-control"
+                  id="password"
+                  placeholder="Password"
+                  value={state.password}
+                  onChange={handleChange}
+                />
+              </div>
+
+              <div className="form-check form-group">
+                <button
+                  type="submit"
+                  className="btn btn-submit btn-lg btn-dark"
+                  style={{ marginTop: "35px" }}
+                  onClick={handleSubmitClick}>
+                  Submit
           </button>
-            </div>
+              </div>
 
-            <div
-              className="alert alert-success mt-2"
-              style={{ display: state.successMessage ? "block" : "none" }}
-              role="alert">
-              {state.successMessage}
-            </div>
-            <div className="registerMessage" style={{ marginTop: "35px" }}>
-              <span>Don't have an account? </span>
-              <span className="loginText"
+              <div
+                className="alert alert-success mt-2"
+                style={{ display: state.successMessage ? "block" : "none" }}
+                role="alert">
+                {state.successMessage}
+              </div>
+              <div className="registerMessage" style={{ marginTop: "35px" }}>
+                <span>Don't have an account? </span>
+                <span className="loginText"
 
-                onClick={() => redirectToRegister()}>
-                Register HERE</span>
+                  onClick={() => redirectToRegister()}>
+                  Register HERE</span>
+              </div>
             </div>
           </form>
         </div>
