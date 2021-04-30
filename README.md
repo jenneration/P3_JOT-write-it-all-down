@@ -16,7 +16,7 @@ _![jotApp](./readmeimages/jot.png)
 ***jot*** is a MERN App. (Mongo, Express, React and Node).
 Users create an account to write and save private journals, create daily entries, receive a daily generated movtivation quote, and change the background theme to suit thier writing mood.
 
-_please note that ***jot** is still in production. Added features, bugs, etc. are being worked out!_
+_please note that ***jot*** is still in production. Added features, bugs, etc. are being worked out!_
 
 ## Technology
 Technologies utilized include
@@ -50,28 +50,28 @@ To runs this application you must have Mongo DB, Node.js and React installed. On
 
 ## Screenshots
 
-### _Create a journal or multiple journals._
+_Create a journal or multiple journals._
 ![jotApp](./readmeimages/crjurnal.png)
 
 
-### _Write it all down by creating jots in those jounals._
+_Write it all down by creating jots in those jounals._
 ![jotApp](./readmeimages/createjot.png)
 
 
-### _See all your jots for a particular journal and read and (updating ability coming)_
+ _See all your jots for a particular journal and read and (updating ability coming)_
 ![jotApp](./readmeimages/jourentries.png)
 
 
-### _Receive daily inspirational Zen Quotes...._
+_Receive daily inspirational Zen Quotes...._
 ![jotApp](./readmeimages/zequotes.png)
 
 
-### _Change the scenery of your writing space to match your mood!_
+_Change the scenery of your writing space to match your mood!_
 ![jotApp](./readmeimages/themechanger.png)
 
 
-### _...and save your favorties!_
+ _...and save your favorties!_
 ![jotApp](./readmeimages/savequotes.png)
 
-## This App was made by _Team JAMM_ We are Jenner, Arjun, Mary, Menuka
+This App was made by _Team JAMM_ and we are Jenner, Arjun, Mary, Menuka
 ![jotApp](./readmeimages/team.png)
