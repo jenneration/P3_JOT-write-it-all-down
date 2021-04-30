@@ -1,5 +1,5 @@
-# The-JAAM
-
+# Project 3: 
+![DreamApp](./readmeimages/jot.png)
 
 # Table of Contents
 - [Description](#Description)
@@ -11,9 +11,7 @@
 - [Screenshots](#Screenshots)
 
 ## Description
-
-
-
+Jot is a MERN (Mongo,Express, React and Node) App. User can register to this app and login to write and save Journals. App has a feature of motivational quote. Every time user logged in , app gives you new motivational quote. User can also set up a theme for their Journal by selecting theme option.
 
 ## Technology
 Technologies utilized include
@@ -48,3 +46,26 @@ To runs this application you must have Mongo DB,  Node.js and React installed. O
 
 ## Screenshots
 
+### Create a journal or multiple journals
+
+![jotApp](./readmeimages/crjurnal.png)
+
+### Create a jot - Write it all down!
+
+![jotApp](./readmeimages/createjot.png)
+
+### See all jots for a particular journal and read (update coming)
+
+![jotApp](./readmeimages/jourentries.png)
+
+### Change the scenery of your writing space to match your mood
+![jotApp](./readmeimages/themechanger.png)
+
+### Receive daily inspirational Zen Quotes....
+![jotApp](./readmeimages/zequotes.png)
+
+### ...and save your favorties!
+[jotApp](./readmeimages/savequotes.png)
+Team JAMM - Jenne, Arjun, Mary, Menuka
+
+![jotApp](./readmeimages/team.png)
