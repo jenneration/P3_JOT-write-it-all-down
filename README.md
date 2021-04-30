@@ -65,7 +65,8 @@ To runs this application you must have Mongo DB,  Node.js and React installed. O
 ![jotApp](./readmeimages/zequotes.png)
 
 ### ...and save your favorties!
-[jotApp](./readmeimages/savequotes.png)
-Team JAMM - Jenne, Arjun, Mary, Menuka
+![jotApp](./readmeimages/savequotes.png)
+
+Team JAMM - Jenner, Arjun, Mary, Menuka
 
 ![jotApp](./readmeimages/team.png)
