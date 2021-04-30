@@ -1,5 +1,9 @@
 # Project 3: 
-![DreamApp](./readmeimages/jot.png)
+![jotApp](./readmeimages/jot.png)
+
+We wonder, have experiences, have ideas - and daily journaling about them _is a good thing._
+
+Write it all down here with ***jot***.
 
 # Table of Contents
 - [Description](#Description)
@@ -11,7 +15,11 @@
 - [Screenshots](#Screenshots)
 
 ## Description
-Jot is a MERN (Mongo,Express, React and Node) App. User can register to this app and login to write and save Journals. App has a feature of motivational quote. Every time user logged in , app gives you new motivational quote. User can also set up a theme for their Journal by selecting theme option.
+
+***jot*** is a MERN App. (Mongo, Express, React and Node).
+Users create an account to write and save private journals, create daily entries, receive a daily generated movtivation quote, and change the background theme to suit thier writing mood.
+
+_please note that ***jot** is still in production. Added features, bugs, etc. are being worked out!_
 
 ## Technology
 Technologies utilized include
@@ -24,49 +32,49 @@ Technologies utilized include
 - Heroku
 
 ## Installation
-To runs this application you must have Mongo DB,  Node.js and React installed. Once installed:
-1. Clone the git hub repo.
-2. In the terminal, navigate to source folder and install the required dependencies listed in the package.json file by entering `npm install` or `npm i` and `ENTER`. Navigate to server.js 
-3. 
+
+To runs this application you must have Mongo DB, Node.js and React installed. Once installed:
+- Clone the git hub repo.
+- In the terminal, navigate to source folder root. Run `npm i` to install the required dependencies listed in the back-end and client package.json 
+
 
 ## Usage
 
-1. Once the above installation steps have been completed, right click on the `server.js` and `Open in an internal/external terminal`
-2. The application is launched by typing `npm start` in the terminal.
-3. NOTE: If you're new to using backend servers remember: `Ctrl C` at an active server prompt will "end/kill" the server connection when/if necessary.
+- Once the above installation steps have been completed, right click on the `server.js` and `Open in an internal/external terminal`
+- The application is launched by typing `npm start` in the terminal.
+- NOTE: If you're new to using backend servers remember: `Ctrl C` at an active server prompt will "end/kill" the server connection when/if necessary.
 
 ## Repository
-
+- Git hub link  https://github.com/ghimirear/the-jamm
 
 ## Deployment
-
-- Git hub link  https://github.com/ghimirear/the-jamm
 - Heroku link https://pacific-river-65796.herokuapp.com/**
-** NOTE re known issues: Upon deployment, site responsiveness on the the login and registration page, as well as some styles on the journal page were severly altered. Other issues have also come up and will be resolved in the coming weeks.
+** NOTE the site does not render responsiveness properly and some styles have been altered on Heroku. This issues are being resolved. 
 
 ## Screenshots
 
-### Create a journal or multiple journals
-
+### _Create a journal or multiple journals._
 ![jotApp](./readmeimages/crjurnal.png)
 
-### Create a jot - Write it all down!
 
+### _Write it all down by creating jots in those jounals._
 ![jotApp](./readmeimages/createjot.png)
 
-### See all jots for a particular journal and read (update coming)
 
+### _See all your jots for a particular journal and read and (updating ability coming)_
 ![jotApp](./readmeimages/jourentries.png)
 
-### Change the scenery of your writing space to match your mood
-![jotApp](./readmeimages/themechanger.png)
 
-### Receive daily inspirational Zen Quotes....
+### _Receive daily inspirational Zen Quotes...._
 ![jotApp](./readmeimages/zequotes.png)
 
-### ...and save your favorties!
+
+### _Change the scenery of your writing space to match your mood!_
+![jotApp](./readmeimages/themechanger.png)
+
+
+### _...and save your favorties!_
 ![jotApp](./readmeimages/savequotes.png)
 
-Team JAMM - Jenner, Arjun, Mary, Menuka
-
+## This App was made by _Team JAMM_ We are Jenner, Arjun, Mary, Menuka
 ![jotApp](./readmeimages/team.png)
