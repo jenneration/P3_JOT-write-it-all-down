@@ -1,9 +1,7 @@
 # Project 3: 
-![jotApp](./readmeimages/jot.png)
+We wonder, have experiences, have ideas - and daily journaling about them _is a good thing.
 
-We wonder, have experiences, have ideas - and daily journaling about them _is a good thing._
-
-Write it all down here with ***jot***.
+_![jotApp](./readmeimages/jot.png)
 
 # Table of Contents
 - [Description](#Description)
