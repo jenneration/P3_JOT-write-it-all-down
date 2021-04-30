@@ -1,5 +1,4 @@
-# Project 3: 
-We wonder, have experiences, have ideas - and daily journaling about them _is a good thing.
+ We wonder, have experiences, have ideas - and daily journaling about them _is a good thing.
 
 _![jotApp](./readmeimages/jot.png)
 
