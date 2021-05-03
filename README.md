@@ -1,4 +1,4 @@
- We wonder, have experiences, think up great ideas. Daily journaling about them _is a good thing.
+ We wonder, have experiences, think up great ideas. Daily journaling about them _is a good thing_.
 
 _![jotApp](./readmeimages/jot.png)
 
