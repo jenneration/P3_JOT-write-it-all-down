@@ -66,13 +66,12 @@ _Write it all down by creating jots in those jounals._
 _Receive daily inspirational Zen Quotes...._
 ![jotApp](./readmeimages/zequotes.png)
 
+ _...and save your favorties!_
+![jotApp](./readmeimages/savequotes.png)
 
 _Change the scenery of your writing space to match your mood!_
 ![jotApp](./readmeimages/themechanger.png)
 
-
- _...and save your favorties!_
-![jotApp](./readmeimages/savequotes.png)
 
 This App was made by _Team JAMM_ and we are Jenner, Arjun, Mary, Menuka
 ![jotApp](./readmeimages/team.png)
