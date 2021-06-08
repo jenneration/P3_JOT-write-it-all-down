@@ -42,7 +42,7 @@ To runs this application you must have Mongo DB, Node.js and React installed. On
 - NOTE: If you're new to using backend servers remember: `Ctrl C` at an active server prompt will "end/kill" the server connection when/if necessary.
 
 ## Repository
-- Git hub link  https://github.com/ghimirear/the-jamm
+- Git hub link  https://github.com/jenneration/P3_JOT-write-it-all-down
 
 ## Deployment
 - Heroku link https://pacific-river-65796.herokuapp.com/
